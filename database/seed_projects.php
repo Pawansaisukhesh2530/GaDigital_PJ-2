@@ -1,6 +1,6 @@
 <?php
 /**
- * Seed the 5 original (hardcoded) projects into the database and migrate their
+ * Seed the original (hardcoded) projects into the database and migrate their
  * images into assets/uploads/projects/. Idempotent: skips if projects exist.
  *
  * Run:  php database/seed_projects.php

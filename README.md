@@ -47,7 +47,7 @@ configuration are editable from the admin panel — no code changes needed.
 ## Folder structure
 
 ```
-nivi-homes/
+GaDigital_PJ-2/
 ├── admin/                 Admin panel (login, dashboard, projects, enquiries, settings, account)
 │   ├── assets/            admin.css, admin.js
 │   └── partials/          header, sidebar, topbar, footer
@@ -66,7 +66,7 @@ nivi-homes/
 │   ├── mail.php           PHPMailer wrapper (reads SMTP from Settings)
 │   ├── upload.php         Image upload handling
 │   └── lib/PHPMailer/     Bundled PHPMailer (no Composer dependency required)
-├── assets/                css, js, images, fonts, pdfs, uploads/projects
+├── assets/                css, js, images, pdfs, uploads/projects
 ├── data/                  SQLite DB + runtime (sessions, logs) — protected by .htaccess
 │   └── nivihomes.sqlite   The database (ships with demo data)
 ├── database/              schema.sql, install.php, seed_projects.php, reset_projects.php
@@ -86,7 +86,7 @@ nivi-homes/
 
 ```bash
 git clone https://github.com/Pawansaisukhesh2530/GaDigital_PJ-2.git
-cd GaDigital_PJ-2        # or the folder containing nivi-homes/
+cd GaDigital_PJ-2
 ```
 
 The repository already includes a ready-to-use `data/nivihomes.sqlite` with the
@@ -116,7 +116,7 @@ settings:
 php database/install.php
 ```
 
-To load the 5 demo projects and their images (optional, only if the DB has no
+To load the demo projects and their images (optional, only if the DB has no
 projects yet):
 
 ```bash
@@ -164,7 +164,7 @@ by a one-time code emailed to the account address).
 
 ## Running the project
 
-Using PHP's built-in server (from the `nivi-homes` folder):
+Using PHP's built-in server (from the project root):
 
 ```bash
 php -S localhost:8000

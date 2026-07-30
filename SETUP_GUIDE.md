@@ -51,12 +51,6 @@ git clone https://github.com/Pawansaisukhesh2530/GaDigital_PJ-2.git
 cd GaDigital_PJ-2
 ```
 
-If the PHP application lives in a `nivi-homes` sub-folder, `cd` into it:
-
-```bat
-cd nivi-homes
-```
-
 ---
 
 ## 4. Composer install (optional)
@@ -74,7 +68,7 @@ The site runs fine without it.
 ## 5. Database setup
 
 The repo ships with a ready `data\nivihomes.sqlite` (default admin, default
-settings, 5 demo projects), so you can skip straight to running it.
+settings, demo projects), so you can skip straight to running it.
 
 To rebuild the database from scratch instead:
 
@@ -84,7 +78,7 @@ C:\xampp\php\php.exe database\seed_projects.php
 ```
 
 - `install.php` creates the schema and seeds the default admin + settings.
-- `seed_projects.php` loads the 5 demo projects and their images.
+- `seed_projects.php` loads the demo projects and their images.
 
 Make sure the `data\` folder is **writable** (it holds the database, sessions
 and logs).
@@ -93,7 +87,7 @@ and logs).
 
 ## 6. Run the project
 
-From inside the `nivi-homes` folder:
+From inside the project folder (e.g. `GaDigital_PJ-2`):
 
 ```bat
 C:\xampp\php\php.exe -S localhost:8000
