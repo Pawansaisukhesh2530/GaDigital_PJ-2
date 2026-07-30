@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Documentation (not needed in the image)
+SETUP_GUIDE.md
+DEPLOY_RENDER.md
+
+# Runtime files that are regenerated
+data/sessions/*
+data/logs/*
+*.sqlite-wal
+*.sqlite-shm
+
+# Dependencies (not used; PHPMailer is bundled)
+/vendor/
+node_modules/
