@@ -1,0 +1,22 @@
+{
+    "name": "gadigital/nivi-homes",
+    "description": "Nivi Homes - custom PHP + SQLite marketing website with an admin panel (projects, enquiries, settings, account management).",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.0",
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*",
+        "ext-mbstring": "*",
+        "ext-fileinfo": "*",
+        "ext-openssl": "*"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "install-db": "php database/install.php",
+        "seed-projects": "php database/seed_projects.php"
+    }
+}

@@ -1,0 +1,178 @@
+/* =============================================================
+   Nivi Homes - Responsive
+   Matches the original Elementor behaviour:
+   - Nav collapses to hamburger at <= 1024px
+   - Content columns stay multi-column through tablet, stack at <= 767px
+   ============================================================= */
+
+/* Large desktop (<=1440) */
+@media (max-width: 1440px) {
+    :root { --container: 1160px; }
+}
+@media (max-width: 1366px) {
+    :root { --container: 1120px; }
+}
+
+/* =============================================================
+   TABLET & BELOW (<=1024) : hamburger nav
+   ============================================================= */
+@media (max-width: 1024px) {
+    .nav-toggle { display: flex; }
+
+    /* Header: logo left, hamburger right */
+    .header-inner { justify-content: space-between; }
+    .site-header .container { padding: 10px 15px; }
+
+    /* Mobile menu slides in from the LEFT (matches ElementsKit), 350px, black */
+    .primary-nav {
+        position: fixed; top: 0; left: -350px;
+        width: 350px; max-width: 85vw; height: 100vh;
+        background: var(--color-black); box-shadow: 10px 0 40px rgba(0,0,0,.4);
+        padding: 80px 0 40px; overflow-y: auto;
+        transition: left .35s ease; z-index: 1001;
+        display: block;
+    }
+    .primary-nav.open { left: 0; }
+    .nav-menu { flex-direction: column; align-items: stretch; gap: 0; }
+    .nav-item { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .nav-link { padding: 14px 24px; height: auto; justify-content: space-between; color: var(--color-primary); }
+    .caret { display: none; }
+
+    .dropdown {
+        position: static; opacity: 1; visibility: visible; transform: none;
+        box-shadow: none; border-top: none; border-radius: 0;
+        max-height: 0; overflow: hidden; padding: 0;
+        background: var(--color-secondary);
+        transition: max-height .35s ease;
+    }
+    .nav-item.submenu-open .dropdown { max-height: 600px; padding: 4px 0; }
+    .dropdown li a { padding: 12px 28px; }
+    .submenu-toggle {
+        display: block; position: absolute; right: 16px; top: 10px;
+        width: 34px; height: 34px;
+    }
+    .submenu-toggle::before, .submenu-toggle::after {
+        content: ""; position: absolute; left: 50%; top: 50%; background: var(--color-primary);
+    }
+    .submenu-toggle::before { width: 12px; height: 2px; transform: translate(-50%, -50%); }
+    .submenu-toggle::after { width: 2px; height: 12px; transform: translate(-50%, -50%); transition: transform var(--transition); }
+    .nav-item.submenu-open .submenu-toggle::after { transform: translate(-50%, -50%) scaleY(0); }
+    .nav-backdrop.show { display: block; opacity: 1; }
+    .nav-backdrop[hidden] { display: none; }
+
+    /* Why Build With Us: intro + apart-top stack at tablet (<=1024, like live) */
+    .wb-row .container, .wb-apart .container { padding: 0 20px; }
+    .wb-grid, .wb-apart-top { grid-template-columns: 1fr; gap: 24px; }
+    .wb-text { padding-right: 0; }
+    .wb-text p { max-width: none; margin-left: 0; }
+    .wb-apart-media img { width: 100%; }
+
+    /* Our Inclusions: detailed grid collapses to 2 columns at tablet */
+    .inc-sec .container { padding: 0 20px; }
+    .inc-grid { grid-template-columns: repeat(2, 1fr); }
+    .inc-three { grid-template-columns: 1fr; gap: 24px; }
+    .inc-col-img { order: 3; }
+
+    /* Our Services: intro side padding */
+    .srv-intro .container { padding: 0 20px; }
+
+    /* Custom Homes: image + features and why-choose rows stack */
+    .ch-features-grid, .ch-why-grid { grid-template-columns: 1fr; gap: 30px; }
+    .ch-why-media { text-align: center; }
+    .ch-why-media img { max-width: 538px; margin: 0 auto; }
+
+    /* Storey projects: cards to 2 columns on tablet */
+    .ss-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =============================================================
+   MOBILE (<=767) : content stacks to single column
+   ============================================================= */
+@media (max-width: 767px) {
+    body { font-size: 15px; }
+
+    /* Mobile logo ~28vw of viewport (matches live), left-aligned */
+    .brand { flex: 0 0 auto; }
+    .brand-inner { width: auto; text-align: left; }
+    .brand-logo { width: 28vw; }
+    .site-header .container { padding: 10px; }
+
+    /* Banner shrinks (live: ~277px tall, heading 25px) */
+    .page-banner { min-height: 277px; }
+    .page-banner h1 { font-size: 25px; margin-bottom: 30px; }
+
+    /* About / Our Story rows stack (image + text full width, DOM order) */
+    .story-grid.img-left,
+    .story-grid.img-right { grid-template-columns: 1fr; }
+    .story-grid .story-text { padding: 0 !important; margin-top: 24px; }
+    .story-media { padding: 10px; }
+
+    /* Homepage + Our Values grids collapse to one column */
+    .services-grid, .features-grid, .projects-grid,
+    .designs-grid, .values-grid { grid-template-columns: 1fr; }
+
+    /* Restore side padding on the full-bleed 1140 containers */
+    .intro .container, .why-choose .container { padding: 0 20px; }
+    /* Features stack to a single column on mobile (tablet keeps 4-col) */
+    .wb-features { grid-template-columns: 1fr; }
+    .wb-feature { padding: 30px 20px 0; }
+
+    /* Other page splits */
+    .split, .detail-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+    .split-content .section-title, .detail-content h2 { text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+
+    /* Service tiles */
+    .service-card { min-height: 240px; padding: 60px 30px; }
+    .service-card h3 { font-size: 25px; }
+    .services-section { margin-bottom: 40px; }
+
+    /* Footer stacks to single column */
+    .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+    .footer-bar-inner { flex-direction: column; text-align: center; }
+    /* Contact: single fixed column would overflow — let it fill */
+    .contact-grid { grid-template-columns: 1fr; }
+
+    /* Our Inclusions: all columns stack to single column on mobile */
+    .inc-two, .inc-three, .inc-grid { grid-template-columns: 1fr; gap: 24px; }
+    .inc-img-lg, .inc-img-xl, .inc-img-mid { max-width: 100%; }
+
+    /* Our Services: tiles stack to a single column */
+    .srv-tiles { grid-template-columns: 1fr; }
+    .srv-tile { min-height: 320px; }
+
+    /* Custom Homes: 2x2 features become single column */
+    .ch-feat-grid { grid-template-columns: 1fr; }
+    .ch-cta h3 { font-size: 24px; }
+
+    /* Granny Flats: gallery to 2 columns */
+    .gf-gallery { grid-template-columns: repeat(2, 1fr); }
+
+    /* Project videos & tours: single column */
+    .pt-grid { grid-template-columns: 1fr; }
+
+    /* Project detail: cover stacks above info; gallery to 2 cols */
+    .pj-top-grid { grid-template-columns: 1fr; gap: 30px; }
+    .pj-info-grid { grid-template-columns: 1fr 1fr; }
+    .pj-gallery { grid-template-columns: repeat(2, 1fr); }
+
+    /* Single/Double storey projects: cards to a single column */
+    .ss-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    .ss-hero h2 { font-size: 30px; }
+    .ss-filter .container { gap: 16px 30px; }
+}
+
+/* =============================================================
+   SMALL MOBILE (<=480)
+   ============================================================= */
+@media (max-width: 480px) {
+    .container { padding: 0 20px; }
+    .footer-gallery { grid-template-columns: repeat(4, 1fr); max-width: 280px; }
+    .btn { padding: 13px 26px; }
+    .design-actions { flex-direction: column; }
+    .design-actions .btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 360px) {
+    .contact-form-wrap, .contact-info-card { padding: 0; }
+}
