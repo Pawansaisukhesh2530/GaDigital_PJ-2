@@ -47,7 +47,7 @@ require __DIR__ . '/includes/header.php';
             </div>
         </div>
     </div>
-    <div class="services-grid">
+    <div class="services-grid" data-reveal>
         <?php
         $services = [
             ['t' => 'Custom Homes', 'img' => 'custom-homes', 'k' => 'custom-homes', 'd' => 'Designed to reflect your unique style and preferences'],

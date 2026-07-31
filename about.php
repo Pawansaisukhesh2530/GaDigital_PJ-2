@@ -16,10 +16,10 @@ require __DIR__ . '/includes/banner.php';
 <section class="story-row about-row">
     <div class="container">
         <div class="story-grid img-left">
-            <div class="story-media">
+            <div class="story-media" data-anim="fadeInLeft">
                 <img src="<?php echo asset('images/gallery/image-1-1.webp'); ?>" alt="About Nivi Homes" width="409" height="272" loading="lazy">
             </div>
-            <div class="story-text">
+            <div class="story-text" data-anim="fadeInRight">
                 <h2>About us</h2>
                 <p>Every meaningful journey begins with intention.</p>
                 <p class="sp">&nbsp;</p>
@@ -63,7 +63,7 @@ require __DIR__ . '/includes/banner.php';
 <!-- ===================== OUR VALUES ===================== -->
 <section class="values-section">
     <div class="container">
-        <div class="values-head">
+        <div class="values-head" data-anim="fadeIn">
             <h2>Our Values</h2>
             <p class="values-intro">At Nivi Homes, our values are the cornerstone of everything we do. They guide our decisions, inspire our actions, and define our commitment to you, our valued client. Here are the core values that shape our company:</p>
         </div>

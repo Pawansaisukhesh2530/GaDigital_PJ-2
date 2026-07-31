@@ -23,6 +23,9 @@
     .header-inner { justify-content: space-between; }
     .site-header .container { padding: 10px 15px; }
 
+    /* Page banner title scales for tablet */
+    .page-banner h1 { font-size: 40px; }
+
     /* Mobile menu slides in from the LEFT (matches ElementsKit), 350px, black */
     .primary-nav {
         position: fixed; top: 0; left: -350px;
@@ -66,6 +69,7 @@
     .wb-text { padding-right: 0; }
     .wb-text p { max-width: none; margin-left: 0; }
     .wb-apart-media img { width: 100%; }
+    .wb-apart-card { padding: 30px 20px; }
 
     /* Our Inclusions: detailed grid collapses to 2 columns at tablet */
     .inc-sec .container { padding: 0 20px; }
@@ -102,7 +106,7 @@
 
     /* Banner shrinks (live: ~277px tall, heading 25px) */
     .page-banner { min-height: 277px; }
-    .page-banner h1 { font-size: 25px; margin-bottom: 30px; }
+    .page-banner h1 { font-size: 32px; margin-bottom: 30px; }
 
     /* About / Our Story rows stack (image + text full width, DOM order) */
     .story-grid.img-left,
@@ -122,6 +126,13 @@
     .intro-media {
         padding: 0;
         text-align: center;
+    }
+    /* Scale down the gold rectangle on mobile */
+    .intro-media::before {
+        top: 15px;
+        left: 5px;
+        width: 80%;
+        height: 80%;
     }
     .intro-media img {
         max-width: 100%;
@@ -197,6 +208,7 @@
     .btn { padding: 13px 26px; }
     .design-actions { flex-direction: column; }
     .design-actions .btn { width: 100%; justify-content: center; }
+    .page-banner h1 { font-size: 28px; }
 }
 
 @media (max-width: 360px) {

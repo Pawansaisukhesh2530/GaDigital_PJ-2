@@ -57,7 +57,11 @@ $NAV = [
         ['label' => 'Knock Down Rebuilds', 'url' => 'service-details.php?s=knock-down-rebuilds'],
         ['label' => 'Granny Flats', 'url' => 'service-details.php?s=granny-flats'],
     ]],
-    ['label' => 'Projects', 'url' => 'projects.php', 'key' => 'projects'],
+    ['label' => 'Projects', 'url' => 'projects.php', 'key' => 'projects', 'children' => [
+        ['label' => 'All Projects', 'url' => 'projects.php'],
+        ['label' => 'Single Storey', 'url' => 'single-storey-projects.php'],
+        ['label' => 'Double Storey', 'url' => 'double-storey-projects.php'],
+    ]],
     ['label' => 'Our Designs', 'url' => 'single-storey-projects.php', 'key' => 'designs', 'children' => [
         ['label' => 'Single Storey Projects', 'url' => 'single-storey-projects.php'],
         ['label' => 'Double Storey Projects', 'url' => 'double-storey-projects.php'],

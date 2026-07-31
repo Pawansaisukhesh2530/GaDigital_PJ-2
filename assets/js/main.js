@@ -41,6 +41,25 @@
         }
     }
 
+    /* ---------- Section-level auto-reveal (subtle fade-up for sections without explicit animation) ---------- */
+    var sections = document.querySelectorAll('main > section, .section, .inc-sec, .pj-top, .pj-detail, .pj-gallery-sec, .story-row, .values-section');
+    if ('IntersectionObserver' in window && sections.length) {
+        sections.forEach(function (sec) {
+            // Skip sections that already have explicit reveal/anim attributes
+            if (sec.hasAttribute('data-reveal') || sec.hasAttribute('data-anim') || sec.classList.contains('revealed') || sec.classList.contains('hero')) return;
+            sec.classList.add('section-reveal');
+        });
+        var sectionObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-revealed');
+                    sectionObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.section-reveal').forEach(function (el) { sectionObs.observe(el); });
+    }
+
     /* ---------- Banner overlay mouse-track (drifts opposite the cursor) ---------- */
     var banner = document.querySelector('.page-banner');
     if (banner && window.matchMedia('(pointer:fine)').matches) {

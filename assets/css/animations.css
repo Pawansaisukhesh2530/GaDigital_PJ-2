@@ -97,4 +97,20 @@
         scroll-behavior: auto !important;
     }
     [data-reveal] { opacity: 1 !important; transform: none !important; }
+    .section-reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* =============================================================
+   Section-level auto-reveal (applied by main.js to sections
+   without explicit data-reveal or data-anim attributes)
+   ============================================================= */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+}
+.section-reveal.section-revealed {
+    opacity: 1;
+    transform: translateY(0);
 }

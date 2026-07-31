@@ -265,7 +265,7 @@ require __DIR__ . '/includes/banner.php';
 <section class="inc-sec">
     <div class="container">
         <div class="inc-standard" data-anim="fadeIn">
-            <h2 class="inc-eyebrow">STANDARD INCLUSIONS</h2>
+            <h2 class="inc-eyebrow">Standard Inclusions</h2>
             <h2 class="inc-h2">Create Beautiful Memories Every Day</h2>
             <h2 class="inc-h3">A Journey With Nirvana</h2>
             <p class="inc-lead">Our inclusions are prestigious for other builders but STANDARD for our build.</p>
@@ -279,20 +279,20 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="inc-two">
             <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">KITCHEN</h2>
-                <p class="inc-intro">Functional, yet modern KITCHEN with these inclusions:</p>
+                <h2 class="inc-head">Kitchen</h2>
+                <p class="inc-intro">Functional, yet modern kitchen with these inclusions:</p>
                 <?php inc_ul($kitchen); ?>
                 <img class="inc-img inc-img-lg" src="<?php echo asset('images/inclusions/Picture.webp'); ?>" alt="Kitchen" loading="lazy">
                 <img class="inc-img inc-img-lg" src="<?php echo asset('images/inclusions/Picture-1.webp'); ?>" alt="Kitchen" loading="lazy">
             </div>
             <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">BATHROOM</h2>
+                <h2 class="inc-head">Bathroom</h2>
                 <div class="inc-img-row">
                     <img class="inc-img" src="<?php echo asset('images/inclusions/Picture-2.webp'); ?>" alt="Bathroom" loading="lazy">
                     <img class="inc-img" src="<?php echo asset('images/inclusions/Picture-3.webp'); ?>" alt="Bathroom" loading="lazy">
                 </div>
                 <?php inc_ul($bathroom); ?>
-                <h2 class="inc-head inc-head-mt">Bespoke BATHROOM features for your home.</h2>
+                <h2 class="inc-head inc-head-mt">Bespoke Bathroom Features For Your Home</h2>
                 <?php inc_ul($bespoke); ?>
             </div>
         </div>
@@ -304,7 +304,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="inc-two inc-two-mid">
             <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">ELECTRICAL</h2>
+                <h2 class="inc-head">Electrical</h2>
                 <?php inc_ul($electrical); ?>
             </div>
             <div class="inc-col inc-col-img" data-anim="fadeIn">
@@ -319,12 +319,12 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="inc-two">
             <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">ALFRESCO</h2>
+                <h2 class="inc-head">Alfresco</h2>
                 <?php inc_ul($alfresco); ?>
                 <img class="inc-img inc-img-xl" src="<?php echo asset('images/inclusions/Picture-6-1024x583.webp'); ?>" alt="Alfresco" loading="lazy">
             </div>
             <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">LAUNDRY</h2>
+                <h2 class="inc-head">Laundry</h2>
                 <?php inc_ul($laundry); ?>
                 <img class="inc-img inc-img-xl" src="<?php echo asset('images/inclusions/Picture-5-1024x568.webp'); ?>" alt="Laundry" loading="lazy">
             </div>
@@ -337,14 +337,14 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="inc-three">
             <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">EXTERNAL FACADE</h2>
+                <h2 class="inc-head">External Facade</h2>
                 <?php inc_ul($facade); ?>
             </div>
             <div class="inc-col inc-col-img" data-anim="fadeIn">
                 <img class="inc-img inc-img-mid" src="<?php echo asset('images/inclusions/Picture-7-850x1024.webp'); ?>" alt="External facade" loading="lazy">
             </div>
             <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">DOORS &amp; HANDLES</h2>
+                <h2 class="inc-head">Doors &amp; Handles</h2>
                 <?php inc_ul($doors); ?>
             </div>
         </div>
