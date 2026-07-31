@@ -4,11 +4,11 @@ $PAGE_TITLE = 'Double Storey House Designs | Nivi Homes';
 require __DIR__ . '/includes/header.php';
 
 $projects = [
-    ['t' => 'Elyra 35',   'img' => 'elyra-35.jpg',   'bed' => '5', 'bath' => '3', 'cars' => '2',
+    ['t' => 'Elyra 35',   'img' => 'elyra-35.webp',   'bed' => '5', 'bath' => '3', 'cars' => '2',
      'link' => 'design-details.php?d=elyra-35',   'pdf' => asset('pdfs/elyra.pdf')],
-    ['t' => 'Olympia 39', 'img' => 'olympia-39.jpg', 'bed' => '5', 'bath' => '3', 'cars' => '2',
+    ['t' => 'Olympia 39', 'img' => 'olympia-39.webp', 'bed' => '5', 'bath' => '3', 'cars' => '2',
      'link' => 'design-details.php?d=olympia-39', 'pdf' => asset('pdfs/olympia-39.pdf')],
-    ['t' => 'Chiron 28',  'img' => 'chiron-28.jpg',  'bed' => '5', 'bath' => '3', 'cars' => '2',
+    ['t' => 'Chiron 28',  'img' => 'chiron-28.webp',  'bed' => '5', 'bath' => '3', 'cars' => '2',
      'link' => 'design-details.php?d=chiron-28', 'pdf' => asset('pdfs/chiron-28.pdf')],
 ];
 

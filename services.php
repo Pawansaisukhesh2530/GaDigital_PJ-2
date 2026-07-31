@@ -23,10 +23,10 @@ require __DIR__ . '/includes/banner.php';
 <section class="srv-tiles">
     <?php
     $services = [
-        ['t' => 'Custom Homes',        'img' => 'srv-custom-homes.png', 'pos' => 'left top',    'k' => 'custom-homes'],
-        ['t' => 'Duplex Homes',        'img' => 'srv-duplex.png',       'pos' => 'center',      'k' => 'duplex-homes'],
-        ['t' => 'Knock Down Rebuilds', 'img' => 'srv-knock-down.png',   'pos' => 'center',      'k' => 'knock-down-rebuilds'],
-        ['t' => 'Granny Flats',        'img' => 'srv-granny-flats.png', 'pos' => 'center',      'k' => 'granny-flats'],
+        ['t' => 'Custom Homes',        'img' => 'srv-custom-homes.webp', 'pos' => 'left top',    'k' => 'custom-homes'],
+        ['t' => 'Duplex Homes',        'img' => 'srv-duplex.webp',       'pos' => 'center',      'k' => 'duplex-homes'],
+        ['t' => 'Knock Down Rebuilds', 'img' => 'srv-knock-down.webp',   'pos' => 'center',      'k' => 'knock-down-rebuilds'],
+        ['t' => 'Granny Flats',        'img' => 'srv-granny-flats.webp', 'pos' => 'center',      'k' => 'granny-flats'],
     ];
     foreach ($services as $s): ?>
     <div class="srv-tile" style="background-image:url('<?php echo asset('images/services/' . $s['img']); ?>'); background-position:<?php echo $s['pos']; ?>" data-anim="fadeIn">

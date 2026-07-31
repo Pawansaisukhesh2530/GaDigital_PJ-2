@@ -41,13 +41,13 @@ require __DIR__ . '/includes/banner.php';
         <div class="wb-features">
             <?php
             $features = [
-                ['t' => 'Structured Foundation', 'icon' => 'icon-3.png', 'anim' => 'fadeInLeft',
+                ['t' => 'Structured Foundation', 'icon' => 'icon-3.webp', 'anim' => 'fadeInLeft',
                  'd' => 'Nirvana Homes operates as the holding and parent organization, ensuring governance, financial clarity, and strategic oversight behind every project. You&rsquo;re not dealing with an unstructured builder &mdash; you&rsquo;re backed by an organized system.'],
-                ['t' => 'Thoughtful Planning', 'icon' => 'icon-2.png', 'anim' => 'fadeInUp',
+                ['t' => 'Thoughtful Planning', 'icon' => 'icon-2.webp', 'anim' => 'fadeInUp',
                  'd' => 'Every layout is designed for real living &mdash; efficient space utilization, functional flow, and modern aesthetics that remain relevant over time.'],
-                ['t' => 'Transparent Execution', 'icon' => 'icon-1.png', 'anim' => 'fadeInUp',
+                ['t' => 'Transparent Execution', 'icon' => 'icon-1.webp', 'anim' => 'fadeInUp',
                  'd' => 'Clear documentation. Defined timelines. Straight communication. We eliminate ambiguity so you always know where your project stands.'],
-                ['t' => 'Quality with Accountability', 'icon' => 'icon-5.png', 'anim' => 'fadeInRight',
+                ['t' => 'Quality with Accountability', 'icon' => 'icon-5.webp', 'anim' => 'fadeInRight',
                  'd' => 'From material selection to finishing details, we maintain disciplined construction standards &mdash; because a home should feel just as solid years later as it did on handover day.'],
             ];
             foreach ($features as $f): ?>

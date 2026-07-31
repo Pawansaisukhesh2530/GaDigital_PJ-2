@@ -4,11 +4,11 @@ $PAGE_TITLE = 'One Storey House Designs | Nivi Homes';
 require __DIR__ . '/includes/header.php';
 
 $projects = [
-    ['t' => 'Akira 21',  'img' => 'akira-21.jpg',  'bed' => '4',   'bath' => '2.5', 'cars' => '2',
+    ['t' => 'Akira 21',  'img' => 'akira-21.webp',  'bed' => '4',   'bath' => '2.5', 'cars' => '2',
      'link' => 'design-details.php?d=akira-21', 'pdf' => asset('pdfs/akira-21.pdf')],
-    ['t' => 'Melora 31', 'img' => 'melora-31.jpg', 'bed' => '4',   'bath' => '2.5', 'cars' => '2',
+    ['t' => 'Melora 31', 'img' => 'melora-31.webp', 'bed' => '4',   'bath' => '2.5', 'cars' => '2',
      'link' => 'design-details.php?d=melora-31',  'pdf' => asset('pdfs/meliora.pdf')],
-    ['t' => 'Sophea 22', 'img' => 'sophea-22.jpg', 'bed' => '3',   'bath' => '2.5', 'cars' => '2',
+    ['t' => 'Sophea 22', 'img' => 'sophea-22.webp', 'bed' => '3',   'bath' => '2.5', 'cars' => '2',
      'link' => 'design-details.php?d=sophea-22', 'pdf' => asset('pdfs/sophea-22.pdf')],
 ];
 
