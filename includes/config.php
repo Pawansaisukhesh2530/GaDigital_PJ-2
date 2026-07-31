@@ -43,7 +43,29 @@ $SOCIAL = settings_social($SOCIAL_DEFAULTS);
 /**
  * Primary navigation with dropdown children.
  * `active` is matched against $CURRENT_PAGE set by each page.
+ *
+ * The "Projects" dropdown is dynamically populated from the database
+ * so it automatically reflects any projects added/edited/removed in Admin.
  */
+
+// Dynamically build the Projects dropdown from published projects in the DB.
+$_nav_projects_children = [];
+try {
+    $__navProjects = db()->query(
+        "SELECT title, slug FROM projects WHERE status = 'published'
+         ORDER BY display_order ASC, datetime(created_at) DESC, id DESC"
+    )->fetchAll();
+    foreach ($__navProjects as $__p) {
+        $_nav_projects_children[] = [
+            'label' => $__p['title'],
+            'url'   => 'project-details.php?p=' . urlencode($__p['slug']),
+        ];
+    }
+} catch (Throwable $e) {
+    // DB unavailable — fall back to a simple link (no dropdown)
+    $_nav_projects_children = [];
+}
+
 $NAV = [
     ['label' => 'Home', 'url' => 'index.php', 'key' => 'home'],
     ['label' => 'About Nivi', 'url' => '#', 'key' => 'about', 'children' => [
@@ -57,11 +79,7 @@ $NAV = [
         ['label' => 'Knock Down Rebuilds', 'url' => 'service-details.php?s=knock-down-rebuilds'],
         ['label' => 'Granny Flats', 'url' => 'service-details.php?s=granny-flats'],
     ]],
-    ['label' => 'Projects', 'url' => 'projects.php', 'key' => 'projects', 'children' => [
-        ['label' => 'All Projects', 'url' => 'projects.php'],
-        ['label' => 'Single Storey', 'url' => 'single-storey-projects.php'],
-        ['label' => 'Double Storey', 'url' => 'double-storey-projects.php'],
-    ]],
+    ['label' => 'Projects', 'url' => 'projects.php', 'key' => 'projects', 'children' => $_nav_projects_children],
     ['label' => 'Our Designs', 'url' => 'single-storey-projects.php', 'key' => 'designs', 'children' => [
         ['label' => 'Single Storey Projects', 'url' => 'single-storey-projects.php'],
         ['label' => 'Double Storey Projects', 'url' => 'double-storey-projects.php'],

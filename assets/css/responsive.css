@@ -48,7 +48,7 @@
         background: var(--color-secondary);
         transition: max-height .35s ease;
     }
-    .nav-item.submenu-open .dropdown { max-height: 600px; padding: 4px 0; }
+    .nav-item.submenu-open .dropdown { max-height: 60vh; padding: 4px 0; overflow-y: auto; }
     .dropdown li a { padding: 12px 28px; }
     .submenu-toggle {
         display: block; position: absolute; right: 16px; top: 10px;

@@ -203,7 +203,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     transition: all var(--transition);
     z-index: 100;
     overflow: hidden;
+    max-height: 70vh;
+    overflow-y: auto;
 }
+/* Scrollbar styling for dropdown with many items */
+.dropdown::-webkit-scrollbar { width: 5px; }
+.dropdown::-webkit-scrollbar-track { background: transparent; }
+.dropdown::-webkit-scrollbar-thumb { background: var(--color-secondary); border-radius: 3px; }
+.dropdown::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
 .nav-item.has-dropdown:hover > .dropdown {
     opacity: 1; visibility: visible; transform: translateY(0);
 }
