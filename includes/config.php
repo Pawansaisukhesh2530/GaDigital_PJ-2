@@ -92,7 +92,7 @@ try {
 }
 // Fallback to the bundled static thumbnails if no project images are available.
 if (!$GALLERY) {
-    $GALLERY = array_map(fn($f) => 'images/gallery/' . $f . '.png', [
+    $GALLERY = array_map(fn($f) => 'images/gallery/' . $f . '.webp', [
         'image-2', 'image-1-1', 'custom-home-1', 'Knock-Down-Rebuilds',
         'granny-flats', 'dupulex', 'custom-home', 'image-1',
     ]);

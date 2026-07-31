@@ -683,6 +683,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top:hover { background: var(--color-secondary); color: #fff; }
 
+/* WhatsApp floating button */
+.whatsapp-float {
+    position: fixed; right: 24px; bottom: 84px; z-index: 900;
+    width: 54px; height: 54px; border-radius: 50%;
+    background: #25D366; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, .4);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, .55);
+}
+.whatsapp-float svg { display: block; }
+
 /* =============================================================
    ABOUT / NIVI HOMES STORY PAGE
    ============================================================= */

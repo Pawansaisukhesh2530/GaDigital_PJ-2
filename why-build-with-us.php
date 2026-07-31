@@ -8,7 +8,7 @@ require __DIR__ . '/includes/header.php';
 <?php
 $BANNER_TITLE = 'Why Build With Us?';
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; Why Build With Us?';
-$BANNER_IMG = asset('images/banners/why-build-banner.jpg');
+$BANNER_IMG = asset('images/banners/why-build-banner.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 
@@ -17,7 +17,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="wb-grid">
             <div class="wb-media" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/why-build/images-1.png'); ?>" alt="Why build with Nivi Homes" loading="lazy">
+                <img src="<?php echo asset('images/why-build/images-1.webp'); ?>" alt="Why build with Nivi Homes" loading="lazy">
             </div>
             <div class="wb-text" data-anim="fadeInRight">
                 <p>Building a home is not a casual decision &mdash; it&rsquo;s a financial commitment, an emotional investment, and a long-term responsibility. We approach every project with discipline, transparency, and thoughtful execution. From planning and approvals to construction and handover, every stage follows defined processes designed to protect your investment and deliver lasting value. We don&rsquo;t chase volume &mdash; we focus on building homes that stand strong, function intelligently, and feel right to live in.</p>
@@ -31,7 +31,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="wb-apart-top">
             <div class="wb-apart-media" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/why-build/images-2.png'); ?>" alt="What sets us apart" loading="lazy">
+                <img src="<?php echo asset('images/why-build/images-2.webp'); ?>" alt="What sets us apart" loading="lazy">
             </div>
             <div class="wb-apart-content" data-anim="fadeInRight">
                 <h2>What Sets Us Apart</h2>

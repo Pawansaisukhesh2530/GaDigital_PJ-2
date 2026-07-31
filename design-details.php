@@ -103,7 +103,7 @@ require __DIR__ . '/includes/header.php';
 <?php
 $BANNER_TITLE = htmlspecialchars($d['name']);
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; <a href="designs.php">Our Designs</a> &gt; ' . htmlspecialchars($d['name']);
-$BANNER_IMG   = asset('images/projects/' . $d['img'] . '.jpg');
+$BANNER_IMG   = asset('images/projects/' . $d['img'] . '.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 
@@ -112,7 +112,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="dd-grid">
             <div class="dd-plan" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/floorplans/' . $d['img'] . '.jpg'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> floor plan" loading="lazy">
+                <img src="<?php echo asset('images/floorplans/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> floor plan" loading="lazy">
             </div>
             <div class="dd-info" data-anim="fadeInRight">
                 <h2 class="dd-title"><?php echo htmlspecialchars($d['name']); ?></h2>

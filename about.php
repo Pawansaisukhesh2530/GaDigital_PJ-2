@@ -8,7 +8,7 @@ require __DIR__ . '/includes/header.php';
 <?php
 $BANNER_TITLE = 'About Us';
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; About';
-$BANNER_IMG = asset('images/banners/about-banner.jpg');
+$BANNER_IMG = asset('images/banners/about-banner.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 
@@ -17,7 +17,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="story-grid img-left">
             <div class="story-media">
-                <img src="<?php echo asset('images/gallery/image-1-1.png'); ?>" alt="About Nivi Homes" width="409" height="272" loading="lazy">
+                <img src="<?php echo asset('images/gallery/image-1-1.webp'); ?>" alt="About Nivi Homes" width="409" height="272" loading="lazy">
             </div>
             <div class="story-text">
                 <h2>About us</h2>
@@ -54,7 +54,7 @@ require __DIR__ . '/includes/banner.php';
                 <p>That responsibility guided the creation of Nivi Homes as a focused, customer-facing brand &mdash; designed to deliver homes with transparency, structured execution, and long-term livability.</p>
             </div>
             <div class="story-media" data-anim="fadeIn">
-                <img src="<?php echo asset('images/gallery/image-2.png'); ?>" alt="Our Story" width="411" height="274" loading="lazy">
+                <img src="<?php echo asset('images/gallery/image-2.webp'); ?>" alt="Our Story" width="411" height="274" loading="lazy">
             </div>
         </div>
     </div>

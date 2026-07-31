@@ -21,7 +21,7 @@ $car = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=
 <?php
 $BANNER_TITLE = 'Home Designs';
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; Our Designs';
-$BANNER_IMG = asset('images/projects/elyra-35.jpg');
+$BANNER_IMG = asset('images/projects/elyra-35.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 
@@ -43,7 +43,7 @@ require __DIR__ . '/includes/banner.php';
             <?php foreach ($designs as $i => $d): ?>
             <article class="design-card" data-type="<?php echo $d['type']; ?>" data-reveal data-reveal-delay="<?php echo ($i % 3) + 1; ?>">
                 <a class="design-card-media" href="design-details.php?d=<?php echo $slug($d['name']); ?>">
-                    <img src="<?php echo asset('images/projects/' . $d['img'] . '.jpg'); ?>" alt="<?php echo $d['name']; ?>" loading="lazy">
+                    <img src="<?php echo asset('images/projects/' . $d['img'] . '.webp'); ?>" alt="<?php echo $d['name']; ?>" loading="lazy">
                 </a>
                 <div class="design-card-body">
                     <h3><?php echo $d['name']; ?></h3>

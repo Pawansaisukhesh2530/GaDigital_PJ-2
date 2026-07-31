@@ -9,7 +9,7 @@
  *   $BANNER_CRUMB  - breadcrumb HTML (optional)
  *   $BANNER_IMG    - background image asset path (optional)
  */
-$__img = $BANNER_IMG ?? asset('images/banners/about-banner.jpg');
+$__img = $BANNER_IMG ?? asset('images/banners/about-banner.webp');
 ?>
 <section class="page-banner">
     <div class="page-banner__bg" style="background-image:url('<?php echo $__img; ?>')"></div>

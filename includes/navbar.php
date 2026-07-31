@@ -5,7 +5,7 @@
     <div class="container header-inner">
         <div class="brand">
             <a href="index.php" aria-label="Nivi Homes home" class="brand-inner">
-                <img src="<?php echo asset('images/logo/logo.png'); ?>" alt="Nivi Homes logo" class="brand-logo" width="233" height="109">
+                <img src="<?php echo asset('images/logo/logo.webp'); ?>" alt="Nivi Homes logo" class="brand-logo" width="233" height="109">
             </a>
         </div>
 

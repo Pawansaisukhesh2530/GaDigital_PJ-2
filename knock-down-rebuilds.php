@@ -8,7 +8,7 @@ require __DIR__ . '/includes/header.php';
 <?php
 $BANNER_TITLE = 'Knock Down Rebuilds';
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; <a href="services.php">Our Services</a> &gt; Knock Down Rebuilds';
-$BANNER_IMG = asset('images/banners/knock-down-banner.jpg');
+$BANNER_IMG = asset('images/banners/knock-down-banner.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 
@@ -24,7 +24,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="ch-features-grid">
             <div class="ch-features-media" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/services/kdr-features.png'); ?>" alt="Knock down rebuilds" loading="lazy">
+                <img src="<?php echo asset('images/services/kdr-features.webp'); ?>" alt="Knock down rebuilds" loading="lazy">
             </div>
             <div class="ch-feat-grid">
                 <?php
@@ -54,7 +54,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="ch-why-grid">
             <div class="ch-why-media" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/services/kdr-why.png'); ?>" alt="Why choose a knock down rebuild" loading="lazy">
+                <img src="<?php echo asset('images/services/kdr-why.webp'); ?>" alt="Why choose a knock down rebuild" loading="lazy">
             </div>
             <div class="ch-why-text" data-anim="fadeInRight">
                 <h3>Why Choose a Knock Down Rebuild?</h3>
@@ -65,7 +65,7 @@ require __DIR__ . '/includes/banner.php';
 </section>
 
 <!-- ===================== CTA ===================== -->
-<section class="ch-cta" style="background-image:url('<?php echo asset('images/services/kdr-cta-bg.png'); ?>')">
+<section class="ch-cta" style="background-image:url('<?php echo asset('images/services/kdr-cta-bg.webp'); ?>')">
     <div class="container" data-anim="fadeIn">
         <h3>Ready to rebuild your dream home? Contact us today for a consultation</h3>
         <p>and discover how we can transform your existing property into the home of your dreams!</p>

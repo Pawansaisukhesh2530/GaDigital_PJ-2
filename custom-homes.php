@@ -8,7 +8,7 @@ require __DIR__ . '/includes/header.php';
 <?php
 $BANNER_TITLE = 'Custom Homes';
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; <a href="services.php">Our Services</a> &gt; Custom Homes';
-$BANNER_IMG = asset('images/banners/custom-homes-banner.jpg');
+$BANNER_IMG = asset('images/banners/custom-homes-banner.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 
@@ -24,7 +24,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="ch-features-grid">
             <div class="ch-features-media" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/services/ch-features.png'); ?>" alt="Custom homes" loading="lazy">
+                <img src="<?php echo asset('images/services/ch-features.webp'); ?>" alt="Custom homes" loading="lazy">
             </div>
             <div class="ch-feat-grid">
                 <?php
@@ -54,7 +54,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="ch-why-grid">
             <div class="ch-why-media" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/services/ch-why-choose.png'); ?>" alt="Why choose a custom home" loading="lazy">
+                <img src="<?php echo asset('images/services/ch-why-choose.webp'); ?>" alt="Why choose a custom home" loading="lazy">
             </div>
             <div class="ch-why-text" data-anim="fadeInRight">
                 <h3>Why Choose a Custom Home?</h3>
@@ -65,7 +65,7 @@ require __DIR__ . '/includes/banner.php';
 </section>
 
 <!-- ===================== CTA ===================== -->
-<section class="ch-cta" style="background-image:url('<?php echo asset('images/services/ch-cta-bg.png'); ?>')">
+<section class="ch-cta" style="background-image:url('<?php echo asset('images/services/ch-cta-bg.webp'); ?>')">
     <div class="container" data-anim="fadeIn">
         <h3>Ready to build your dream home? Contact us today for a free consultation</h3>
         <p>and start your journey towards a custom home that perfectly reflects your lifestyle and preferences!</p>

@@ -8,7 +8,7 @@ require __DIR__ . '/includes/header.php';
 <?php
 $BANNER_TITLE = 'Duplex Homes';
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; <a href="services.php">Our Services</a> &gt; Duplex Homes';
-$BANNER_IMG = asset('images/banners/duplex-banner.jpg');
+$BANNER_IMG = asset('images/banners/duplex-banner.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 
@@ -24,7 +24,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="ch-features-grid">
             <div class="ch-features-media" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/services/dh-image.png'); ?>" alt="Duplex homes" loading="lazy">
+                <img src="<?php echo asset('images/services/dh-image.webp'); ?>" alt="Duplex homes" loading="lazy">
             </div>
             <div class="ch-feat-grid">
                 <?php
@@ -54,7 +54,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="ch-why-grid">
             <div class="ch-why-media" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/services/dh-image.png'); ?>" alt="Why choose a duplex home" loading="lazy">
+                <img src="<?php echo asset('images/services/dh-image.webp'); ?>" alt="Why choose a duplex home" loading="lazy">
             </div>
             <div class="ch-why-text" data-anim="fadeInRight">
                 <h3>Why Choose a Duplex Home?</h3>
@@ -65,7 +65,7 @@ require __DIR__ . '/includes/banner.php';
 </section>
 
 <!-- ===================== CTA ===================== -->
-<section class="ch-cta" style="background-image:url('<?php echo asset('images/services/dh-cta-bg.png'); ?>')">
+<section class="ch-cta" style="background-image:url('<?php echo asset('images/services/dh-cta-bg.webp'); ?>')">
     <div class="container" data-anim="fadeIn">
         <h3>Ready to explore the possibilities of custom or duplex homes? Contact us today for a free consultation and let us bring your vision to life!</h3>
         <p>for a free consultation and let us bring your vision to life!</p>

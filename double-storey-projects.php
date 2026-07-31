@@ -18,7 +18,7 @@ $ic_car  = '<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
 ?>
 
 <!-- ===================== HERO (dark) ===================== -->
-<section class="ss-hero" style="background-image:url('<?php echo asset('images/designs/hero-double.jpg'); ?>')">
+<section class="ss-hero" style="background-image:url('<?php echo asset('images/designs/hero-double.webp'); ?>')">
     <div class="container">
         <h2 data-anim="fadeInUp">Double Storey House Designs</h2>
         <p data-anim="fadeInUp">Our double storey homes are built for those who need more room to grow. With dedicated zones for entertaining, relaxing, and working, they strike the perfect balance between privacy and family togetherness. Upstairs bedrooms create a peaceful retreat, while spacious downstairs living areas bring everyone together. Perfect for larger families and those who love to host.</p>

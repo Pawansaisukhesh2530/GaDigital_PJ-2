@@ -18,7 +18,7 @@ $ic_car  = '<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
 ?>
 
 <!-- ===================== HERO (dark) ===================== -->
-<section class="ss-hero" style="background-image:url('<?php echo asset('images/designs/hero-single.jpg'); ?>')">
+<section class="ss-hero" style="background-image:url('<?php echo asset('images/designs/hero-single.webp'); ?>')">
     <div class="container">
         <h2 data-anim="fadeInUp">One Storey House Designs</h2>
         <p data-anim="fadeInUp">Nivi Homes&rsquo; single storey designs are crafted for effortless, everyday living. With open-plan layouts, they offer seamless connectivity between the kitchen, dining, and lounge areas. Generous bedrooms and well-zoned spaces provide comfort, privacy, and functionality. Ideal for young families, downsizers, or anyone who prefers a home that lives all on one level.</p>

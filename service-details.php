@@ -18,28 +18,28 @@ require __DIR__ . '/includes/config.php';
 $SERVICES = [
     'custom-homes' => [
         'title' => 'Custom Homes',
-        'img' => asset('images/services/custom-homes.png'),
+        'img' => asset('images/services/custom-homes.webp'),
         'intro' => 'Designed to reflect your unique style and preferences, our custom homes are built around the way you live.',
         'body' => 'At Nivi Homes, a custom home is a true collaboration. Our engineers, architects and designers work closely with you to translate your vision into a home that balances beauty, function and long-term value. Every layout, finish and detail is considered so the finished result feels unmistakably yours.',
         'points' => ['Fully personalised floor plans', 'Premium fixtures and finishes', 'Transparent pricing and process', 'Dedicated project management', 'Quality craftsmanship throughout'],
     ],
     'duplex-homes' => [
         'title' => 'Duplex Homes',
-        'img' => asset('images/services/duplex.png'),
+        'img' => asset('images/services/duplex.webp'),
         'intro' => 'Maximizing space and functionality without compromising on aesthetics.',
         'body' => 'Duplex homes are an excellent way to make the most of your land, whether for investment, dual living or extended family. We design smart, stylish duplexes that maximise every square metre while maintaining privacy, comfort and modern appeal.',
         'points' => ['Efficient dual-occupancy designs', 'Ideal for investment or family living', 'Modern, space-smart layouts', 'Compliant with council requirements', 'Excellent rental and resale potential'],
     ],
     'knock-down-rebuilds' => [
         'title' => 'Knock Down Rebuilds',
-        'img' => asset('images/services/knock-down.png'),
+        'img' => asset('images/services/knock-down.webp'),
         'intro' => 'Transforming existing properties into modern, efficient homes.',
         'body' => 'Love your location but not your home? A knock down rebuild lets you stay in the neighbourhood you love while building a brand new home tailored to your needs. We manage the entire process, from demolition through to handover, making it seamless and stress-free.',
         'points' => ['Stay in your preferred location', 'Brand new, modern home', 'Full demolition management', 'Energy-efficient design', 'End-to-end project handling'],
     ],
     'granny-flats' => [
         'title' => 'Granny Flats',
-        'img' => asset('images/services/granny-flats.png'),
+        'img' => asset('images/services/granny-flats.webp'),
         'intro' => 'Versatile living solutions designed for comfort and convenience.',
         'body' => 'Our granny flats are perfect for extended family, guests or additional rental income. Thoughtfully designed to feel spacious and comfortable, they deliver self-contained living within a compact, cost-effective footprint.',
         'points' => ['Self-contained living spaces', 'Great additional income stream', 'Comfortable, functional layouts', 'Fast, cost-effective builds', 'Quality inclusions as standard'],
@@ -62,7 +62,7 @@ require __DIR__ . '/includes/header.php';
 <?php
 $BANNER_TITLE = $svc['title'];
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; <a href="services.php">Our Services</a> &gt; ' . $svc['title'];
-$BANNER_IMG = asset('images/banners/services-banner.jpg');
+$BANNER_IMG = asset('images/banners/services-banner.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 

@@ -18,7 +18,7 @@ require __DIR__ . '/includes/header.php';
         <div class="pt-grid">
             <?php foreach ($projects as $p):
                 $link = 'project-details.php?p=' . urlencode($p['slug']);
-                $cover = !empty($p['cover_image']) ? upload_public($p['cover_image']) : asset('images/project-tours/rustum.jpg');
+                $cover = !empty($p['cover_image']) ? upload_public($p['cover_image']) : asset('images/project-tours/rustum.webp');
             ?>
             <article class="pt-card" data-anim="fadeInUp">
                 <a class="pt-media" href="<?php echo e($link); ?>">

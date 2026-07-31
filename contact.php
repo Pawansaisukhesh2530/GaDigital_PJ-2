@@ -47,7 +47,7 @@ require __DIR__ . '/includes/header.php';
 <?php
 $BANNER_TITLE = 'Contact Us';
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; Contact';
-$BANNER_IMG = asset('images/banners/contact-banner.jpg');
+$BANNER_IMG = asset('images/banners/contact-banner.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 

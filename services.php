@@ -8,7 +8,7 @@ require __DIR__ . '/includes/header.php';
 <?php
 $BANNER_TITLE = 'Our Services';
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; Our Services';
-$BANNER_IMG = asset('images/banners/services-banner.jpg');
+$BANNER_IMG = asset('images/banners/services-banner.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 

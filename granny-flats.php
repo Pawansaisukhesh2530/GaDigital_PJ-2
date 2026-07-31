@@ -8,7 +8,7 @@ require __DIR__ . '/includes/header.php';
 <?php
 $BANNER_TITLE = 'Granny Flats';
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; <a href="services.php">Our Services</a> &gt; Granny Flats';
-$BANNER_IMG = asset('images/banners/granny-banner.jpg');
+$BANNER_IMG = asset('images/banners/granny-banner.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 
@@ -24,7 +24,7 @@ require __DIR__ . '/includes/banner.php';
     <div class="container">
         <div class="ch-why-grid">
             <div class="ch-why-media" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/services/granny-top.png'); ?>" alt="Why choose a granny flat" loading="lazy">
+                <img src="<?php echo asset('images/services/granny-top.webp'); ?>" alt="Why choose a granny flat" loading="lazy">
             </div>
             <div class="ch-why-text" data-anim="fadeInRight">
                 <h3>Why Choose a Granny Flat?</h3>
@@ -50,7 +50,7 @@ require __DIR__ . '/includes/banner.php';
         <div class="gf-gallery" data-anim="fadeIn">
             <?php for ($i = 1; $i <= 6; $i++): ?>
             <div class="gf-gallery-item">
-                <img src="<?php echo asset('images/granny/gf-' . $i . '.jpg'); ?>" alt="Granny flat <?php echo $i; ?>" loading="lazy">
+                <img src="<?php echo asset('images/granny/gf-' . $i . '.webp'); ?>" alt="Granny flat <?php echo $i; ?>" loading="lazy">
             </div>
             <?php endfor; ?>
         </div>
@@ -58,7 +58,7 @@ require __DIR__ . '/includes/banner.php';
 </section>
 
 <!-- ===================== CTA ===================== -->
-<section class="ch-cta ch-cta--light-text" style="background-image:url('<?php echo asset('images/services/granny-cta-bg.png'); ?>')">
+<section class="ch-cta ch-cta--light-text" style="background-image:url('<?php echo asset('images/services/granny-cta-bg.webp'); ?>')">
     <div class="container" data-anim="fadeIn">
         <h3>Ready to enhance your property with a custom granny flat? Contact us today for a consultation and let us create a versatile and stylish addition that meets your specific needs!</h3>
         <p>and let us create a versatile and stylish addition that meets your specific needs!</p>

@@ -5,7 +5,7 @@
         <!-- Brand + socials -->
         <div class="footer-col footer-brand">
             <a href="index.php" class="footer-logo-link">
-                <img src="<?php echo asset('images/logo/logo.png'); ?>" alt="Nivi Homes logo" width="180" height="84" loading="lazy">
+                <img src="<?php echo asset('images/logo/logo.webp'); ?>" alt="Nivi Homes logo" width="180" height="84" loading="lazy">
             </a>
             <ul class="social-list" aria-label="Social media">
                 <li><a href="<?php echo $SOCIAL['facebook']; ?>" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.2V14h2.7v7h2.6z"/></svg></a></li>
@@ -61,6 +61,11 @@
 <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
+
+<!-- WhatsApp floating button -->
+<a class="whatsapp-float" href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $SITE['phone_href']); ?>" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.01 2.64C8.66 2.64 2.7 8.58 2.7 15.9c0 2.35.62 4.64 1.8 6.66L2.56 29.36l7.02-1.84a13.22 13.22 0 006.42 1.64c7.34 0 13.3-5.96 13.3-13.28 0-3.55-1.38-6.88-3.88-9.4a13.2 13.2 0 00-9.41-3.84zm0 24.28c-2 0-3.96-.54-5.67-1.56l-.4-.24-4.18 1.1 1.12-4.08-.26-.42a10.97 10.97 0 01-1.7-5.82c0-6.08 4.96-11.02 11.07-11.02 2.96 0 5.74 1.15 7.83 3.25a10.96 10.96 0 013.24 7.8c0 6.08-4.96 11.02-11.06 11.02v-.03zm6.07-8.26c-.33-.17-1.97-.97-2.28-1.08-.3-.11-.52-.17-.74.17-.22.33-.86 1.08-1.05 1.3-.2.22-.39.25-.72.08-.33-.17-1.4-.52-2.67-1.64-.99-.88-1.66-1.96-1.85-2.3-.2-.33-.02-.5.15-.67.15-.15.33-.4.5-.6.17-.2.22-.33.33-.56.11-.22.06-.42-.03-.58-.08-.17-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.58.08-.88.4-.3.33-1.16 1.13-1.16 2.76s1.19 3.2 1.35 3.42c.17.22 2.34 3.57 5.67 5 .79.34 1.41.55 1.89.7.8.25 1.52.22 2.09.13.64-.1 1.97-.8 2.25-1.58.28-.78.28-1.44.2-1.58-.09-.14-.31-.22-.64-.39z"/></svg>
+</a>
 
 <script src="<?php echo asset('js/menu.js'); ?>"></script>
 <script src="<?php echo asset('js/slider.js'); ?>"></script>

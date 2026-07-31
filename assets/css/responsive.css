@@ -111,6 +111,29 @@
     .services-grid, .features-grid, .projects-grid,
     .designs-grid, .values-grid { grid-template-columns: 1fr; }
 
+    /* Discover Nivi Homes (intro) section: stack image above text */
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .intro-media {
+        padding: 0;
+        text-align: center;
+    }
+    .intro-media img {
+        max-width: 100%;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+    .intro-content {
+        padding: 0 15px;
+        text-align: center;
+    }
+    .intro-content .section-title { text-align: center; }
+    .intro-content p { text-align: center; }
+    .intro-content .btn { margin: 0 auto; }
+    .intro { margin: 40px 0; }
+
     /* Restore side padding on the full-bleed 1140 containers */
     .intro .container, .why-choose .container { padding: 0 20px; }
     /* Features stack to a single column on mobile (tablet keeps 4-col) */
