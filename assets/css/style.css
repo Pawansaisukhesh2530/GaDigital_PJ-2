@@ -426,7 +426,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .ch-intro p { font-size: 16px; font-weight: 200; color: var(--color-dark); line-height: 24px; margin: 0; }
 
 /* Image + 2x2 feature grid */
-.ch-features { padding: 60px 0; background: var(--color-bg-soft, #f9f8f5); }
+.ch-features { padding: 60px 0; background: #fff; }
 .ch-features .container { max-width: 1140px; }
 .ch-features-grid {
     display: grid;
