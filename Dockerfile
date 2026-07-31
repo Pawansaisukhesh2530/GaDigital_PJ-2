@@ -5,9 +5,15 @@
 FROM php:8.2-apache
 
 # Install system dependencies and PHP extensions
+# - ca-certificates: required for TLS/SSL certificate verification when
+#   connecting to external SMTP servers (Gmail, etc.)
+# - openssl: provides CLI tools and ensures root CA bundle is present
 RUN apt-get update && apt-get install -y --no-install-recommends \
         libsqlite3-dev \
         libonig-dev \
+        ca-certificates \
+        openssl \
+    && update-ca-certificates \
     && docker-php-ext-install pdo pdo_sqlite mbstring fileinfo \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 

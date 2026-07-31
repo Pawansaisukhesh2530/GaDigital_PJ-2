@@ -117,9 +117,11 @@ function mail_make(array $cfg): PHPMailer
     mail_phpmailer_available();
     $mail = new PHPMailer(true);
     $mail->isSMTP();
-    $mail->Host    = $cfg['host'];
-    $mail->Port    = (int) $cfg['port'];
-    $mail->CharSet = 'UTF-8';
+    $mail->Host       = $cfg['host'];
+    $mail->Port       = (int) $cfg['port'];
+    $mail->CharSet    = 'UTF-8';
+    $mail->Timeout    = 30;          // seconds — generous for cloud environments
+    $mail->SMTPKeepAlive = false;
 
     if ($cfg['username'] !== '') {
         $mail->SMTPAuth = true;
@@ -133,6 +135,17 @@ function mail_make(array $cfg): PHPMailer
     } else {
         $mail->SMTPAutoTLS = false;
     }
+
+    // Ensure PHP uses the system CA bundle for TLS verification.
+    // Required in Docker containers where the default path may not be set.
+    $mail->SMTPOptions = [
+        'ssl' => [
+            'verify_peer'       => true,
+            'verify_peer_name'  => true,
+            'allow_self_signed' => false,
+            'cafile'            => '/etc/ssl/certs/ca-certificates.crt',
+        ],
+    ];
 
     $mail->setFrom($cfg['from_email'] ?: 'no-reply@localhost', $cfg['from_name'] ?: 'Website');
     return $mail;
@@ -261,6 +274,7 @@ function mail_send_raw(string $to, string $subject, string $body): array
 /**
  * Send a test email using the currently SAVED settings, to the configured
  * enquiry email. Surfaces the PHPMailer error for the admin UI.
+ * Includes SMTP debug output in the mail log for troubleshooting.
  * @return array ['sent' => bool, 'reason' => string, 'error' => string, 'to' => string]
  */
 function mail_send_test(): array
@@ -273,8 +287,35 @@ function mail_send_test(): array
         return ['sent' => false, 'reason' => $reason, 'error' => '', 'to' => $to];
     }
 
+    // Log diagnostic info (never log the password).
+    mail_log("=== TEST EMAIL ATTEMPT ===");
+    mail_log("Host: {$cfg['host']} | Port: {$cfg['port']} | Enc: {$cfg['encryption']} | User: {$cfg['username']}");
+    mail_log("PHP OpenSSL: " . (extension_loaded('openssl') ? 'YES (' . OPENSSL_VERSION_TEXT . ')' : 'NO'));
+    mail_log("CA bundle: " . (is_file('/etc/ssl/certs/ca-certificates.crt') ? 'present' : 'MISSING'));
+
+    // Test DNS resolution
+    $dnsResult = @dns_get_record($cfg['host'], DNS_A | DNS_AAAA);
+    if ($dnsResult === false || empty($dnsResult)) {
+        mail_log("DNS lookup FAILED for {$cfg['host']}");
+    } else {
+        $ips = array_map(fn($r) => $r['ip'] ?? ($r['ipv6'] ?? '?'), $dnsResult);
+        mail_log("DNS resolved {$cfg['host']} -> " . implode(', ', $ips));
+    }
+
     try {
         $mail = mail_make($cfg);
+
+        // Capture SMTP debug output to a buffer (level 2 = client+server)
+        $mail->SMTPDebug = SMTP::DEBUG_CONNECTION;
+        $debugOutput = '';
+        $mail->Debugoutput = function ($str, $level) use (&$debugOutput) {
+            // Strip credentials from debug output
+            if (stripos($str, 'PASSWORD') !== false || stripos($str, 'AUTH') !== false) {
+                $str = preg_replace('/(?:USER|PASS|AUTH\s+\S+)\s+.*/i', '$0 [REDACTED]', $str);
+            }
+            $debugOutput .= trim($str) . "\n";
+        };
+
         $mail->addAddress($to);
         $mail->isHTML(true);
         $mail->Subject = 'Nivi Homes - SMTP test email';
@@ -285,10 +326,25 @@ function mail_send_test(): array
         $mail->AltBody = 'This is a test email from your Nivi Homes admin panel. SMTP settings are working.';
         $mail->send();
         mail_log("Test email sent to {$to}.");
+        if ($debugOutput !== '') {
+            mail_log("SMTP Debug:\n" . $debugOutput);
+        }
         return ['sent' => true, 'reason' => 'ok', 'error' => '', 'to' => $to];
     } catch (\Throwable $ex) {
         $err = isset($mail) ? ($mail->ErrorInfo ?: $ex->getMessage()) : $ex->getMessage();
         mail_log("Test email FAILED to {$to}: " . $err);
+        if (!empty($debugOutput)) {
+            mail_log("SMTP Debug:\n" . $debugOutput);
+        }
+
+        // Detect Render free-tier SMTP port block
+        if (stripos($err, 'Network is unreachable') !== false
+            || stripos($err, 'Could not connect') !== false) {
+            $err .= ' | HINT: Render free-tier blocks outbound SMTP (ports 25/465/587). '
+                   . 'Upgrade to a paid instance type to enable SMTP, or use an HTTP-based email API.';
+            mail_log("DIAGNOSIS: Likely Render free-tier SMTP port block. Ports 25, 465, 587 are firewalled on free plans.");
+        }
+
         return ['sent' => false, 'reason' => 'send_failed', 'error' => $err, 'to' => $to];
     }
 }
