@@ -77,7 +77,10 @@
     .srv-intro .container { padding: 0 20px; }
 
     /* Custom Homes: image + features and why-choose rows stack */
-    .ch-features-grid, .ch-why-grid { grid-template-columns: 1fr; gap: 30px; }
+    .ch-features-grid { grid-template-columns: 1fr; gap: 30px; padding: 30px; }
+    .ch-feat-grid { padding-left: 0; }
+    .ch-features-media img { max-width: 320px; margin: 0 auto; }
+    .ch-why-grid { grid-template-columns: 1fr; gap: 30px; }
     .ch-why-media { text-align: center; }
     .ch-why-media img { max-width: 538px; margin: 0 auto; }
 
