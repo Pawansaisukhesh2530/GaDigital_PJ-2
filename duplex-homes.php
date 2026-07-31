@@ -30,16 +30,21 @@ require __DIR__ . '/includes/banner.php';
                 <?php
                 $feats = [
                     ['t' => 'Optimized Space Utilization',
+                     'icon' => '<path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/>',
                      'd' => 'Our duplex homes maximize living space efficiency while maintaining privacy and functionality for each unit, ideal for families or investors seeking versatile living arrangements.'],
                     ['t' => 'Architectural Excellence',
+                     'icon' => '<path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/>',
                      'd' => 'Enjoy innovative design and architectural integrity with our duplex homes, featuring modern layouts and aesthetic appeal that enhance property value and curb appeal.'],
                     ['t' => 'Investment Potential',
+                     'icon' => '<path d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 010 7H6"/>',
                      'd' => 'Duplex homes offer significant investment potential through rental income opportunities or dual occupancy, providing financial flexibility and long-term value appreciation.'],
                     ['t' => 'Customization Options',
+                     'icon' => '<path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/>',
                      'd' => 'Customize your duplex home design with flexible floor plans, interior finishes, and exterior features to create a cohesive living environment that meets your specific preferences and lifestyle requirements.'],
                 ];
                 foreach ($feats as $f): ?>
                 <div class="ch-feat" data-anim="fadeIn">
+                    <div class="ch-feat-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><?php echo $f['icon']; ?></svg></div>
                     <h5><?php echo $f['t']; ?></h5>
                     <p><?php echo $f['d']; ?></p>
                 </div>

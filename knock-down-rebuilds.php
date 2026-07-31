@@ -30,16 +30,21 @@ require __DIR__ . '/includes/banner.php';
                 <?php
                 $feats = [
                     ['t' => 'Comprehensive Rebuild Expertise',
+                     'icon' => '<path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>',
                      'd' => 'Benefit from our expertise in knock down rebuild projects, including site assessment, demolition, planning approvals, and construction management, ensuring a smooth and efficient process.'],
                     ['t' => 'Custom Home Design',
+                     'icon' => '<path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/>',
                      'd' => 'Work closely with our skilled architects and designers to create a custom home design that maximizes your property&rsquo;s potential and reflects your personal style and preferences.'],
                     ['t' => 'Energy Efficiency and Sustainability',
+                     'icon' => '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8"/>',
                      'd' => 'Incorporate sustainable building practices and energy-efficient features into your new home design, reducing environmental impact and ongoing utility costs.'],
                     ['t' => 'Quality Assurance',
+                     'icon' => '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>',
                      'd' => 'Our commitment to quality extends to every aspect of your rebuild project, with strict quality control measures and inspections to ensure superior craftsmanship and long-term durability.'],
                 ];
                 foreach ($feats as $f): ?>
                 <div class="ch-feat" data-anim="fadeIn">
+                    <div class="ch-feat-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><?php echo $f['icon']; ?></svg></div>
                     <h5><?php echo $f['t']; ?></h5>
                     <p><?php echo $f['d']; ?></p>
                 </div>

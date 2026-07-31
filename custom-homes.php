@@ -30,16 +30,21 @@ require __DIR__ . '/includes/banner.php';
                 <?php
                 $feats = [
                     ['t' => 'Personalized Design Process', 'anim' => 'fadeIn',
+                     'icon' => '<path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/>',
                      'd' => 'Collaborate closely with our experienced architects and designers to customize every aspect of your home, from layout and interior finishes to exterior aesthetics.'],
                     ['t' => 'Exceptional Craftsmanship', 'anim' => 'fadeIn',
+                     'icon' => '<path d="M12 2l3 6.5 7 .6-5.3 4.6L18.2 21 12 17.3 5.8 21l1.5-7.3L2 9.1l7-.6z"/>',
                      'd' => 'We pride ourselves on superior craftsmanship and attention to detail, ensuring the highest quality standards are maintained throughout the building process.'],
                     ['t' => 'Transparent Communication', 'anim' => 'fadeIn',
+                     'icon' => '<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>',
                      'd' => 'Enjoy clear and open communication at every stage of your project, with regular updates and consultations to ensure your vision is realized.'],
                     ['t' => 'Quality Assurance', 'anim' => 'fadeIn',
+                     'icon' => '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>',
                      'd' => 'Our commitment to excellence includes rigorous quality control measures and inspections, ensuring your custom home is built to last and meets the highest industry standards.'],
                 ];
                 foreach ($feats as $f): ?>
                 <div class="ch-feat" data-anim="<?php echo $f['anim']; ?>">
+                    <div class="ch-feat-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><?php echo $f['icon']; ?></svg></div>
                     <h5><?php echo $f['t']; ?></h5>
                     <p><?php echo $f['d']; ?></p>
                 </div>
