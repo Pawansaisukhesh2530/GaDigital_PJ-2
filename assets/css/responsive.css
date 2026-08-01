@@ -76,6 +76,8 @@
     .inc-grid { grid-template-columns: repeat(2, 1fr); }
     .inc-three { grid-template-columns: 1fr; gap: 24px; }
     .inc-col-img { order: 3; }
+    /* Inclusions headings scale down slightly at tablet */
+    .inc-eyebrow, .inc-h2, .inc-h3, .inc-head, .inc-gold { font-size: 22px; }
 
     /* Our Services: intro side padding */
     .srv-intro .container { padding: 0 20px; }
@@ -173,6 +175,8 @@
     /* Our Inclusions: all columns stack to single column on mobile */
     .inc-two, .inc-three, .inc-grid { grid-template-columns: 1fr; gap: 24px; }
     .inc-img-lg, .inc-img-xl, .inc-img-mid { max-width: 100%; }
+    /* Inclusions headings scale for mobile */
+    .inc-eyebrow, .inc-h2, .inc-h3, .inc-head, .inc-gold { font-size: 20px; }
 
     /* Our Services: tiles stack to a single column */
     .srv-tiles { grid-template-columns: 1fr; }
