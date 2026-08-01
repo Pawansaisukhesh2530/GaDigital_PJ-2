@@ -82,6 +82,9 @@
     /* Our Services: intro side padding */
     .srv-intro .container { padding: 0 20px; }
 
+    /* Services head: stack columns on tablet to prevent text overlap */
+    .services-head-inner { grid-template-columns: 1fr; gap: 16px; }
+
     /* Custom Homes: image + features and why-choose rows stack */
     .ch-features-grid { grid-template-columns: 1fr; gap: 30px; padding: 30px; }
     .ch-feat-grid { padding-left: 0; }

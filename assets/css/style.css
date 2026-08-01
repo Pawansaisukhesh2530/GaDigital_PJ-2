@@ -364,7 +364,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .services-head { background: var(--color-dark); padding: 40px; }
 .services-head-inner {
     max-width: 1140px; margin: 0 auto;
-    display: grid; grid-template-columns: 40% 60%; align-items: center; gap: 0;
+    display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 30px;
 }
 .services-head-left, .services-head-right { text-align: left; }
 .services-head .section-eyebrow { margin-bottom: 4px; }
