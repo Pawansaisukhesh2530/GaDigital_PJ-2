@@ -2244,7 +2244,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     font-size: 14px;
     border: 1px solid #ddd0ac;
     border-radius: 0;
-    background: #f5f2eb;
+    background: #fdfcf9;
     color: #211d15;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
