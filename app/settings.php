@@ -60,14 +60,16 @@ function settings_phone_href(string $phone): string
     return $href ?: '';
 }
 
-/** Build the public $SITE array from settings, backed by hardcoded defaults. */
+/** Build the public $SITE array from settings. Database is the single source of truth. */
 function settings_site(array $defaults = []): array
 {
     $s = settings_all();
-    $get = fn(string $k, string $d = '') => (isset($s[$k]) && $s[$k] !== '') ? $s[$k] : $d;
+    // Use DB value directly. Only fall back to $defaults if the key is completely
+    // missing from the database (e.g. DB unavailable or first-run before install).
+    $get = fn(string $k, string $d = '') => array_key_exists($k, $s) ? (string) $s[$k] : $d;
 
     return [
-        'name'       => $get('company_name', $defaults['name'] ?? 'Nivi Homes'),
+        'name'       => $get('company_name', $defaults['name'] ?? ''),
         'email'      => $get('email',        $defaults['email'] ?? ''),
         'phone'      => $get('phone',        $defaults['phone'] ?? ''),
         'phone_href' => $get('phone_href',   $defaults['phone_href'] ?? settings_phone_href($get('phone', $defaults['phone'] ?? ''))),
@@ -79,11 +81,11 @@ function settings_site(array $defaults = []): array
     ];
 }
 
-/** Build the public $SOCIAL array from settings, backed by hardcoded defaults. */
+/** Build the public $SOCIAL array from settings. Database is the single source of truth. */
 function settings_social(array $defaults = []): array
 {
     $s = settings_all();
-    $get = fn(string $k, string $d = '') => (isset($s[$k]) && $s[$k] !== '') ? $s[$k] : $d;
+    $get = fn(string $k, string $d = '') => array_key_exists($k, $s) ? (string) $s[$k] : $d;
 
     return [
         'facebook'  => $get('facebook',  $defaults['facebook'] ?? ''),
