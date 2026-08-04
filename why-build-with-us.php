@@ -20,7 +20,6 @@ require __DIR__ . '/includes/banner.php';
                 <div class="abt-img-offset"></div>
                 <div class="abt-img-card">
                     <img src="<?php echo asset('images/why-build/images-1.webp'); ?>" alt="Living Room Featured Build" loading="lazy">
-                    <span class="abt-img-label">Living Room &middot; Featured Build</span>
                 </div>
             </div>
             <div class="wb-intro-text">
@@ -38,7 +37,6 @@ require __DIR__ . '/includes/banner.php';
                 <div class="abt-img-offset"></div>
                 <div class="abt-img-card">
                     <img src="<?php echo asset('images/why-build/images-2.webp'); ?>" alt="Living Room Interior Detail" loading="lazy">
-                    <span class="abt-img-label">Living Room &middot; Interior Detail</span>
                 </div>
             </div>
             <div class="wb-apart-content">

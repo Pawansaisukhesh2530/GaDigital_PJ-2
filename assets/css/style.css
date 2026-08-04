@@ -1519,7 +1519,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .abt-img-card {
     position: relative;
-    border: 1px solid #18160f;
     border-radius: 4px;
     overflow: hidden;
     min-height: 280px;
