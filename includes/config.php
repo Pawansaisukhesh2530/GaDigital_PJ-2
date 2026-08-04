@@ -15,24 +15,26 @@ require_once __DIR__ . '/../app/db.php';
 require_once __DIR__ . '/../app/helpers.php';
 require_once __DIR__ . '/../app/settings.php';
 
-// ---- Fallback defaults (original hardcoded values) ----
+// ---- Fallback defaults (used ONLY if the database is completely unavailable) ----
+// These are NOT applied when a setting exists in the DB — even if its value is empty.
+// The database is the single source of truth after initial installation.
 $SITE_DEFAULTS = [
     'name'       => 'Nivi Homes',
-    'email'      => 'hemachandra@gadigitalsolutions.com',
-    'phone'      => '+61 411 468 309',
-    'phone_href' => '+61411468309',
+    'email'      => '',
+    'phone'      => '',
+    'phone_href' => '',
     'phone2'     => '',
-    'address'    => '32/33-39 Veron st, Wentworthville, NSW, 2145',
-    'hours'      => 'Monday - Friday, 07:00 AM to 5:00 PM',
-    'map'        => 'https://www.google.com/maps?q=-33.80874252319336,150.9775848388672&z=17&hl=en',
-    'map_embed'  => 'https://maps.google.com/maps?q=-33.80874252319336,150.9775848388672&z=16&output=embed',
+    'address'    => '',
+    'hours'      => '',
+    'map'        => '',
+    'map_embed'  => '',
 ];
 $SOCIAL_DEFAULTS = [
-    'facebook'  => 'https://www.facebook.com/profile.php?id=61560965706586',
-    'instagram' => 'https://www.instagram.com/nivihomes01/',
-    'twitter'   => 'https://x.com/NiviHomes',
-    'pinterest' => 'https://in.pinterest.com/nivihomes/',
-    'youtube'   => 'https://www.youtube.com/channel/UCWkJkbbuacTgj94lbQJOatA',
+    'facebook'  => '',
+    'instagram' => '',
+    'twitter'   => '',
+    'pinterest' => '',
+    'youtube'   => '',
     'linkedin'  => '',
 ];
 

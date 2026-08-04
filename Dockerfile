@@ -48,8 +48,9 @@ RUN mkdir -p /var/www/html/data/sessions \
     && chmod -R 775 /var/www/html/data \
                     /var/www/html/assets/uploads/projects
 
-# Run database installer (schema + default admin + settings)
-RUN php /var/www/html/database/install.php
+# NOTE: Database installation happens at RUNTIME (in start.sh), not here.
+# This ensures admin-entered settings persist across container restarts.
+# The installer is idempotent — it only seeds values for keys that don't exist.
 
 # Default port (Render overrides via $PORT env var at runtime)
 ENV PORT=10000
