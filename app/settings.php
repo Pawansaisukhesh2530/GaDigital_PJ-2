@@ -47,7 +47,10 @@ function settings_update(array $pairs): void
         }
         $pdo->commit();
     } catch (Throwable $e) {
-        $pdo->rollBack();
+        if ($pdo->inTransaction()) {
+            $pdo->rollBack();
+        }
+        error_log('settings_update failed: ' . $e->getMessage());
         throw $e;
     }
     settings_all(true);   // refresh cache

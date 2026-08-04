@@ -20,6 +20,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Enable Apache modules
 RUN a2enmod rewrite
 
+# PHP production config: log errors, don't display to browser
+RUN { \
+    echo 'display_errors = Off'; \
+    echo 'log_errors = On'; \
+    echo 'error_log = /dev/stderr'; \
+    echo 'error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT'; \
+    } > /usr/local/etc/php/conf.d/production.ini
+
 # Allow .htaccess overrides (for directory deny rules in app/ and data/)
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 RUN echo 'ServerName localhost' >> /etc/apache2/apache2.conf

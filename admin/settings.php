@@ -34,8 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors = $res['errors'];
 
     if (!$errors) {
-        settings_update($v);
-        flash_set('flash_success', 'Settings saved. Changes are now live across the website.');
+        try {
+            settings_update($v);
+            flash_set('flash_success', 'Settings saved. Changes are now live across the website.');
+        } catch (Throwable $e) {
+            error_log('Settings save failed: ' . $e->getMessage());
+            flash_set('flash_error', 'Could not save settings. The database may be read-only or locked. Please try again.');
+        }
         redirect('settings.php');
     } else {
         flash_set('flash_error', 'Please correct the highlighted fields.');
