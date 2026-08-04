@@ -47,6 +47,8 @@
         sections.forEach(function (sec) {
             // Skip sections that already have explicit reveal/anim attributes
             if (sec.hasAttribute('data-reveal') || sec.hasAttribute('data-anim') || sec.classList.contains('revealed') || sec.classList.contains('hero')) return;
+            // Skip container sections whose children handle their own animations
+            if (sec.classList.contains('inc-page') || sec.classList.contains('inc-spec-section') || sec.classList.contains('abt-section') || sec.classList.contains('abt-values-section') || sec.classList.contains('wb-section') || sec.classList.contains('wb-apart-section')) return;
             sec.classList.add('section-reveal');
         });
         var sectionObs = new IntersectionObserver(function (entries) {
