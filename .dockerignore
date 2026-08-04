@@ -20,6 +20,7 @@ DEPLOY_RENDER.md
 # Runtime files that are regenerated
 data/sessions/*
 data/logs/*
+data/nivihomes.sqlite
 *.sqlite-wal
 *.sqlite-shm
 

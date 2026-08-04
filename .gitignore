@@ -5,10 +5,11 @@
 # --- Runtime / generated files (never commit) ---
 data/sessions/
 data/logs/
+data/nivihomes.sqlite
 *.log
 mail.log
 
-# SQLite write-ahead log & shared-memory (transient; the .sqlite is committed)
+# SQLite write-ahead log & shared-memory (transient)
 *.sqlite-wal
 *.sqlite-shm
 data/nivihomes.sqlite-wal
