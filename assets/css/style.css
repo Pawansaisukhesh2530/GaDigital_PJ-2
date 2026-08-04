@@ -1655,41 +1655,97 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* --- What Sets Us Apart --- */
 .wb-apart-section { padding: 0 0 100px; }
-.wb-apart-grid {
-    display: grid;
-    grid-template-columns: 454px 1fr;
-    gap: 57px;
-    align-items: center;
-    margin-bottom: 57px;
+.wb-apart-card {
+    background: #fffefb;
+    border: 1px solid #ddd0ac;
+    border-radius: 20px;
+    box-shadow: 0 4px 2px rgba(198, 188, 120, 0.2);
+    padding: 57px 57px 9px;
 }
-.wb-apart-media { position: relative; }
+
+/* Top grid: image left, heading right */
+.wb-apart-top {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+}
+.wb-apart-img {
+    position: relative;
+    border: 1px solid #ddd0ac;
+    border-top: 2px solid #c6bc78;
+    overflow: hidden;
+    background: #fbf8f1;
+    min-height: 300px;
+}
+.wb-apart-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 300px;
+}
+.wb-apart-corner-tl {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    border-left: 1px solid #c6bc78;
+    border-top: 1px solid #c6bc78;
+}
+.wb-apart-corner-br {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    border-right: 1px solid #c6bc78;
+    border-bottom: 1px solid #c6bc78;
+}
+.wb-apart-img-tag {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(20, 17, 10, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 8px 13px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.44px;
+    line-height: 1.7;
+}
 .wb-apart-content { max-width: 615px; }
 .wb-apart-title {
     font-size: 36px;
-    font-weight: 600;
-    font-style: italic;
-    color: #8a6c2a;
+    font-weight: 700;
+    color: #211d15;
     letter-spacing: -0.36px;
-    line-height: 1.72;
+    line-height: 1.7;
     margin: 6px 0 13px;
 }
 .wb-apart-desc {
-    font-size: 15px;
+    font-size: 15.5px;
     font-weight: 400;
-    color: #211d15;
-    line-height: 1.75;
+    color: #6f6552;
+    line-height: 1.7;
     margin: 0;
 }
 
-/* --- Feature Cards (4 columns) --- */
+/* Divider between top and features */
+.wb-apart-divider {
+    border-top: 1px solid #ddd0ac;
+    margin-top: 56px;
+}
+
+/* --- Feature Cards (4 columns with vertical dividers) --- */
 .wb-features-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid #ddd0ac;
-    border-bottom: 1px solid #ddd0ac;
 }
 .wb-feat-card {
-    padding: 40px 28px;
+    padding: 40px 28px 48px;
     border-right: 1px solid #ddd0ac;
 }
 .wb-feat-card:last-child { border-right: none; }
@@ -1699,23 +1755,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(198, 188, 120, 0.12);
-    border-radius: 8px;
-    margin-bottom: 12px;
+    border: 1px solid #a9812e;
+    border-radius: 23px;
+    margin-bottom: 11px;
 }
 .wb-feat-icon img { width: 20px; height: 20px; object-fit: contain; }
 .wb-feat-title {
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 16.5px;
+    font-weight: 700;
     color: #211d15;
-    margin: 0 0 12px;
-    line-height: 1.5;
+    letter-spacing: -0.165px;
+    margin: 9px 0 11px;
+    line-height: 1.3;
 }
 .wb-feat-desc {
-    font-size: 13px;
+    font-size: 13.6px;
     font-weight: 400;
     color: #6f6552;
-    line-height: 1.7;
+    line-height: 1.65;
     margin: 0;
 }
 
@@ -1726,11 +1783,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .abt-grid,
     .abt-grid-reverse,
     .wb-intro-grid,
-    .wb-apart-grid { grid-template-columns: 1fr; gap: 40px; }
+    .wb-apart-top { grid-template-columns: 1fr; gap: 40px; }
     .abt-grid-reverse .abt-text { order: 0; }
     .abt-img-card img { height: 380px; }
     .wb-features-grid { grid-template-columns: repeat(2, 1fr); }
     .wb-feat-card:nth-child(2) { border-right: none; }
+    .wb-apart-card { padding: 40px 30px 9px; }
 }
 @media (max-width: 767px) {
     .abt-section, .wb-section { padding: 50px 0; }
@@ -1742,4 +1800,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .wb-feat-card { border-right: none; border-bottom: 1px solid #ddd0ac; }
     .wb-feat-card:last-child { border-bottom: none; }
     .abt-img-offset { left: -8px; top: 8px; }
+    .wb-apart-card { padding: 30px 20px 9px; border-radius: 12px; }
+    .wb-apart-img { min-height: 220px; }
+    .wb-apart-img img { min-height: 220px; }
 }
