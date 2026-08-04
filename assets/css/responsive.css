@@ -8,11 +8,9 @@
 /* Large desktop (<=1440) */
 @media (max-width: 1440px) {
     :root { --container: 1160px; }
-    .inc-layout { padding: 0 80px; gap: 60px; }
 }
 @media (max-width: 1366px) {
     :root { --container: 1120px; }
-    .inc-layout { padding: 0 60px; gap: 50px; }
 }
 
 /* =============================================================
@@ -79,6 +77,7 @@
     .inc-page { padding: 50px 0 0; }
     .inc-title { font-size: 34px; }
     .inc-spec-grid { grid-template-columns: repeat(2, 1fr); }
+    .inc-spec-container { padding: 0 30px; }
 
     /* Our Services: intro side padding */
     .srv-intro .container { padding: 0 20px; }
@@ -181,7 +180,8 @@
     .inc-title { font-size: 28px; }
     .inc-spec-grid { grid-template-columns: 1fr; }
     .inc-spec-section { padding: 60px 0; }
-    .inc-spec-title { font-size: 28px; }
+    .inc-spec-title { font-size: 26px; }
+    .inc-spec-container { padding: 0 20px; }
     .inc-image-card-tall { height: 350px; }
     .inc-layout { padding: 0 20px; }
 

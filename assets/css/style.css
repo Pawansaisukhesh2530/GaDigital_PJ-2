@@ -905,7 +905,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     gap: 90px;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 180px 0 180px;
+    padding: 0 40px;
     align-items: start;
 }
 
@@ -1108,7 +1108,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     line-height: 1.65;
     letter-spacing: -0.38px;
     margin: 0 0 11px;
-    white-space: nowrap;
 }
 .inc-spec-accent { color: #c6bc78; }
 .inc-spec-subtitle {
