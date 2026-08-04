@@ -2202,7 +2202,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* --- Right: Form panel --- */
 .ct-form-panel {
-    background: #fff;
+    background: #f5f2eb;
     padding: 89px 60px 80px;
     display: flex;
     align-items: flex-start;
@@ -2244,7 +2244,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     font-size: 14px;
     border: 1px solid #ddd0ac;
     border-radius: 0;
-    background: #fff;
+    background: #f5f2eb;
     color: #211d15;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
