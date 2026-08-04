@@ -2095,32 +2095,41 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     min-height: 900px;
 }
 
-/* --- Left: Info panel (dark/gold gradient) --- */
+/* --- Left: Info panel (dark) --- */
 .ct-info {
-    background: linear-gradient(160deg, #2a2518 0%, #18160f 50%, #1a1710 100%);
-    padding: 110px 60px 80px;
+    background: #18160f;
+    padding: 90px 64px 70px;
     display: flex;
     align-items: flex-start;
+    justify-content: center;
 }
-.ct-info-inner { max-width: 440px; margin: 0 auto; }
+.ct-info-inner { max-width: 440px; width: 100%; }
 .ct-heading {
-    font-size: 32px;
-    font-weight: 700;
-    color: #fbf6ea;
-    letter-spacing: -0.32px;
-    line-height: 1.72;
-    margin: 0 0 20px;
+    font-size: 52px;
+    font-weight: 600;
+    font-style: italic;
+    color: #ddd0ac;
+    letter-spacing: -0.52px;
+    line-height: 1.05;
+    margin: 0 0 19px;
 }
 .ct-intro {
     font-size: 15px;
     font-weight: 400;
     color: #a89d84;
     line-height: 1.75;
-    margin: 0 0 40px;
+    margin: 0 0 29px;
 }
 
 /* Contact items */
-.ct-list { display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px; }
+.ct-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(201, 162, 84, 0.28);
+    margin-bottom: 21px;
+}
 .ct-item { display: flex; gap: 16px; align-items: flex-start; }
 .ct-icon {
     width: 36px;
@@ -2128,51 +2137,68 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(198, 188, 120, 0.4);
+    border: 1px solid rgba(201, 162, 84, 0.45);
     border-radius: 50%;
     flex-shrink: 0;
-    color: #c6bc78;
+    color: #ddd0ac;
 }
 .ct-label {
     display: block;
-    font-size: 12px;
-    font-weight: 600;
-    color: #a89d84;
-    margin-bottom: 2px;
-    letter-spacing: 0.3px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #ddd0ac;
+    text-transform: uppercase;
+    letter-spacing: 1.05px;
+    margin-bottom: 3px;
+    line-height: 1.75;
 }
-.ct-item a, .ct-item span:not(.ct-icon):not(.ct-label) {
-    font-size: 14px;
-    color: #fbf6ea;
-    line-height: 1.6;
+.ct-item a, .ct-item > div > span:not(.ct-label) {
+    font-size: 14.5px;
+    font-weight: 400;
+    color: #efe8d8;
+    line-height: 1.5;
 }
 .ct-item a:hover { color: #c6bc78; }
 
 /* Social links */
-.ct-socials { display: flex; gap: 10px; margin-bottom: 40px; }
+.ct-socials { display: flex; gap: 10px; padding: 21px 0 19px; }
 .ct-socials a {
     width: 34px;
     height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(198, 188, 120, 0.3);
-    border-radius: 50%;
+    border: 1px solid rgba(201, 162, 84, 0.4);
+    border-radius: 17px;
     font-size: 12px;
-    font-weight: 600;
-    color: #c6bc78;
+    font-weight: 400;
+    color: #ddd0ac;
     transition: background 0.3s, color 0.3s;
 }
-.ct-socials a:hover { background: #c6bc78; color: #18160f; }
+.ct-socials a:hover { background: rgba(201, 162, 84, 0.2); color: #efe8d8; }
 
 /* Map thumbnail */
 .ct-map-thumb {
-    border: 1px solid rgba(198, 188, 120, 0.3);
-    border-radius: 8px;
+    border: 1px solid rgba(201, 162, 84, 0.3);
     overflow: hidden;
     height: 110px;
+    min-height: 110px;
+    width: 550px;
+    max-width: 100%;
+    background: #26221a;
+    position: relative;
 }
 .ct-map-thumb iframe { width: 100%; height: 100%; border: 0; display: block; }
+.ct-map-label {
+    position: absolute;
+    bottom: 12px;
+    left: 14px;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #a89d84;
+    letter-spacing: 0.315px;
+    line-height: 1.75;
+}
 
 /* --- Right: Form panel --- */
 .ct-form-panel {
@@ -2180,8 +2206,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     padding: 89px 60px 80px;
     display: flex;
     align-items: flex-start;
+    justify-content: center;
 }
-.ct-form-inner { max-width: 520px; margin: 0 auto; width: 100%; }
+.ct-form-inner { max-width: 520px; width: 100%; }
 .ct-form-heading {
     font-size: 30px;
     font-weight: 700;
@@ -2203,9 +2230,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .ct-field { margin-bottom: 20px; }
 .ct-field label {
     display: block;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 700;
     color: #211d15;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin-bottom: 8px;
 }
 .ct-field input, .ct-field textarea {
@@ -2214,7 +2243,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     font-family: inherit;
     font-size: 14px;
     border: 1px solid #ddd0ac;
-    border-radius: 6px;
+    border-radius: 0;
     background: #fff;
     color: #211d15;
     transition: border-color 0.3s, box-shadow 0.3s;
@@ -2223,7 +2252,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .ct-field input:focus, .ct-field textarea:focus {
     outline: none;
     border-color: #a9812e;
-    box-shadow: 0 0 0 4px rgba(198, 188, 120, 0.15);
+    box-shadow: 0 0 0 3px rgba(201, 162, 84, 0.12);
 }
 .ct-field textarea { resize: vertical; min-height: 110px; }
 .ct-char-count {
@@ -2234,16 +2263,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .ct-submit {
     width: 100%;
-    padding: 16px;
+    padding: 18px;
     background: #18160f;
     color: #fbf6ea;
     font-family: inherit;
     font-size: 15px;
     font-weight: 600;
     border: none;
-    border-radius: 6px;
+    border-radius: 0;
     cursor: pointer;
     transition: background 0.3s;
+    margin-top: 10px;
 }
 .ct-submit:hover { background: #2a2518; }
 
