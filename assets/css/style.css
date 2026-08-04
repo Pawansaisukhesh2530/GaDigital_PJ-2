@@ -1483,3 +1483,264 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .lb-toolbar { top: 10px; right: 10px; gap: 4px; }
     .lb-btn { width: 36px; height: 36px; }
 }
+
+/* =============================================================
+   ABOUT US PAGE (Redesigned)
+   ============================================================= */
+.abt-section { padding: 80px 0; }
+.abt-container {
+    max-width: 1362px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* --- Image + Text Grid --- */
+.abt-grid {
+    display: grid;
+    grid-template-columns: 586px 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.abt-grid-reverse {
+    grid-template-columns: 1fr 586px;
+}
+.abt-grid-reverse .abt-text { order: -1; }
+
+/* --- Image Card with Gold Offset --- */
+.abt-media { position: relative; }
+.abt-img-offset {
+    position: absolute;
+    top: 14px;
+    left: -14px;
+    width: 100%;
+    height: 100%;
+    background: #c6bc78;
+    border-radius: 4px;
+}
+.abt-img-card {
+    position: relative;
+    border: 1px solid #18160f;
+    border-radius: 4px;
+    overflow: hidden;
+    min-height: 280px;
+}
+.abt-img-card img {
+    width: 100%;
+    height: 488px;
+    object-fit: cover;
+    display: block;
+}
+.abt-img-label {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(20, 17, 10, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 7px 13px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.44px;
+    line-height: 1.75;
+}
+
+/* --- Text Content --- */
+.abt-text { max-width: 696px; }
+.abt-heading {
+    font-size: 30px;
+    font-weight: 600;
+    font-style: italic;
+    color: #8a6c2a;
+    letter-spacing: -0.3px;
+    line-height: 1.75;
+    margin: 0 0 13px;
+}
+.abt-text p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #211d15;
+    line-height: 1.75;
+    margin: 0 0 13px;
+}
+.abt-text p:last-child { margin-bottom: 0; }
+.abt-text p strong { font-weight: 700; }
+
+/* --- Our Values Section --- */
+.abt-values-section {
+    padding: 80px 0 100px;
+}
+.abt-values-header {
+    max-width: 640px;
+    margin-bottom: 50px;
+}
+.abt-values-title {
+    font-size: 36px;
+    font-weight: 600;
+    font-style: italic;
+    color: #8a6c2a;
+    letter-spacing: -0.36px;
+    line-height: 1.75;
+    margin: 6px 0 16px;
+}
+.abt-values-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: #211d15;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* --- Value Rows (horizontal) --- */
+.abt-values-list {
+    border-top: 1px solid #ddd0ac;
+}
+.abt-value-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd0ac;
+}
+.abt-value-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(198, 188, 120, 0.12);
+    border-radius: 8px;
+    flex-shrink: 0;
+    color: #8a6c2a;
+}
+.abt-value-content { flex: 1; }
+.abt-value-content h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #211d15;
+    margin: 0 0 8px;
+    line-height: 1.5;
+}
+.abt-value-content p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6f6552;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =============================================================
+   WHY BUILD WITH US PAGE (Redesigned)
+   ============================================================= */
+.wb-section { padding: 80px 0; }
+.wb-container {
+    max-width: 1362px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* --- Intro Grid --- */
+.wb-intro-grid {
+    display: grid;
+    grid-template-columns: 558px 1fr;
+    gap: 64px;
+    align-items: center;
+}
+.wb-intro-media { position: relative; }
+.wb-intro-text p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #211d15;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* --- What Sets Us Apart --- */
+.wb-apart-section { padding: 0 0 100px; }
+.wb-apart-grid {
+    display: grid;
+    grid-template-columns: 454px 1fr;
+    gap: 57px;
+    align-items: center;
+    margin-bottom: 57px;
+}
+.wb-apart-media { position: relative; }
+.wb-apart-content { max-width: 615px; }
+.wb-apart-title {
+    font-size: 36px;
+    font-weight: 600;
+    font-style: italic;
+    color: #8a6c2a;
+    letter-spacing: -0.36px;
+    line-height: 1.72;
+    margin: 6px 0 13px;
+}
+.wb-apart-desc {
+    font-size: 15px;
+    font-weight: 400;
+    color: #211d15;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* --- Feature Cards (4 columns) --- */
+.wb-features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #ddd0ac;
+    border-bottom: 1px solid #ddd0ac;
+}
+.wb-feat-card {
+    padding: 40px 28px;
+    border-right: 1px solid #ddd0ac;
+}
+.wb-feat-card:last-child { border-right: none; }
+.wb-feat-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(198, 188, 120, 0.12);
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+.wb-feat-icon img { width: 20px; height: 20px; object-fit: contain; }
+.wb-feat-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #211d15;
+    margin: 0 0 12px;
+    line-height: 1.5;
+}
+.wb-feat-desc {
+    font-size: 13px;
+    font-weight: 400;
+    color: #6f6552;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =============================================================
+   RESPONSIVE: About + Why Build
+   ============================================================= */
+@media (max-width: 1024px) {
+    .abt-grid,
+    .abt-grid-reverse,
+    .wb-intro-grid,
+    .wb-apart-grid { grid-template-columns: 1fr; gap: 40px; }
+    .abt-grid-reverse .abt-text { order: 0; }
+    .abt-img-card img { height: 380px; }
+    .wb-features-grid { grid-template-columns: repeat(2, 1fr); }
+    .wb-feat-card:nth-child(2) { border-right: none; }
+}
+@media (max-width: 767px) {
+    .abt-section, .wb-section { padding: 50px 0; }
+    .abt-container, .wb-container { padding: 0 20px; }
+    .abt-heading { font-size: 26px; }
+    .abt-values-title, .wb-apart-title { font-size: 28px; }
+    .abt-img-card img { height: 300px; }
+    .wb-features-grid { grid-template-columns: 1fr; }
+    .wb-feat-card { border-right: none; border-bottom: 1px solid #ddd0ac; }
+    .wb-feat-card:last-child { border-bottom: none; }
+    .abt-img-offset { left: -8px; top: 8px; }
+}
