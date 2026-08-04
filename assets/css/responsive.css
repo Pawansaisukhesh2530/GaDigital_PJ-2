@@ -8,9 +8,11 @@
 /* Large desktop (<=1440) */
 @media (max-width: 1440px) {
     :root { --container: 1160px; }
+    .inc-layout { padding: 0 80px; gap: 60px; }
 }
 @media (max-width: 1366px) {
     :root { --container: 1120px; }
+    .inc-layout { padding: 0 60px; gap: 50px; }
 }
 
 /* =============================================================
@@ -71,13 +73,12 @@
     .wb-apart-media img { width: 100%; }
     .wb-apart-card { padding: 30px 20px; }
 
-    /* Our Inclusions: detailed grid collapses to 2 columns at tablet */
-    .inc-sec .container { padding: 0 20px; }
-    .inc-grid { grid-template-columns: repeat(2, 1fr); }
-    .inc-three { grid-template-columns: 1fr; gap: 24px; }
-    .inc-col-img { order: 3; }
-    /* Inclusions headings scale down slightly at tablet */
-    .inc-eyebrow, .inc-h2, .inc-h3, .inc-head, .inc-gold { font-size: 22px; }
+    /* Our Inclusions: sidebar hides, layout becomes single column at tablet */
+    .inc-layout { grid-template-columns: 1fr; gap: 0; padding: 0 30px; }
+    .inc-sidebar { display: none; }
+    .inc-page { padding: 50px 0 0; }
+    .inc-title { font-size: 34px; }
+    .inc-spec-grid { grid-template-columns: repeat(2, 1fr); }
 
     /* Our Services: intro side padding */
     .srv-intro .container { padding: 0 20px; }
@@ -175,11 +176,14 @@
     /* Contact: single fixed column would overflow — let it fill */
     .contact-grid { grid-template-columns: 1fr; }
 
-    /* Our Inclusions: all columns stack to single column on mobile */
-    .inc-two, .inc-three, .inc-grid { grid-template-columns: 1fr; gap: 24px; }
-    .inc-img-lg, .inc-img-xl, .inc-img-mid { max-width: 100%; }
-    /* Inclusions headings scale for mobile */
-    .inc-eyebrow, .inc-h2, .inc-h3, .inc-head, .inc-gold { font-size: 20px; }
+    /* Our Inclusions: stack all columns on mobile */
+    .inc-two-col, .inc-split, .inc-image-pair { grid-template-columns: 1fr; gap: 24px; }
+    .inc-title { font-size: 28px; }
+    .inc-spec-grid { grid-template-columns: 1fr; }
+    .inc-spec-section { padding: 60px 0; }
+    .inc-spec-title { font-size: 28px; }
+    .inc-image-card-tall { height: 350px; }
+    .inc-layout { padding: 0 20px; }
 
     /* Our Services: tiles stack to a single column */
     .srv-tiles { grid-template-columns: 1fr; }

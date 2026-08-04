@@ -93,7 +93,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .section-title {
     font-size: 32px;
     font-weight: 500;
-    font-style: italic;
+    font-style: italic; 
     color: var(--color-dark);
     margin-bottom: 16px;
     line-height: 1;
@@ -898,47 +898,298 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .design-actions .btn { padding: 10px 20px; font-size: 13px; }
 
 /* =============================================================
-   OUR INCLUSIONS PAGE
+   OUR INCLUSIONS PAGE (Redesigned)
+   Figma: sidebar + main content layout, Montserrat-inspired
    ============================================================= */
-.inc-sec { padding: 10px 0; }
-.inc-sec .container { max-width: 1140px; padding: 0 10px; }
 
-/* ----- Standard inclusions intro block ----- */
-.inc-eyebrow { font-size: 24px; font-weight: 500; color: #000000; line-height: 1.3; margin: 0 0 16px; letter-spacing: 0; font-family: var(--font-primary); }
-.inc-h2 { font-size: 24px; font-weight: 500; color: #000000; line-height: 1.3; margin: 0 0 16px; letter-spacing: 0; font-family: var(--font-primary); }
-.inc-h3 { font-size: 24px; font-weight: 500; color: #000000; line-height: 1.3; margin: 0 0 16px; letter-spacing: 0; font-family: var(--font-primary); }
-.inc-lead { font-size: 16px; font-weight: 200; color: var(--color-dark); line-height: 24px; margin: 0 0 20px; }
+/* --- Page Layout --- */
+.inc-page { padding: 80px 0 0; }
+.inc-layout {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 90px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 180px 0 180px;
+    align-items: start;
+}
 
-/* ----- List styling ----- */
-.inc-ul { list-style: disc; padding-left: 40px; margin: 0 0 20px; }
-.inc-ul li { font-size: 16px; font-weight: 200; color: var(--color-dark); line-height: 24px; margin-bottom: 6px; }
-.inc-ul li::marker { color: var(--color-dark); }
+/* --- Sidebar --- */
+.inc-sidebar {
+    position: sticky;
+    top: 20px;
+    background: #fffaf0;
+    border-left: 1px solid #ddd0ac;
+    box-shadow: 0 4px 2px rgba(201, 162, 84, 0.1);
+    padding: 0 0 12px 1px;
+}
+.inc-nav { display: flex; flex-direction: column; gap: 2px; }
+.inc-nav-link {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 8px 12px 9px 19px;
+    font-weight: 600;
+    border-left: 1px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+.inc-nav-link:hover,
+.inc-nav-link.active { border-left-color: #a9812e; }
+.inc-nav-link:hover .inc-nav-label,
+.inc-nav-link.active .inc-nav-label { color: #211d15; }
+.inc-nav-num { font-size: 11px; color: #8a6c2a; line-height: 1.65; }
+.inc-nav-label { font-size: 13px; color: #6f6552; line-height: 1.65; }
+.inc-nav-note {
+    margin-top: 20px;
+    padding: 18px 18px 0;
+}
+.inc-nav-note p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #6f6552;
+    line-height: 1.6;
+    margin: 0;
+}
 
-/* ----- Section headings ----- */
-.inc-head { font-size: 24px; font-weight: 500; color: #000000; line-height: 1.3; margin: 0 0 16px; letter-spacing: 0; font-family: var(--font-primary); text-transform: none; }
-.inc-head-mt { margin-top: 30px; }
-.inc-intro { font-size: 16px; font-weight: 200; color: var(--color-dark); line-height: 24px; margin: 0 0 16px; }
+/* --- Main Content --- */
+.inc-main { max-width: 1020px; }
 
-/* ----- Two / three column layouts ----- */
-.inc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.inc-two-mid { align-items: start; }
-.inc-three { display: grid; grid-template-columns: 1fr auto 1fr; gap: 40px; align-items: start; }
-.inc-col-img { display: flex; align-items: flex-start; justify-content: center; }
+/* --- Section Shared --- */
+.inc-section {
+    padding-bottom: 49px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid #ddd0ac;
+}
+.inc-section:last-child { border-bottom: none; margin-bottom: 0; }
 
-/* ----- Images ----- */
-.inc-img { width: 100%; height: auto; display: block; }
-.inc-img-lg { max-width: 458px; margin: 20px auto 0; }
-.inc-img-xl { max-width: 550px; margin: 20px auto 0; }
-.inc-img-mid { max-width: 310px; margin: 0 auto; }
-.inc-img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 20px; }
-.inc-img-row .inc-img { max-width: 100%; }
+/* --- Section Header --- */
+.inc-section-header { margin-bottom: 34px; }
 
-/* ----- Detailed grid ----- */
-.inc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 20px; }
-.inc-grid-col { display: flex; flex-direction: column; }
-.inc-block { margin-bottom: 20px; }
-.inc-gold { font-size: 24px; font-weight: 500; color: #000000; line-height: 1.3; margin: 0 0 16px; letter-spacing: 0; font-family: var(--font-primary); }
-.inc-disclaimer-text { font-size: 16px; font-weight: 200; color: var(--color-dark); line-height: 24px; margin: 0; }
+/* --- Label (numbered eyebrow) --- */
+.inc-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 11px;
+}
+.inc-label-line {
+    display: inline-block;
+    width: 22px;
+    height: 1px;
+    background: #a9812e;
+}
+.inc-label-text {
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.07px;
+    color: #8a6c2a;
+    line-height: 1.65;
+}
+.inc-label-dark .inc-label-line { background: #c6bc78; }
+.inc-label-dark .inc-label-text { color: #c6bc78; }
+
+/* --- Headings --- */
+.inc-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #211d15;
+    line-height: 1.65;
+    letter-spacing: -0.42px;
+    margin: 0 0 11px;
+}
+.inc-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: #6f6552;
+    line-height: 1.65;
+    max-width: 556px;
+    margin: 0;
+}
+.inc-subtitle em {
+    font-style: italic;
+    color: #8a6c2a;
+}
+.inc-h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #211d15;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ddd0ac;
+}
+
+/* --- List Items --- */
+.inc-list { width: 100%; }
+.inc-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 9px 0 10px 0;
+    border-bottom: 1px dashed #ddd0ac;
+    font-size: 14.5px;
+    font-weight: 400;
+    color: #211d15;
+    line-height: 1.65;
+}
+.inc-list-item:last-child { border-bottom: none; }
+.inc-dash {
+    display: inline-block;
+    width: 11px;
+    min-width: 11px;
+    height: 1.5px;
+    background: #a9812e;
+    margin-top: 11px;
+    flex-shrink: 0;
+}
+.inc-list-sm .inc-list-item { font-size: 14px; padding: 6.5px 0; }
+
+/* --- Two Column Split --- */
+.inc-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    margin-bottom: 34px;
+}
+.inc-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+}
+
+/* --- Image Cards --- */
+.inc-image-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 34px;
+}
+.inc-image-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd0ac;
+}
+.inc-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.inc-image-card-tall { height: 600px; }
+.inc-image-card-tall img { height: 100%; }
+.inc-image-label {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    padding: 7.5px 13px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #211d15;
+    border-radius: 6px;
+    border: 1px solid rgba(221, 208, 172, 0.5);
+    line-height: 1.65;
+}
+
+/* --- Section 07: Full Spec Summary (dark) --- */
+.inc-spec-section {
+    background: #18160f;
+    padding: 96px 0;
+}
+.inc-spec-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.inc-spec-header { margin-bottom: 56px; max-width: 640px; }
+.inc-spec-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #fbf6ea;
+    line-height: 1.65;
+    letter-spacing: -0.38px;
+    margin: 0 0 11px;
+}
+.inc-spec-accent { color: #c6bc78; }
+.inc-spec-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: #a89d84;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* --- Spec Grid (4 columns) --- */
+.inc-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(201, 162, 84, 0.28);
+}
+.inc-spec-grid::after {
+    content: "";
+    background: #18160f;
+}
+.inc-spec-card {
+    background: #18160f;
+    padding: 32px 26px 30px;
+    border-top: 2px solid transparent;
+}
+.inc-spec-card-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.84px;
+    color: #c6bc78;
+    line-height: 1.65;
+    padding-bottom: 13px;
+    border-bottom: 1px solid rgba(201, 162, 84, 0.3);
+    margin: 0 0 16px;
+}
+.inc-spec-card-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.inc-spec-card-list li {
+    font-size: 12.8px;
+    font-weight: 400;
+    color: #efe8d8;
+    line-height: 1.55;
+    padding: 6px 0 6px 15px;
+    position: relative;
+}
+.inc-spec-dash {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    font-weight: 700;
+    color: #c6bc78;
+    font-size: 12.8px;
+    line-height: 1.55;
+}
+
+/* --- Section 08: Disclaimer --- */
+.inc-disclaimer-section {
+    padding: 40px 0 80px;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+.inc-disclaimer-container {
+    padding: 0 40px;
+}
+.inc-disclaimer-body {
+    font-size: 13px;
+    font-weight: 400;
+    color: #6f6552;
+    line-height: 1.7;
+    margin: 13px 0 0;
+    max-width: 1168px;
+}
 
 /* =============================================================
    CONTACT
