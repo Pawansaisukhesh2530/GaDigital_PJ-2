@@ -80,7 +80,7 @@ require __DIR__ . '/includes/banner.php';
 </section>
 
 <!-- ===================== CTA ===================== -->
-<section class="svc-cta">
+<section class="svc-cta" style="background-image:url('<?php echo asset('images/services/ch-cta-bg.webp'); ?>')">
     <div class="svc-cta-inner">
         <h2>Ready to build your dream home? Contact us today for a free consultation</h2>
         <p>and start your journey towards a custom home that perfectly reflects your lifestyle and preferences!</p>
