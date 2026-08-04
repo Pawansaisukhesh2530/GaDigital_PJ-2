@@ -1,7 +1,7 @@
 /* ============================================================
    Nivi Homes - Admin Panel
    Premium UI, styled to match the public Nivi Homes website.
-   Brand: Poppins - gold #D9CE83 - charcoal #282828 - warm neutrals.
+   Brand: Montserrat - gold #D9CE83 - charcoal #282828 - warm neutrals.
    NOTE: visual layer only. All class names match the existing markup.
    ============================================================ */
 :root {
@@ -45,7 +45,7 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-    font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     background: var(--bg); color: var(--ink); font-size: 14px; line-height: 1.6;
     -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
 }
