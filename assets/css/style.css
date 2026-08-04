@@ -2038,3 +2038,49 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .svc-card-img-bg { left: -10px; top: 10px; }
     .svc-why-media .svc-card-img-bg { left: -10px; top: 10px; }
 }
+
+/* --- Service page: Article text section --- */
+.svc-article { padding: 60px 0; }
+.svc-article p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #211d15;
+    line-height: 1.75;
+    margin: 0 0 20px;
+    max-width: 953px;
+}
+.svc-article p:last-child { margin-bottom: 0; }
+
+/* --- Service page: Gallery grid (3x2) --- */
+.svc-gallery { padding: 0 0 80px; }
+.svc-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+.svc-gallery-item {
+    position: relative;
+    border: 1px solid #ddd0ac;
+    overflow: hidden;
+    background: #eae1cc;
+}
+.svc-gallery-item img {
+    width: 100%;
+    height: 303px;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Flipped Why Choose (image left, text right) --- */
+.svc-why-grid-flip {
+    grid-template-columns: 497px 1fr;
+}
+
+@media (max-width: 1024px) {
+    .svc-why-grid-flip { grid-template-columns: 1fr; }
+    .svc-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+    .svc-gallery-grid { grid-template-columns: 1fr; }
+    .svc-gallery-item img { height: 220px; }
+}

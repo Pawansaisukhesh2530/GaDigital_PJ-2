@@ -4,7 +4,6 @@ $PAGE_TITLE = 'Knock Down Rebuilds | Nivi Homes';
 require __DIR__ . '/includes/header.php';
 ?>
 
-<!-- ===================== PAGE BANNER ===================== -->
 <?php
 $BANNER_TITLE = 'Knock Down Rebuilds';
 $BANNER_CRUMB = '<a href="index.php">Home</a> &gt; <a href="services.php">Our Services</a> &gt; Knock Down Rebuilds';
@@ -13,20 +12,24 @@ require __DIR__ . '/includes/banner.php';
 ?>
 
 <!-- ===================== INTRO ===================== -->
-<section class="ch-intro">
-    <div class="container">
+<section class="svc-intro">
+    <div class="svc-container">
         <p data-anim="fadeIn">Transform your current property into your dream home with Nivi Homes&rsquo; knock down rebuild services. Whether you&rsquo;ve outgrown your current space or want to update an older property, our rebuild solutions offer a fresh start without leaving your desired neighborhood. From concept design to construction completion, we manage every aspect of the rebuild process to deliver a seamless and rewarding experience.</p>
     </div>
 </section>
 
-<!-- ===================== IMAGE + FEATURES (2x2) ===================== -->
-<section class="ch-features">
-    <div class="container">
-        <div class="ch-features-grid">
-            <div class="ch-features-media" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/services/kdr-features.webp'); ?>" alt="Knock down rebuilds" loading="lazy">
+<!-- ===================== FEATURES (bordered card) ===================== -->
+<section class="svc-features">
+    <div class="svc-container">
+        <div class="svc-card" data-anim="fadeIn">
+            <div class="svc-card-media">
+                <div class="svc-card-img-bg"></div>
+                <div class="svc-card-img">
+                    <img src="<?php echo asset('images/services/kdr-features.webp'); ?>" alt="Knock Down Rebuild" loading="lazy">
+                    <span class="svc-card-img-label">Knock Down Rebuild &middot; Concept</span>
+                </div>
             </div>
-            <div class="ch-feat-grid">
+            <div class="svc-card-features">
                 <?php
                 $feats = [
                     ['t' => 'Comprehensive Rebuild Expertise',
@@ -43,9 +46,11 @@ require __DIR__ . '/includes/banner.php';
                      'd' => 'Our commitment to quality extends to every aspect of your rebuild project, with strict quality control measures and inspections to ensure superior craftsmanship and long-term durability.'],
                 ];
                 foreach ($feats as $f): ?>
-                <div class="ch-feat" data-anim="fadeIn">
-                    <div class="ch-feat-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><?php echo $f['icon']; ?></svg></div>
-                    <h5><?php echo $f['t']; ?></h5>
+                <div class="svc-feat-item">
+                    <div class="svc-feat-icon">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><?php echo $f['icon']; ?></svg>
+                    </div>
+                    <h4><?php echo $f['t']; ?></h4>
                     <p><?php echo $f['d']; ?></p>
                 </div>
                 <?php endforeach; ?>
@@ -54,27 +59,31 @@ require __DIR__ . '/includes/banner.php';
     </div>
 </section>
 
-<!-- ===================== WHY CHOOSE A KNOCK DOWN REBUILD ===================== -->
-<section class="ch-why">
-    <div class="container">
-        <div class="ch-why-grid">
-            <div class="ch-why-media" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/services/kdr-why.webp'); ?>" alt="Why choose a knock down rebuild" loading="lazy">
-            </div>
-            <div class="ch-why-text" data-anim="fadeInRight">
-                <h3>Why Choose a Knock Down Rebuild?</h3>
+<!-- ===================== WHY CHOOSE ===================== -->
+<section class="svc-why">
+    <div class="svc-container">
+        <div class="svc-why-grid" data-anim="fadeIn">
+            <div class="svc-why-text">
+                <h2>Why Choose a Knock Down Rebuild?</h2>
                 <p>A knock down rebuild with Nivi Homes allows you to stay in the location you love while enjoying the benefits of a brand-new home tailored to your lifestyle and preferences. Whether you&rsquo;re looking to modernize an older property or want to create a more energy-efficient living environment, our comprehensive rebuild services ensure your vision for a dream home becomes a reality with minimal disruption and maximum satisfaction.</p>
+            </div>
+            <div class="svc-why-media">
+                <div class="svc-card-img-bg"></div>
+                <div class="svc-card-img">
+                    <img src="<?php echo asset('images/services/kdr-why.webp'); ?>" alt="Knock Down Rebuild" loading="lazy">
+                    <span class="svc-card-img-label">Knock Down Rebuild &middot; Concept</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ===================== CTA ===================== -->
-<section class="ch-cta" style="background-image:url('<?php echo asset('images/services/kdr-cta-bg.webp'); ?>')">
-    <div class="container" data-anim="fadeIn">
-        <h3>Ready to rebuild your dream home? Contact us today for a consultation</h3>
+<section class="svc-cta" style="background-image:url('<?php echo asset('images/services/kdr-cta-bg.webp'); ?>')">
+    <div class="svc-cta-inner" data-anim="fadeIn">
+        <h2>Ready to rebuild your dream home? Contact us today for a consultation</h2>
         <p>and discover how we can transform your existing property into the home of your dreams!</p>
-        <a class="ch-cta-btn" href="contact.php">Contact us</a>
+        <a class="svc-cta-btn" href="contact.php">Contact us</a>
     </div>
 </section>
 
