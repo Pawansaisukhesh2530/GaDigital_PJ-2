@@ -1,8 +1,3 @@
-/* =============================================================
-   Nivi Homes - Core styles
-   Colors & type extracted from the original Elementor theme.
-   ============================================================= */
-
 :root {
     /* Brand colors (from --e-global-color-*) */
     --color-primary: #D9CE83;      /* gold / accent (global primary & accent) */
