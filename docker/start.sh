@@ -1,7 +1,8 @@
 #!/bin/bash
 # Start script for Render deployment.
 # 1. Ensures the database exists (creates only if missing)
-# 2. Starts Apache on the PORT Render provides.
+# 2. Seeds demo projects if the database is empty
+# 3. Starts Apache on the PORT Render provides.
 #
 # IMPORTANT: For settings to persist across deployments on Render,
 # attach a Persistent Disk mounted at /var/www/html/data
@@ -21,8 +22,12 @@ mkdir -p /var/www/html/data/sessions /var/www/html/data/logs
 # This ensures admin-saved settings are NEVER overwritten.
 php /var/www/html/database/install.php
 
+# Seed demo projects (idempotent - only runs if projects table is empty).
+# This ensures the Projects page is populated on a fresh deployment.
+php /var/www/html/database/seed_projects.php
+
 # Fix ownership (in case new files were created by root)
-chown -R www-data:www-data /var/www/html/data
+chown -R www-data:www-data /var/www/html/data /var/www/html/assets/uploads
 
 # Start Apache in the foreground
 exec apache2-foreground

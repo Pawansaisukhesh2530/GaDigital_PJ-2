@@ -21,6 +21,7 @@ DEPLOY_RENDER.md
 data/sessions/*
 data/logs/*
 data/nivihomes.sqlite
+assets/uploads/projects/*
 *.sqlite-wal
 *.sqlite-shm
 

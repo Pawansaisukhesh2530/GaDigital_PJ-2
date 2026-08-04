@@ -24,7 +24,7 @@ $seed = [
         'location' => '20 Halifax St, Nirimba Fields, NSW',
         'building_type' => 'High end Luxury home',
         'build_up_area' => '34 sqs',
-        'cover' => $IMG . '/project-tours/rustum.jpg',
+        'cover' => $IMG . '/project-tours/rustum.webp',
         'gallery_dir' => $IMG . '/projects/rustum-20', 'count' => 20,
         'order' => 1,
     ],
@@ -34,7 +34,7 @@ $seed = [
         'location' => '14 Freshwater Drive Cobbity (Mirvac Estate)',
         'building_type' => 'Double Storey',
         'build_up_area' => '32 sqs',
-        'cover' => $IMG . '/project-tours/nirvana.jpg',
+        'cover' => $IMG . '/project-tours/nirvana.webp',
         'gallery_dir' => $IMG . '/projects/nirvana', 'count' => 15,
         'order' => 2,
     ],
@@ -44,7 +44,7 @@ $seed = [
         'location' => 'wadalba, Central coast, NSW',
         'building_type' => 'Single Storey',
         'build_up_area' => '30 sqs',
-        'cover' => $IMG . '/project-tours/voyager-72.jpg',
+        'cover' => $IMG . '/project-tours/voyager-72.webp',
         'gallery_dir' => $IMG . '/projects/72-voyager', 'count' => 22,
         'order' => 3,
     ],
@@ -54,7 +54,7 @@ $seed = [
         'location' => 'Pendle hill',
         'building_type' => 'Double Storey High end Premium House',
         'build_up_area' => '55 sqs',
-        'cover' => $IMG . '/project-tours/warman-33.jpg',
+        'cover' => $IMG . '/project-tours/warman-33.webp',
         'gallery_dir' => $IMG . '/projects/33-warman', 'count' => 20,
         'order' => 4,
     ],
@@ -64,7 +64,7 @@ $seed = [
         'location' => '121 Aerodrome Drive, Nirimba Fields, NSW 2763',
         'building_type' => 'Double Storey House with Detached Garage and Studio',
         'build_up_area' => '44 sqs',
-        'cover' => $IMG . '/project-tours/akuna-vista.jpg',
+        'cover' => $IMG . '/project-tours/akuna-vista.webp',
         'gallery_dir' => $IMG . '/projects/akuna-vista', 'count' => 21,
         'order' => 5,
     ],
@@ -92,7 +92,11 @@ foreach ($seed as $p) {
 
     $added = 0;
     for ($i = 1; $i <= $p['count']; $i++) {
+        // Try .jpg first, fall back to .webp
         $src = $p['gallery_dir'] . '/img-' . $i . '.jpg';
+        if (!is_file($src)) {
+            $src = $p['gallery_dir'] . '/img-' . $i . '.webp';
+        }
         if (!is_file($src)) {
             continue;
         }

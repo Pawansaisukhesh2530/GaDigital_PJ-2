@@ -6,6 +6,7 @@
 data/sessions/
 data/logs/
 data/nivihomes.sqlite
+assets/uploads/projects/
 *.log
 mail.log
 
