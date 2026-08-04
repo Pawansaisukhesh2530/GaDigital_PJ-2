@@ -22,8 +22,10 @@ function session_boot(): void
     if (session_status() === PHP_SESSION_ACTIVE) {
         return;
     }
+    // Detect HTTPS: direct or behind a reverse proxy (Render, Cloudflare, etc.)
     $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-        || (($_SERVER['SERVER_PORT'] ?? null) == 443);
+        || (($_SERVER['SERVER_PORT'] ?? null) == 443)
+        || (strtolower($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
 
     // Use a writable, project-local session directory (the default
     // C:\xampp\tmp may not be writable in every environment).
