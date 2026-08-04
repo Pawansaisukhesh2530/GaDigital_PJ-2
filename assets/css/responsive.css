@@ -181,6 +181,7 @@
     .inc-spec-grid { grid-template-columns: 1fr; }
     .inc-spec-section { padding: 60px 0; }
     .inc-spec-container { padding: 0 20px; }
+    .inc-spec-title { white-space: normal; font-size: 28px; }
     .inc-image-card-tall { height: 350px; }
     .inc-layout { padding: 0 20px; }
 

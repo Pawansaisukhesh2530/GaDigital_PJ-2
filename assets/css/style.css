@@ -1102,7 +1102,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .inc-spec-header { margin-bottom: 56px; max-width: 640px; }
 .inc-spec-title {
-    font-size: clamp(26px, 3vw, 38px);
+    font-size: 38px;
     font-weight: 700;
     color: #fbf6ea;
     line-height: 1.65;
