@@ -1564,19 +1564,25 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .abt-text p:last-child { margin-bottom: 0; }
 .abt-text p strong { font-weight: 700; }
 
-/* --- Our Values Section --- */
+/* --- Our Values Section (dark themed) --- */
 .abt-values-section {
-    padding: 80px 0 100px;
+    background: #18160f;
+    padding: 110px 0 100px;
+}
+.abt-values-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 .abt-values-header {
     max-width: 640px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 .abt-values-title {
     font-size: 36px;
-    font-weight: 600;
+    font-weight: 700;
     font-style: italic;
-    color: #8a6c2a;
+    color: #fbf6ea;
     letter-spacing: -0.36px;
     line-height: 1.75;
     margin: 6px 0 16px;
@@ -1584,47 +1590,51 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .abt-values-subtitle {
     font-size: 15px;
     font-weight: 400;
-    color: #211d15;
+    color: #a89d84;
     line-height: 1.75;
     margin: 0;
 }
 
-/* --- Value Rows (horizontal) --- */
+/* --- Value Rows (numbered timeline) --- */
 .abt-values-list {
-    border-top: 1px solid #ddd0ac;
+    border-top: 1px solid rgba(221, 208, 172, 0.25);
 }
 .abt-value-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    padding: 40px 0;
-    border-bottom: 1px solid #ddd0ac;
+    display: grid;
+    grid-template-columns: 80px 1px 1fr;
+    gap: 40px;
+    align-items: start;
+    padding: 48px 0;
+    border-bottom: 1px solid rgba(221, 208, 172, 0.25);
 }
-.abt-value-icon {
-    width: 46px;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(198, 188, 120, 0.12);
-    border-radius: 8px;
-    flex-shrink: 0;
+.abt-value-num {
+    font-size: 42px;
+    font-weight: 700;
     color: #8a6c2a;
+    line-height: 1;
+    letter-spacing: -1px;
 }
-.abt-value-content { flex: 1; }
+.abt-value-divider {
+    width: 1px;
+    height: 100%;
+    min-height: 60px;
+    background: rgba(221, 208, 172, 0.3);
+}
+.abt-value-content { padding-top: 4px; }
 .abt-value-content h4 {
-    font-size: 15px;
-    font-weight: 600;
-    color: #211d15;
-    margin: 0 0 8px;
-    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fbf6ea;
+    margin: 0 0 10px;
+    line-height: 1.4;
 }
 .abt-value-content p {
-    font-size: 14px;
+    font-size: 13.6px;
     font-weight: 400;
-    color: #6f6552;
-    line-height: 1.7;
+    color: #a89d84;
+    line-height: 1.65;
     margin: 0;
+    max-width: 580px;
 }
 
 /* =============================================================

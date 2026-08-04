@@ -61,30 +61,26 @@ require __DIR__ . '/includes/banner.php';
 
 <!-- ===================== OUR VALUES ===================== -->
 <section class="abt-values-section">
-    <div class="abt-container">
+    <div class="abt-values-inner">
         <div class="abt-values-header" data-anim="fadeIn">
-            <div class="inc-label"><span class="inc-label-line"></span><span class="inc-label-text">What We Stand On</span></div>
+            <div class="inc-label inc-label-dark"><span class="inc-label-line"></span><span class="inc-label-text">What We Stand On</span></div>
             <h2 class="abt-values-title">Our Values</h2>
             <p class="abt-values-subtitle">At Nivi Homes, our values are the cornerstone of everything we do. They guide our decisions, inspire our actions, and define our commitment to you, our valued client. Here are the core values that shape our company:</p>
         </div>
         <div class="abt-values-list">
             <?php
             $values = [
-                ['t' => 'Intentional Quality',
-                 'd' => 'We don&rsquo;t believe in rushed construction or cosmetic excellence. Quality begins in planning &mdash; in structural clarity, disciplined execution, and materials chosen for durability, not just appearance. Every decision is made with long-term livability in mind.',
-                 'svg' => '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8h8M8 12h6M8 16h6"/>'],
-                ['t' => 'Integrity and Transparency',
-                 'd' => 'No inflated promises. No unclear terms. No hidden processes. We believe trust is built before the foundation is laid. Clear documentation, transparent communication, and honest commitments form the core of how we operate.',
-                 'svg' => '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>'],
-                ['t' => 'Customer-First Thinking',
-                 'd' => 'A home is deeply personal. That&rsquo;s why we listen before we build. Understanding lifestyle, space requirements, and future needs allows us to create homes that serve real families &mdash; not just floor plans on paper.',
-                 'svg' => '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.9"/>'],
+                ['n' => '01', 't' => 'Intentional Quality',
+                 'd' => 'We don&rsquo;t believe in rushed construction or cosmetic excellence. Quality begins in planning &mdash; in structural clarity, disciplined execution, and materials chosen for durability, not just appearance. Every decision is made with long-term livability in mind.'],
+                ['n' => '02', 't' => 'Integrity and Transparency Without Layers',
+                 'd' => 'No inflated promises. No unclear terms. No hidden processes. We believe trust is built before the foundation is laid. Clear documentation, transparent communication, and honest commitments form the core of how we operate.'],
+                ['n' => '03', 't' => 'Customer-First Thinking',
+                 'd' => 'A home is deeply personal. That&rsquo;s why we listen before we build. Understanding lifestyle, space requirements, and future needs allows us to create homes that serve real families &mdash; not just floor plans on paper.'],
             ];
             foreach ($values as $v): ?>
             <article class="abt-value-row" data-anim="fadeIn">
-                <div class="abt-value-icon">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><?php echo $v['svg']; ?></svg>
-                </div>
+                <span class="abt-value-num"><?php echo $v['n']; ?></span>
+                <div class="abt-value-divider"></div>
                 <div class="abt-value-content">
                     <h4><?php echo $v['t']; ?></h4>
                     <p><?php echo $v['d']; ?></p>
