@@ -992,11 +992,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* --- Headings --- */
 .inc-title {
-    font-size: 42px;
+    font-size: 32px;
     font-weight: 700;
     color: #211d15;
     line-height: 1.65;
-    letter-spacing: -0.42px;
+    letter-spacing: -0.32px;
     margin: 0 0 11px;
 }
 .inc-subtitle {
