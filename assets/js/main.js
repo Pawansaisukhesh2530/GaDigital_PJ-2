@@ -34,7 +34,7 @@
                     el.classList.add('anim-run', 'anim-' + name);
                     ao.unobserve(el);
                 });
-            }, { threshold: 0.15 });
+            }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
             animEls.forEach(function (el) { ao.observe(el); });
         } else {
             animEls.forEach(function (el) { el.classList.remove('anim-hidden'); });
