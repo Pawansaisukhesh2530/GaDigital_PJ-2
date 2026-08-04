@@ -19,19 +19,18 @@ require __DIR__ . '/includes/banner.php';
     </div>
 </section>
 
-<!-- ===================== IMAGE + FEATURES (2x2) ===================== -->
+<!-- ===================== FEATURES (bordered card) ===================== -->
 <section class="svc-features">
     <div class="svc-container">
-        <div class="svc-features-grid" data-anim="fadeIn">
-            <div class="svc-features-media">
-                <div class="svc-img-offset"></div>
-                <div class="svc-img-card">
-                    <img src="<?php echo asset('images/services/ch-features.webp'); ?>" alt="Custom homes" loading="lazy">
-                    <span class="svc-img-corner-tl"></span>
-                    <span class="svc-img-corner-br"></span>
+        <div class="svc-card" data-anim="fadeIn">
+            <div class="svc-card-media">
+                <div class="svc-card-img-bg"></div>
+                <div class="svc-card-img">
+                    <img src="<?php echo asset('images/services/ch-features.webp'); ?>" alt="Custom Home Elevation" loading="lazy">
+                    <span class="svc-card-img-label">Duplex Home &middot; Dusk Elevation</span>
                 </div>
             </div>
-            <div class="svc-feat-grid">
+            <div class="svc-card-features">
                 <?php
                 $feats = [
                     ['t' => 'Personalized Design Process',
@@ -50,7 +49,7 @@ require __DIR__ . '/includes/banner.php';
                 foreach ($feats as $f): ?>
                 <div class="svc-feat-item">
                     <div class="svc-feat-icon">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><?php echo $f['icon']; ?></svg>
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><?php echo $f['icon']; ?></svg>
                     </div>
                     <h4><?php echo $f['t']; ?></h4>
                     <p><?php echo $f['d']; ?></p>
@@ -61,21 +60,20 @@ require __DIR__ . '/includes/banner.php';
     </div>
 </section>
 
-<!-- ===================== WHY CHOOSE A CUSTOM HOME ===================== -->
+<!-- ===================== WHY CHOOSE ===================== -->
 <section class="svc-why">
     <div class="svc-container">
         <div class="svc-why-grid" data-anim="fadeIn">
-            <div class="svc-why-media">
-                <div class="svc-img-offset"></div>
-                <div class="svc-img-card">
-                    <img src="<?php echo asset('images/services/ch-why-choose.webp'); ?>" alt="Why choose a custom home" loading="lazy">
-                    <span class="svc-img-corner-tl"></span>
-                    <span class="svc-img-corner-br"></span>
-                </div>
-            </div>
             <div class="svc-why-text">
                 <h2>Why Choose a Custom Home?</h2>
                 <p>A custom home from Nivi Homes offers the ultimate opportunity to create a living space that is uniquely yours. Whether you desire a contemporary masterpiece, a traditional sanctuary, or a blend of styles, our team is dedicated to transforming your vision into a reality. With meticulous attention to detail and a focus on quality craftsmanship, we ensure your custom home not only meets but exceeds your expectations.</p>
+            </div>
+            <div class="svc-why-media">
+                <div class="svc-card-img-bg"></div>
+                <div class="svc-card-img">
+                    <img src="<?php echo asset('images/services/ch-why-choose.webp'); ?>" alt="Custom Home Interior" loading="lazy">
+                    <span class="svc-card-img-label">Custom Home &middot; Interior Concept</span>
+                </div>
             </div>
         </div>
     </div>
