@@ -3,16 +3,7 @@ $CURRENT_PAGE = 'inclusions';
 $PAGE_TITLE = 'Our Inclusions | Nivi Homes';
 require __DIR__ . '/includes/header.php';
 
-/* ---------- Helpers ---------- */
-function inc_ul($items, $class = '') {
-    echo '<ul class="inc-ul' . ($class ? ' ' . $class : '') . '">';
-    foreach ($items as $it) {
-        echo '<li>' . $it . '</li>';
-    }
-    echo '</ul>';
-}
-
-/* ---------- Content (verbatim from live site) ---------- */
+/* ---------- Content arrays (verbatim from live site) ---------- */
 $standard = [
     'H1 waffle pod slab.',
     '2700mm ceiling height to ground floor and 2400mm ceiling height in first floor.',
@@ -32,10 +23,9 @@ $kitchen = [
     '40mm engineered stone benchtops and waterfall model island from builder&rsquo;s range.',
     'Polyurethane to kitchen bench and overhead cupboards with soft close action to drawers and cabinet doors.',
     'Designer pull-out kitchen sink mixer tap.',
-    'Polyurethane bulkhead above overhead cupboards.',
     'Pot drawer below microwave',
     'Designer splash-back glass to underside of overhead cupboards.',
-    'Splash Back Window (On Selected Designs',
+    'Splash Back Window (On Selected Designs)',
     'Double bowl undermount sink.',
     '4 rows of solid Melamine shelving for walk in pantry (if applicable).',
     'Fridge provision with water connection and overhead cupboard',
@@ -73,11 +63,11 @@ $bespoke = [
 ];
 
 $electrical = [
-    'underground three-phase electrical connection to the home up to 6 meters',
+    'Underground three-phase electrical connection to the home up to 6 meters',
     'Up to 50 LED ceiling lights throughout the house',
     'Clipsal iconic series PowerPoints up to 35, including indoor and outdoor',
     '2 fa&ccedil;ade lights provision',
-    'Clipsal 2 smoke detector Alaram',
+    'Clipsal 2 smoke detector Alarm',
     'LED lights to garage',
     'Sunshine 3 in 1 Fan, light heat lamp to ensuite and bathrooms.',
     'Earth Leakage safety switches to meter box, circuit breakers to meter box.',
@@ -93,7 +83,7 @@ $alfresco = [
     'Sliding Door To Rear Of Living Or Dining',
     '1 Gas And 1 Power-Point',
     'Covered (Roof Over) Alfresco With Recessed Ceiling',
-    'Tiles To The Alfersco',
+    'Tiles To The Alfresco',
 ];
 
 $laundry = [
@@ -118,10 +108,8 @@ $doors = [
     '2340mm X 1200mm High Stained Front Entry Door With solid Timber(from Builder Range)',
     'Solid Timber Frame With Full Glass To Pantry',
     'Solid External Door With Half Duracote Clear Glass',
-    'Corinthian 2040mm Flush Pre-hung Hollow Core Door With Paint Finis',
+    'Corinthian 2040mm Flush Pre-hung Hollow Core Door With Paint Finish',
     'Panel Lift Garage Door With 2 Remote Controls And A Wall Mount',
-    'Panel Lift Garage Door With 2 Remote Controls And A Wall Mount',
-    'Gainsborough Angular Passage Set Door Handles',
     'Gainsborough Angular Internal Privacy Set Door Handles To Bathroom, Ensuite, Powder Room, WC And Master Bedroom',
     '75mm Wall Stops with Rubber Buffer In Satin Stainless Finish To All Internal Access Doors',
     '600mm Chrome Back-To-Back Pull Handle with Gainsborough Smooth Square Double Cylinder Deadbolt And Gainsborough Heavy Duty Roller To Front Entry Door',
@@ -133,124 +121,133 @@ $grid = [
     'Kitchen Appliances &ndash; Bosch (Builder Range)' => [
         '900mm Cooktop', '900mm Rangehood', 'Dishwasher', '600mm Microwave Oven', '600mm Oven',
     ],
-    'Benchtop and Cabinetry' => [
-        '40mm Engineered Stone to Kitchen Benchtop',
-        '20mm Engineered Stone to Vanities',
-        'Polyurethane Finish to Kitchen Cabinets and Overhead Cupboards',
-        'Soft Close Action to Drawers and Cabinet Doors',
-        'Pull-Out Kitchen Sink Mixer Tap',
-        'Designer Glass/Window Splashback to Underside of Overhead Cupboards',
-    ],
-    'Pantry and Fridge' => [
-        'Timber Hinged Door (as per plans)',
-        '4 Rows of Solid Melamine Shelving in Walk-In Pantry (if shown on plans)',
-        'Fridge Provision with Water Connection and Overhead Cupboard',
-    ],
-    'Laundry' => [
-        'Quality Laundry Cabinetry with Stone Benchtop',
-        '45-liter Stainless Steel Sink with Mixer',
-        'Tiled Splashback Above Benchtop (1 tile height, 600&times;600 tile size)',
-        'Skirting Tiles to the Remainder of Laundry Walls (1 tile height)',
-    ],
-    'Electrical' => [
-        '3 Television/Data Points',
-        '30 Power Points (internal and external)',
-        '50 LED Ceiling Downlights Throughout the House',
-        '2-Way Light Switch on Staircase and Hallway',
-        '2 Up-Down Lights on Front Fa&ccedil;ade',
-        '3 Breakfast Light Provisions Over Kitchen Island',
-        'Sunshine 3-in-1 Fan, Light, and Heat Lamp in Ensuite and Bathrooms',
-        '2 Smoke Detectors',
-        'Earth Leakage Safety Switches in Meter Box',
-        'Circuit Breakers in Meter Box',
-    ],
-    'Additional Features' => [
-        'Sliding Door to Rear of Living or Dining',
-        '1 Gas Point and 1 Power Point',
-        'Covered Alfresco with Recessed Ceiling',
-        'Tiled Alfresco Area',
-    ],
     'Bathroom &amp; Ensuite' => [
-        '20mm Stone Bench-Tops to Wall-Hung Vanity',
-        'Designer Ceramic Bowls',
-        'Soft Close Action to Drawers',
-        'Coloured Plug and Waste to Outlets',
-        'Polyurethane to Vanity Cupboards',
-        'Stylish Chrome Single Lever Mixers to Vanities, Bathtub, and Showers',
-        'Modern Rimless Toilet Suite with Soft Close Action Seats',
-        'Tiled Shower Niche to Ensuite and Bathrooms',
-        '2-in-1 Dual Hand-Held Multi-Function Shower Head Set',
-        'Frameless Polished Edge Mirrors &ndash; 600mm Wide',
-        'Deluxe Free Standing Bathtub up to 1700mm Length (Main Bathroom Only)',
-        'Semi Frameless Shower Screen with Pivot Door (Clear Toughened Safety Glass)',
-        'Coloured Double Towel Rails, Rings, and Toilet Roll Holders',
-        'Chrome Single Lever Mixer',
-    ],
-    'Safety &amp; Security' => [
-        'Burglar System',
-        'Remote Control to Panel Lift Garage Door',
-        'Video Intercom Bell',
-    ],
-    'Main Entrance Door' => [
-        'Hinged Sunburst Entrance Door &ndash; 1200mm x 2400mm (Builder Range Solid Timber)',
-        'Modern Push &amp; Pull Handle (Builder Range)',
-        'Digital Lock',
-    ],
-    'Air Conditioning' => [
-        'Ducted Daikin Air Conditioning with 4 Zones and 2 Controllers',
-    ],
-    'Internal' => [
-        '2700mm Height to Ground Floor and 2450mm to First Floor (in lieu of standard)',
-        'Walk-in Robe with 1 Set of Drawers and Shelves',
-        '2 Sliding Mirror Robes with Single Shelf to Other Bedrooms',
-    ],
-    'External' => [
-        'Engineer-Designed H1-Class Concrete with Waffle Pod Slab on Ground',
-        'Engineered H2 Treated Timber Frame and Roof Trusses',
-        'Face Brick from PGH or Austral with Off-White Mortar',
-        'Colorbond Roof from Nivi Standard Range',
-        'Maintenance-Free Metal Fascia and Gutter',
+        '20mm stone bench-tops to vanity',
+        'Designer ceramic bowls',
+        'Soft close action to drawers',
+        'Coloured plug and waste to outlets',
+        'Stylish chrome single lever mixers',
+        'Modern rimless toilet suite',
+        'Tiled shower niche',
+        '2-in-1 dual hand-held shower head set',
+        'Frameless polished edge mirrors &ndash; 600mm',
+        'Deluxe free-standing bathtub to 1700mm',
+        'Semi frameless shower screen, pivot door',
+        'Coloured double towel rails &amp; rings',
     ],
     'Balcony' => [
-        'Frameless Glass Balustrade to External Balcony as Per the Plan (applicable for double-storey only)',
+        'Frameless glass balustrade to external balcony as per plan (double-storey only)',
     ],
-    'Alfresco ' => [
-        'Provide Sliding Door to Rear of Living/Dining',
-        'Provide 1 Gas and 1 Double PowerPoint',
-        'Provide Covered (Roof Over) Alfresco with Recessed Ceiling',
-        'Provide Tiles to the Concrete Slab',
+    'Alfresco' => [
+        'Sliding door to rear of living/dining',
+        '1 gas and 1 double power point',
+        'Covered (roof over) alfresco, recessed ceiling',
+        'Tiles to the concrete slab',
     ],
-    'Flooring and Wall Tiles' => [
-        '600&times;600 Tiles to Main House, 300&times;600 to Washrooms and Ensuites',
-        'Full-Height Tiling to Entire Bathrooms from Nivi &ldquo;Standard&rdquo; Range',
-        'Provide 1 Height Tile Skirting to WC/Powder Room',
-        'Ceramic Floor Tiles to Entry, Lounge, Living, Kitchen, Walk-In Pantry, and Dining',
-        'Wall-to-Wall Laminate or Carpet from Nivi Standard Range',
+    'Flooring &amp; Wall Tiles' => [
+        '600&times;600 tiles to main house, 300&times;600 to washrooms/ensuites',
+        'Full-height tiling to bathroom &ndash; Nivi Standard range',
+        '1 height tile skirting to WC / powder room',
+        'Ceramic floor tiles to entry, lounge, living, kitchen, pantry, dining',
+        'Wall-to-wall laminate or carpet &ndash; Nivi Standard range',
     ],
     'Other Essentials' => [
-        'BASIX Assessment and Fees',
-        'Fire Retardant Sarking to Underside of Roof Tiles',
-        'Slimline Rainwater Tank (Size to Be Determined as per BASIX)',
-        'Ceiling Insulation R3.5',
-        'Wall Insulation R2.0',
-        '1 Gas Bayonet Point to Living Area',
-        'Rheem Continuous Flow Gas Hot Water System',
+        'BASIX assessment and fees',
+        'Fire retardant sarking under roof tiles',
+        'Slimline rainwater tank (per BASIX)',
+        'Ceiling insulation R3.5',
+        'Wall insulation R2.0',
+        '1 gas bayonet point to living area',
+        'Rheem continuous flow gas hot water',
     ],
-    'Staircase and Staircase Balustrade' => [
-        'Timber Handrail (Stained) with Vertical Metal Balustrade',
-        'MDF Treads and Risers (for Carpet or Balcony Laminated Timber Floor) &ndash; applicable for double-storey only',
+    'Benchtop &amp; Cabinetry' => [
+        '40mm engineered stone to kitchen benchtop',
+        '20mm engineered stone to vanities',
+        'Polyurethane finish to kitchen cabinets',
+        'Soft close action to drawers and doors',
+        'Pull-out kitchen sink mixer tap',
+        'Designer glass splashback',
+    ],
+    'Pantry &amp; Fridge' => [
+        'Timber hinged door (as per plans)',
+        '4 row melamine shelving in walk-in pantry',
+        'Fridge provision with water connection and overhead cupboard',
+    ],
+    'Laundry' => [
+        'Quality laundry cabinetry with stone benchtop',
+        '45L stainless steel sink with mixer tap',
+        'Tiled splashback above bench top',
+        'Skirting tiles to remainder of walls',
+    ],
+    'Electrical' => [
+        '2 television / data points',
+        '35 power points, internal and external',
+        '50 LED ceiling downlights throughout',
+        '2-way light switch on staircase and hallway',
+        '2 up-down lights on front facade',
+        '3 breakfast light provisions over island',
+        'Sunshine 3-in-1 fan, light and heat lamp',
+        '2 smoke detectors',
+        'Earth leakage switches in meter box',
+    ],
+    'Safety &amp; Security' => [
+        'Burglar system',
+        'Remote control to panel lift garage door',
+        'Video intercom bell',
+    ],
+    'Main Entrance Door' => [
+        'Hinged sunburst entrance door &ndash; 1200 x 2400mm, builder range solid timber',
+        'Modern push &amp; pull handle',
+        'Digital lock',
+    ],
+    'Air Conditioning' => [
+        'Ducted Daikin air conditioning with 4 zones and 2 controllers',
+    ],
+    'Internal' => [
+        '2700mm ceiling to ground floor, 2400mm to first floor',
+        'Walk-in robe with 2 sets of drawers and shelves',
+        '2 sliding mirror robes to all other bedrooms',
+    ],
+    'External' => [
+        'Engineer-designed waffle pod slab on ground',
+        'Engineered H2 treated timber frame and roof trusses',
+        'Face brick from PGH or Austral, off-white mortar',
+        'Colorbond roof &ndash; Nivi Standard range',
+        'Maintenance-free metal fascia and gutter',
+    ],
+    'Staircase &amp; Balustrade' => [
+        'Timber handrail (stained) with vertical metal balustrade',
+        'MDF treads and risers for carpet or laminated timber floor &ndash; double-storey only',
     ],
     'Paint' => [
-        'Dulux Three-Coat Paint System to Walls',
-        'Two-Coat Paint System to Ceilings',
-        '2 Feature Walls',
+        'Dulux three-coat paint system to walls',
+        'Two-coat paint system to ceilings',
+        '2 feature walls',
     ],
     'Driveway' => [
-        'Coloured Concrete Driveway &ndash; 40sqm for Single Garage, 50sqm for Double Garage',
+        'Coloured concrete driveway &ndash; 40sqm single garage, 50sqm double garage',
+    ],
+    'Additional Features' => [
+        'Sliding door to rear of living or dining',
+        '1 gas point and 1 power point',
+        'Covered alfresco with recessed ceiling',
+        'Tiled alfresco area',
     ],
 ];
 
-$disclaimer = 'Photographs &amp; graphic impressions are representative only to finishes available and may not reflect the finish to the standard design and may also depict fixtures, finishes &amp; features not supplied by Nivi Homes, such as, but not limited to, landscaping &amp; outdoor features, furnishing, decorative items, and window furnishing. Dimensions are approximate only and may vary according to fa&ccedil;ade. Nivi Homes reserves the right to revise specifications, inclusions, materials, and suppliers without notice.';
+$disclaimer = 'Photographs &amp; graphic impressions are representative only of finishes available and may not reflect the finish of the standard design, and may also depict features, finishes &amp; textures not supplied by Nivi Homes, such as but not limited to landscaping, pools and outdoor furnishing. Dimensions are approximate only and may vary according to fa&ccedil;ade selection. Nivi Homes reserves the right to revise specifications, inclusions, materials and suppliers without notice.';
+
+/* Sidebar nav items */
+$nav_items = [
+    ['num' => '01', 'label' => 'Standard', 'id' => 'standard'],
+    ['num' => '02', 'label' => 'Kitchen', 'id' => 'kitchen'],
+    ['num' => '03', 'label' => 'Bathroom', 'id' => 'bathroom'],
+    ['num' => '04', 'label' => 'Electrical', 'id' => 'electrical'],
+    ['num' => '05', 'label' => 'Alfresco &amp; Laundry', 'id' => 'alfresco-laundry'],
+    ['num' => '06', 'label' => 'Facade &amp; Doors', 'id' => 'facade-doors'],
+    ['num' => '07', 'label' => 'Full Schedule', 'id' => 'full-schedule'],
+    ['num' => '08', 'label' => 'Disclaimer', 'id' => 'disclaimer'],
+];
 ?>
 
 <!-- ===================== PAGE BANNER ===================== -->
@@ -261,125 +258,254 @@ $BANNER_IMG = asset('images/banners/inclusions-banner.webp');
 require __DIR__ . '/includes/banner.php';
 ?>
 
-<!-- ===================== STANDARD INCLUSIONS ===================== -->
-<section class="inc-sec">
-    <div class="container">
-        <div class="inc-standard" data-anim="fadeIn">
-            <h2 class="inc-eyebrow">Standard Inclusions</h2>
-            <h2 class="inc-h2">Create Beautiful Memories Every Day</h2>
-            <h2 class="inc-h3">A Journey With Nirvana</h2>
-            <p class="inc-lead">Our inclusions are prestigious for other builders but STANDARD for our build.</p>
-            <?php inc_ul($standard, 'disc'); ?>
-        </div>
-    </div>
-</section>
+<!-- ===================== INCLUSIONS CONTENT ===================== -->
+<section class="inc-page">
+    <div class="inc-layout">
 
-<!-- ===================== KITCHEN / BATHROOM ===================== -->
-<section class="inc-sec">
-    <div class="container">
-        <div class="inc-two">
-            <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">Kitchen</h2>
-                <p class="inc-intro">Functional, yet modern kitchen with these inclusions:</p>
-                <?php inc_ul($kitchen); ?>
-                <img class="inc-img inc-img-lg" src="<?php echo asset('images/inclusions/Picture.webp'); ?>" alt="Kitchen" loading="lazy">
-                <img class="inc-img inc-img-lg" src="<?php echo asset('images/inclusions/Picture-1.webp'); ?>" alt="Kitchen" loading="lazy">
-            </div>
-            <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">Bathroom</h2>
-                <div class="inc-img-row">
-                    <img class="inc-img" src="<?php echo asset('images/inclusions/Picture-2.webp'); ?>" alt="Bathroom" loading="lazy">
-                    <img class="inc-img" src="<?php echo asset('images/inclusions/Picture-3.webp'); ?>" alt="Bathroom" loading="lazy">
-                </div>
-                <?php inc_ul($bathroom); ?>
-                <h2 class="inc-head inc-head-mt">Bespoke Bathroom Features For Your Home</h2>
-                <?php inc_ul($bespoke); ?>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== ELECTRICAL ===================== -->
-<section class="inc-sec">
-    <div class="container">
-        <div class="inc-two inc-two-mid">
-            <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">Electrical</h2>
-                <?php inc_ul($electrical); ?>
-            </div>
-            <div class="inc-col inc-col-img" data-anim="fadeIn">
-                <img class="inc-img inc-img-xl" src="<?php echo asset('images/inclusions/Picture-4-911x1024.webp'); ?>" alt="Electrical" loading="lazy">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== ALFRESCO / LAUNDRY ===================== -->
-<section class="inc-sec">
-    <div class="container">
-        <div class="inc-two">
-            <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">Alfresco</h2>
-                <?php inc_ul($alfresco); ?>
-                <img class="inc-img inc-img-xl" src="<?php echo asset('images/inclusions/Picture-6-1024x583.webp'); ?>" alt="Alfresco" loading="lazy">
-            </div>
-            <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">Laundry</h2>
-                <?php inc_ul($laundry); ?>
-                <img class="inc-img inc-img-xl" src="<?php echo asset('images/inclusions/Picture-5-1024x568.webp'); ?>" alt="Laundry" loading="lazy">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== EXTERNAL FACADE / DOORS ===================== -->
-<section class="inc-sec">
-    <div class="container">
-        <div class="inc-three">
-            <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">External Facade</h2>
-                <?php inc_ul($facade); ?>
-            </div>
-            <div class="inc-col inc-col-img" data-anim="fadeIn">
-                <img class="inc-img inc-img-mid" src="<?php echo asset('images/inclusions/Picture-7-850x1024.webp'); ?>" alt="External facade" loading="lazy">
-            </div>
-            <div class="inc-col" data-anim="fadeIn">
-                <h2 class="inc-head">Doors &amp; Handles</h2>
-                <?php inc_ul($doors); ?>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== DETAILED GRID ===================== -->
-<section class="inc-sec">
-    <div class="container">
-        <div class="inc-grid">
-            <?php
-            $keys = array_keys($grid);
-            $columns = [
-                array_slice($keys, 0, 6),
-                array_slice($keys, 6, 6),
-                array_slice($keys, 12),
-            ];
-            foreach ($columns as $ci => $col): ?>
-            <div class="inc-grid-col" data-anim="fadeIn">
-                <?php foreach ($col as $k): ?>
-                <div class="inc-block">
-                    <h2 class="inc-gold"><?php echo trim($k); ?></h2>
-                    <?php inc_ul($grid[$k], 'disc'); ?>
-                </div>
+        <!-- SIDEBAR NAV -->
+        <aside class="inc-sidebar" id="inc-sidebar">
+            <nav class="inc-nav">
+                <?php foreach ($nav_items as $item): ?>
+                <a href="#<?php echo $item['id']; ?>" class="inc-nav-link">
+                    <span class="inc-nav-num"><?php echo $item['num']; ?></span>
+                    <span class="inc-nav-label"><?php echo $item['label']; ?></span>
+                </a>
                 <?php endforeach; ?>
-                <?php if ($ci === 2): ?>
-                <div class="inc-block">
-                    <h2 class="inc-gold">Disclaimer</h2>
-                    <p class="inc-disclaimer-text"><?php echo $disclaimer; ?></p>
+            </nav>
+            <div class="inc-nav-note">
+                <p>Every inclusion below is standard &mdash; not an upgrade &mdash; on every Nivi Homes build.</p>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="inc-main">
+
+            <!-- SECTION 01: STANDARD -->
+            <section class="inc-section" id="standard" data-anim="fadeIn">
+                <div class="inc-section-header">
+                    <div class="inc-label"><span class="inc-label-line"></span><span class="inc-label-text">01 &middot; Foundation to Finish</span></div>
+                    <h2 class="inc-title">Standard Inclusions</h2>
+                    <p class="inc-subtitle"><em>Create beautiful memories every day</em> &mdash; a journey with Nivi. Our inclusions are prestigious for other builders, but standard for our build.</p>
                 </div>
-                <?php endif; ?>
+                <div class="inc-list">
+                    <?php foreach ($standard as $item): ?>
+                    <div class="inc-list-item"><span class="inc-dash"></span><span><?php echo $item; ?></span></div>
+                    <?php endforeach; ?>
+                </div>
+            </section>
+
+            <!-- SECTION 02: KITCHEN -->
+            <section class="inc-section" id="kitchen" data-anim="fadeIn">
+                <div class="inc-section-header">
+                    <div class="inc-label"><span class="inc-label-line"></span><span class="inc-label-text">02 &middot; The Heart of the Home</span></div>
+                    <h2 class="inc-title">Kitchen</h2>
+                    <p class="inc-subtitle">Functional, yet modern &mdash; every Nivi kitchen ships with these inclusions as standard.</p>
+                </div>
+                <div class="inc-list">
+                    <?php foreach ($kitchen as $item): ?>
+                    <div class="inc-list-item"><span class="inc-dash"></span><span><?php echo $item; ?></span></div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="inc-image-pair">
+                    <div class="inc-image-card">
+                        <img src="<?php echo asset('images/inclusions/Picture.webp'); ?>" alt="Engineered Stone &amp; Waterfall Island" loading="lazy">
+                    </div>
+                    <div class="inc-image-card">
+                        <img src="<?php echo asset('images/inclusions/Picture-1.webp'); ?>" alt="Pull-Out Mixer &amp; Cooktop" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 03: BATHROOM -->
+            <section class="inc-section" id="bathroom" data-anim="fadeIn">
+                <div class="inc-section-header">
+                    <div class="inc-label"><span class="inc-label-line"></span><span class="inc-label-text">03 &middot; Wet Areas</span></div>
+                    <h2 class="inc-title">Bathroom</h2>
+                    <p class="inc-subtitle">Floor-to-ceiling tiling, soft-close cabinetry, and a tapware colour of your choosing across every wet area.</p>
+                </div>
+                <div class="inc-two-col">
+                    <div>
+                        <h3 class="inc-h3">Standard Fitout</h3>
+                        <div class="inc-list inc-list-sm">
+                            <?php foreach ($bathroom as $item): ?>
+                            <div class="inc-list-item"><span class="inc-dash"></span><span><?php echo $item; ?></span></div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="inc-h3">Bespoke Features</h3>
+                        <div class="inc-list inc-list-sm">
+                            <?php foreach ($bespoke as $item): ?>
+                            <div class="inc-list-item"><span class="inc-dash"></span><span><?php echo $item; ?></span></div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="inc-image-pair">
+                    <div class="inc-image-card">
+                        <img src="<?php echo asset('images/inclusions/Picture-2.webp'); ?>" alt="300×600 Wet-Area Tile" loading="lazy">
+                    </div>
+                    <div class="inc-image-card">
+                        <img src="<?php echo asset('images/inclusions/Picture-3.webp'); ?>" alt="Bathroom Feature" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 04: ELECTRICAL -->
+            <section class="inc-section" id="electrical" data-anim="fadeIn">
+                <div class="inc-section-header">
+                    <div class="inc-label"><span class="inc-label-line"></span><span class="inc-label-text">04 &middot; Power &amp; Light</span></div>
+                    <h2 class="inc-title">Electrical</h2>
+                    <p class="inc-subtitle">A three-phase connection and a lighting plan built for how the house is actually lived in.</p>
+                </div>
+                <div class="inc-split">
+                    <div class="inc-list">
+                        <?php foreach ($electrical as $item): ?>
+                        <div class="inc-list-item"><span class="inc-dash"></span><span><?php echo $item; ?></span></div>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="inc-image-card inc-image-card-tall">
+                        <img src="<?php echo asset('images/inclusions/Picture-4-911x1024.webp'); ?>" alt="Statement Pendant Provision" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 05: ALFRESCO & LAUNDRY -->
+            <section class="inc-section" id="alfresco-laundry" data-anim="fadeIn">
+                <div class="inc-section-header">
+                    <div class="inc-label"><span class="inc-label-line"></span><span class="inc-label-text">05 &middot; Living Beyond the Walls</span></div>
+                    <h2 class="inc-title">Alfresco &amp; Laundry</h2>
+                    <p class="inc-subtitle">Two of the most-used spaces in the home, finished to the same standard as everywhere else.</p>
+                </div>
+                <div class="inc-two-col">
+                    <div>
+                        <h3 class="inc-h3">Alfresco</h3>
+                        <div class="inc-list inc-list-sm">
+                            <?php foreach ($alfresco as $item): ?>
+                            <div class="inc-list-item"><span class="inc-dash"></span><span><?php echo $item; ?></span></div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="inc-h3">Laundry</h3>
+                        <div class="inc-list inc-list-sm">
+                            <?php foreach ($laundry as $item): ?>
+                            <div class="inc-list-item"><span class="inc-dash"></span><span><?php echo $item; ?></span></div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="inc-image-pair">
+                    <div class="inc-image-card">
+                        <img src="<?php echo asset('images/inclusions/Picture-6-1024x583.webp'); ?>" alt="Covered Alfresco" loading="lazy">
+                    </div>
+                    <div class="inc-image-card">
+                        <img src="<?php echo asset('images/inclusions/Picture-5-1024x568.webp'); ?>" alt="Laundry Stone Benchtop" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 06: FACADE & DOORS -->
+            <section class="inc-section" id="facade-doors" data-anim="fadeIn">
+                <div class="inc-section-header">
+                    <div class="inc-label"><span class="inc-label-line"></span><span class="inc-label-text">06 &middot; The Envelope</span></div>
+                    <h2 class="inc-title">External Facade &amp; Doors</h2>
+                    <p class="inc-subtitle">What the street sees, and what protects everything behind it.</p>
+                </div>
+                <div class="inc-two-col">
+                    <div>
+                        <h3 class="inc-h3">External Facade</h3>
+                        <div class="inc-list inc-list-sm">
+                            <?php foreach ($facade as $item): ?>
+                            <div class="inc-list-item"><span class="inc-dash"></span><span><?php echo $item; ?></span></div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="inc-h3">Doors &amp; Handles</h3>
+                        <div class="inc-list inc-list-sm">
+                            <?php foreach ($doors as $item): ?>
+                            <div class="inc-list-item"><span class="inc-dash"></span><span><?php echo $item; ?></span></div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="inc-image-pair">
+                    <div class="inc-image-card">
+                        <img src="<?php echo asset('images/inclusions/Picture-7-850x1024.webp'); ?>" alt="Face Brick Veneer" loading="lazy">
+                    </div>
+                    <div class="inc-image-card">
+                        <img src="<?php echo asset('images/inclusions/Picture.webp'); ?>" alt="Solid Timber Entry Door" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</section>
+
+<!-- ===================== SECTION 07: FULL SPEC SUMMARY ===================== -->
+<section class="inc-spec-section" id="full-schedule" data-anim="fadeIn">
+    <div class="inc-spec-container">
+        <div class="inc-spec-header">
+            <div class="inc-label inc-label-dark"><span class="inc-label-line"></span><span class="inc-label-text">07 &middot; The Complete Schedule</span></div>
+            <h2 class="inc-spec-title">Standard Specifications, <span class="inc-spec-accent">room by room</span></h2>
+            <p class="inc-spec-subtitle">Everything above, indexed for reference &mdash; the same finish schedule your site supervisor works from.</p>
+        </div>
+        <div class="inc-spec-grid">
+            <?php foreach ($grid as $heading => $items): ?>
+            <div class="inc-spec-card">
+                <h4 class="inc-spec-card-title"><?php echo $heading; ?></h4>
+                <ul class="inc-spec-card-list">
+                    <?php foreach ($items as $item): ?>
+                    <li><span class="inc-spec-dash">&mdash;</span><?php echo $item; ?></li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
             <?php endforeach; ?>
         </div>
     </div>
 </section>
+
+<!-- ===================== SECTION 08: DISCLAIMER ===================== -->
+<section class="inc-disclaimer-section" id="disclaimer" data-anim="fadeIn">
+    <div class="inc-disclaimer-container">
+        <div class="inc-label"><span class="inc-label-line"></span><span class="inc-label-text">08 &middot; Fine Print</span></div>
+        <p class="inc-disclaimer-body"><?php echo $disclaimer; ?></p>
+    </div>
+</section>
+
+<script>
+(function() {
+    'use strict';
+    var links = document.querySelectorAll('.inc-nav-link');
+    var sections = document.querySelectorAll('.inc-section, .inc-spec-section, .inc-disclaimer-section');
+    if (!links.length || !sections.length) return;
+
+    function setActive() {
+        var scrollY = window.scrollY + 120;
+        var current = '';
+        sections.forEach(function(sec) {
+            if (sec.offsetTop <= scrollY) current = sec.id;
+        });
+        links.forEach(function(link) {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        });
+    }
+    window.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+
+    // Smooth scroll for sidebar links
+    links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
+            }
+        });
+    });
+})();
+</script>
 
 <?php require __DIR__ . '/includes/footer.php'; ?>
