@@ -1113,6 +1113,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     line-height: 1.65;
     letter-spacing: -0.38px;
     margin: 0 0 11px;
+    white-space: nowrap;
 }
 .inc-spec-accent { color: #c6bc78; }
 .inc-spec-subtitle {
