@@ -26,7 +26,6 @@ require __DIR__ . '/includes/banner.php';
                 <div class="svc-card-img-bg"></div>
                 <div class="svc-card-img">
                     <img src="<?php echo asset('images/services/dh-image.webp'); ?>" alt="Duplex Home Elevation" loading="lazy">
-                    <span class="svc-card-img-label">Duplex Home &middot; Dusk Elevation</span>
                 </div>
             </div>
             <div class="svc-card-features">
@@ -71,7 +70,6 @@ require __DIR__ . '/includes/banner.php';
                 <div class="svc-card-img-bg"></div>
                 <div class="svc-card-img">
                     <img src="<?php echo asset('images/services/dh-image.webp'); ?>" alt="Duplex Home" loading="lazy">
-                    <span class="svc-card-img-label">Duplex Home &middot; Dusk Elevation</span>
                 </div>
             </div>
         </div>

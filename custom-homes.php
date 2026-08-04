@@ -27,7 +27,6 @@ require __DIR__ . '/includes/banner.php';
                 <div class="svc-card-img-bg"></div>
                 <div class="svc-card-img">
                     <img src="<?php echo asset('images/services/ch-features.webp'); ?>" alt="Custom Home Elevation" loading="lazy">
-                    <span class="svc-card-img-label">Duplex Home &middot; Dusk Elevation</span>
                 </div>
             </div>
             <div class="svc-card-features">
@@ -72,7 +71,6 @@ require __DIR__ . '/includes/banner.php';
                 <div class="svc-card-img-bg"></div>
                 <div class="svc-card-img">
                     <img src="<?php echo asset('images/services/ch-why-choose.webp'); ?>" alt="Custom Home Interior" loading="lazy">
-                    <span class="svc-card-img-label">Custom Home &middot; Interior Concept</span>
                 </div>
             </div>
         </div>

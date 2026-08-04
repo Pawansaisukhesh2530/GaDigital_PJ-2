@@ -26,7 +26,6 @@ require __DIR__ . '/includes/banner.php';
                 <div class="svc-card-img-bg"></div>
                 <div class="svc-card-img">
                     <img src="<?php echo asset('images/services/granny-top.webp'); ?>" alt="Granny Flat Exterior" loading="lazy">
-                    <span class="svc-card-img-label">Granny Flat &middot; Exterior</span>
                 </div>
             </div>
             <div class="svc-why-text">
@@ -56,7 +55,6 @@ require __DIR__ . '/includes/banner.php';
             for ($i = 1; $i <= 6; $i++): ?>
             <div class="svc-gallery-item">
                 <img src="<?php echo asset('images/granny/gf-' . $i . '.webp'); ?>" alt="Granny flat <?php echo $gf_labels[$i-1]; ?>" loading="lazy">
-                <span class="svc-card-img-label">Granny Flat &middot; <?php echo $gf_labels[$i-1]; ?></span>
             </div>
             <?php endfor; ?>
         </div>

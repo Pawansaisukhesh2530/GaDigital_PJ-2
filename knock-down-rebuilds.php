@@ -26,7 +26,6 @@ require __DIR__ . '/includes/banner.php';
                 <div class="svc-card-img-bg"></div>
                 <div class="svc-card-img">
                     <img src="<?php echo asset('images/services/kdr-features.webp'); ?>" alt="Knock Down Rebuild" loading="lazy">
-                    <span class="svc-card-img-label">Knock Down Rebuild &middot; Concept</span>
                 </div>
             </div>
             <div class="svc-card-features">
@@ -71,7 +70,6 @@ require __DIR__ . '/includes/banner.php';
                 <div class="svc-card-img-bg"></div>
                 <div class="svc-card-img">
                     <img src="<?php echo asset('images/services/kdr-why.webp'); ?>" alt="Knock Down Rebuild" loading="lazy">
-                    <span class="svc-card-img-label">Knock Down Rebuild &middot; Concept</span>
                 </div>
             </div>
         </div>
