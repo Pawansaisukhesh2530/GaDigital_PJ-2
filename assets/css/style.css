@@ -1814,3 +1814,211 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .wb-apart-img { min-height: 220px; }
     .wb-apart-img img { min-height: 220px; }
 }
+
+/* =============================================================
+   SERVICE DETAIL PAGES (Custom Homes, Duplex, KDR, Granny Flats)
+   Shared design language matching Figma
+   ============================================================= */
+
+/* --- Container --- */
+.svc-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* --- Intro paragraph --- */
+.svc-intro { padding: 60px 0 0; }
+.svc-intro p {
+    max-width: 826px;
+    margin: 0 auto;
+    font-size: 15px;
+    font-weight: 400;
+    color: #211d15;
+    line-height: 1.75;
+    text-align: center;
+}
+
+/* --- Image card (shared across sections) --- */
+.svc-img-offset {
+    position: absolute;
+    top: 17px;
+    left: -17px;
+    width: 100%;
+    height: 100%;
+    background: #c6bc78;
+}
+.svc-img-card {
+    position: relative;
+    border: 1px solid #ddd0ac;
+    border-top: 2px solid #c6bc78;
+    overflow: hidden;
+    background: #fbf8f1;
+}
+.svc-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.svc-img-corner-tl {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    border-left: 1px solid #c6bc78;
+    border-top: 1px solid #c6bc78;
+}
+.svc-img-corner-br {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    border-right: 1px solid #c6bc78;
+    border-bottom: 1px solid #c6bc78;
+}
+
+/* --- Features section --- */
+.svc-features { padding: 70px 0; }
+.svc-features-grid {
+    display: grid;
+    grid-template-columns: 425px 1fr;
+    gap: 70px;
+    align-items: start;
+}
+.svc-features-media {
+    position: relative;
+    height: 325px;
+}
+.svc-features-media .svc-img-card {
+    height: 100%;
+}
+
+/* 2x2 Feature grid */
+.svc-feat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 44px;
+}
+.svc-feat-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #a9812e;
+    border-radius: 50%;
+    margin-bottom: 11px;
+    color: #8a6c2a;
+}
+.svc-feat-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #211d15;
+    letter-spacing: -0.16px;
+    margin: 0 0 8px;
+    line-height: 1.4;
+}
+.svc-feat-item p {
+    font-size: 13.5px;
+    font-weight: 400;
+    color: #6f6552;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* --- Why Choose section --- */
+.svc-why { padding: 0 0 80px; }
+.svc-why-grid {
+    display: grid;
+    grid-template-columns: 497px 1fr;
+    gap: 70px;
+    align-items: center;
+}
+.svc-why-media {
+    position: relative;
+    height: 373px;
+}
+.svc-why-media .svc-img-card {
+    height: 100%;
+}
+.svc-why-text h2 {
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    color: #8a6c2a;
+    letter-spacing: -0.32px;
+    line-height: 1.75;
+    margin: 0 0 16px;
+}
+.svc-why-text p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #211d15;
+    line-height: 1.75;
+    margin: 0;
+    max-width: 596px;
+}
+
+/* --- CTA section --- */
+.svc-cta {
+    background: linear-gradient(135deg, #18160f 0%, #2a2518 100%);
+    padding: 92px 0;
+    text-align: center;
+}
+.svc-cta-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.svc-cta h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fbf6ea;
+    line-height: 1.6;
+    margin: 0 0 12px;
+}
+.svc-cta p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #a89d84;
+    line-height: 1.7;
+    margin: 0 0 32px;
+}
+.svc-cta-btn {
+    display: inline-block;
+    padding: 16px 36px;
+    background: #c6bc78;
+    color: #18160f;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+}
+.svc-cta-btn:hover {
+    background: #a9812e;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* --- Responsive: Service pages --- */
+@media (max-width: 1024px) {
+    .svc-features-grid { grid-template-columns: 1fr; gap: 40px; }
+    .svc-features-media { height: 280px; max-width: 425px; }
+    .svc-why-grid { grid-template-columns: 1fr; gap: 40px; }
+    .svc-why-media { height: 300px; max-width: 497px; }
+}
+@media (max-width: 767px) {
+    .svc-container { padding: 0 20px; }
+    .svc-intro { padding: 40px 0 0; }
+    .svc-features { padding: 50px 0; }
+    .svc-feat-grid { grid-template-columns: 1fr; gap: 30px; }
+    .svc-features-media { height: 240px; max-width: 100%; }
+    .svc-why-media { height: 250px; max-width: 100%; }
+    .svc-why-text h2 { font-size: 26px; }
+    .svc-cta { padding: 60px 0; }
+    .svc-cta h2 { font-size: 24px; }
+    .svc-img-offset { left: -10px; top: 10px; }
+}
