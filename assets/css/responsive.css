@@ -105,11 +105,13 @@
 
     /* Hero: reduce height on mobile so images don't crop excessively */
     .hero {
-        height: 50vh;
-        min-height: 300px;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 9;
     }
     .hero-slide {
-        background-position: center center;
+        background-size: cover;
+        background-position: center top;
     }
 
     /* Mobile logo ~28vw of viewport (matches live), left-aligned */
