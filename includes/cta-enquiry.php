@@ -24,7 +24,8 @@ $formError = $formError ?? '';
             <div class="cta-enquiry-left" data-anim="fadeInLeft">
                 <p class="cta-enquiry-text">At Nivi Homes, we offer a thoughtfully curated range of single and double storey designs to suit every lifestyle. Whether you prefer the ease of open-plan living on one level or the spacious elegance of a two-storey layout, our homes are crafted with care and functionality in mind. From compact and efficient to bold and luxurious, each design reflects our commitment to comfort, quality, and contemporary living. Discover the perfect space to grow, connect, and create lasting memories with Nivi Homes.</p>
                 <div class="cta-enquiry-image">
-                    <img src="<?php echo asset('images/backgrounds/varahi.webp'); ?>" alt="Nivi Homes - Interior Design" loading="lazy">
+                    <img src="<?php echo asset('images/backgrounds/varahi.webp'); ?>" alt="Nivi Homes - Family Life" loading="lazy">
+                    <span class="cta-enquiry-img-label">Nivi Homes · Family Life</span>
                 </div>
             </div>
 
