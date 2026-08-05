@@ -13,7 +13,6 @@ require __DIR__ . '/includes/header.php';
         <div class="hero-slide" style="background-image:url('<?php echo asset('images/hero/banner-1.webp'); ?>')"></div>
         <div class="hero-slide" style="background-image:url('<?php echo asset('images/hero/banner-3.webp'); ?>')"></div>
     </div>
-    <span class="hero-label">Featured Build &middot; North Shore Residence</span>
     <button class="hero-arrow prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
     <button class="hero-arrow next" aria-label="Next slide"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     <div class="hero-dots" role="tablist" aria-label="Slide navigation"></div>
