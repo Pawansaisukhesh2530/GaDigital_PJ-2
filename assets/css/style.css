@@ -695,7 +695,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* =============================================================
    WHY CHOOSE  (white bg, gold italic heading, feature blocks)
    ============================================================= */
-.why-choose { background: var(--color-white); padding: 0; margin-bottom: 80px; }
+.why-choose { background: var(--color-white); padding: 80px 0; margin-bottom: 80px; }
 .why-choose .container { max-width: 1320px; padding: 0 40px; }
 .why-choose .section-title { margin-bottom: 56px; font-size: 34px; font-weight: 600; font-style: italic; color: #18160f; letter-spacing: -0.34px; }
 .features-grid {
