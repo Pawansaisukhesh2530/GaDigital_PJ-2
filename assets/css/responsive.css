@@ -103,6 +103,15 @@
 @media (max-width: 767px) {
     body { font-size: 15px; }
 
+    /* Hero: reduce height on mobile so images don't crop excessively */
+    .hero {
+        height: 50vh;
+        min-height: 300px;
+    }
+    .hero-slide {
+        background-position: center center;
+    }
+
     /* Mobile logo ~28vw of viewport (matches live), left-aligned */
     .brand { flex: 0 0 auto; }
     .brand-inner { width: auto; text-align: left; }
