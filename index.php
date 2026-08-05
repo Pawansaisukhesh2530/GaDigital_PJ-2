@@ -23,12 +23,16 @@ require __DIR__ . '/includes/header.php';
     <div class="container">
         <div class="intro-grid">
             <div class="intro-media" data-reveal="left">
-                <img src="<?php echo asset('images/backgrounds/clients-say.webp'); ?>" alt="Discover Nivi Homes" loading="lazy" width="768" height="512">
+                <div class="intro-img-offset"></div>
+                <div class="intro-img-card">
+                    <img src="<?php echo asset('images/backgrounds/clients-say.webp'); ?>" alt="Discover Nivi Homes" loading="lazy" width="768" height="512">
+                    <span class="intro-img-label">Living Room &middot; Nivi Homes</span>
+                </div>
             </div>
             <div class="intro-content" data-reveal="right">
                 <h2 class="section-title">Discover Nivi Homes</h2>
                 <p>At Nivi Homes, we believe a home is more than just a structure&mdash;it&rsquo;s a sanctuary where memories are made and futures are built. Founded on the principles of quality craftsmanship, integrity, and customer satisfaction, we are dedicated to turning your dream home vision into reality. Our experienced team of engineers, architects, designers, and skilled workers share a collective commitment to excellence in every project we undertake. From custom homes and duplexes to knock down rebuilds and granny flats, we work closely with you to ensure every detail reflects your unique style and needs. Welcome to Nivi Homes, where every detail matters and your dream home awaits.</p>
-                <a href="about.php" class="btn btn-primary">Read More</a>
+                <a href="about.php" class="btn btn-outline">Read More</a>
             </div>
         </div>
     </div>

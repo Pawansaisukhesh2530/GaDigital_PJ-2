@@ -331,25 +331,44 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     gap: 0;
 }
 .intro-media {
-    padding: 10px;
+    padding: 0;
     position: relative;
 }
-/* Gold rectangular background element behind the About Us image */
-.intro-media::before {
-    content: "";
+/* Gold rectangle offset behind the image */
+.intro-media::before { display: none; }
+.intro-img-offset {
     position: absolute;
-    top: 30px;
-    left: -10px;
-    width: 85%;
-    height: 85%;
-    background: var(--color-primary);
-    z-index: 0;
+    top: 14px;
+    left: -14px;
+    width: 100%;
+    height: 100%;
+    background: #c6bc78;
 }
-.intro-media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; position: relative; z-index: 1; }
+.intro-img-card {
+    position: relative;
+    border: 1px solid #18160f;
+    overflow: hidden;
+    background: #eae1cc;
+    min-height: 260px;
+}
+.intro-img-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.intro-img-label {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(20, 17, 10, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 7px 13px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.44px;
+}
+.intro-media img { width: 100%; aspect-ratio: auto; object-fit: cover; display: block; position: relative; z-index: 1; }
 .intro-content { padding-left: 20px; }
 .intro-content .section-title { text-align: left; margin-bottom: 20px; font-size: 34px; font-weight: 600; font-style: italic; color: #211d15; letter-spacing: -0.34px; }
 .intro-content p { margin-bottom: 20px; font-weight: 400; color: #6f6552; font-size: 15px; line-height: 1.75; }
-.intro-content .btn { margin-top: 0; }
+.intro-content .btn { margin-top: 0; border: 1px solid #18160f; background: transparent; color: #18160f; font-size: 13.5px; font-weight: 700; letter-spacing: 0.27px; padding: 17px 27px; border-radius: 0; }
 
 /* =============================================================
    SERVICES  (dark #282828 section, 2x2 image tiles w/ overlay)
