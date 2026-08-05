@@ -723,12 +723,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .feature-card.fc-dark, .feature-card.fc-dark2, .feature-card.fc-light { }
 .feature-card::before {
     content: ""; position: absolute; inset: 0; z-index: 0;
-    background-color: inherit;
-    opacity: 1;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
     transition: opacity 3s ease;
 }
 .feature-card:hover { background-image: var(--hover-img); background-size: cover; background-position: center; }
-.feature-card:hover::before { opacity: 0.35; }
+.feature-card:hover::before { opacity: 1; }
+.feature-card:hover h3 { color: #c6bc78; }
+.feature-card:hover p { color: #ddd0ac; }
+.feature-card:hover .feature-icon { border-color: #c6bc78; color: #c6bc78; }
+.feature-card:hover .feature-icon svg { stroke: #c6bc78; }
 .feature-card > * { position: relative; z-index: 1; }
 
 .feature-icon {
