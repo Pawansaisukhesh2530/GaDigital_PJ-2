@@ -2105,12 +2105,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .ct-info-inner { max-width: 440px; width: 100%; }
 .ct-heading {
-    font-size: 52px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 700;
     font-style: italic;
     color: #ddd0ac;
-    letter-spacing: -0.52px;
-    line-height: 1.05;
+    letter-spacing: -0.3px;
+    line-height: 1.75;
     margin: 0 0 19px;
 }
 .ct-intro {
