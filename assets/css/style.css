@@ -718,6 +718,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .feature-card:nth-child(1) h3, .feature-card:nth-child(4) h3 { color: #c6bc78; }
 .feature-card:nth-child(1) p, .feature-card:nth-child(4) p { color: #a89d84; }
 .feature-card:nth-child(1) .feature-icon, .feature-card:nth-child(4) .feature-icon { border-color: #c6bc78; color: #c6bc78; }
+.feature-card:nth-child(1) .feature-icon svg, .feature-card:nth-child(4) .feature-icon svg { stroke: #c6bc78; }
 .feature-card.fc-dark, .feature-card.fc-dark2, .feature-card.fc-light { }
 .feature-card::before { display: none; }
 .feature-card:hover { background-image: none; }
@@ -1416,7 +1417,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .section-title.white { color: #ffffff; }
 .services-head .section-title { color: #ffffff; }
 .feature-card.fc-dark h3,
-.feature-card.fc-dark2 h3 { color: #211d15; }
+.feature-card.fc-dark2 h3 { color: #c6bc78; }
 
 /* =============================================================
    LIGHTBOX GALLERY
