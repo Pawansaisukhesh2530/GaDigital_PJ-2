@@ -103,11 +103,11 @@
 @media (max-width: 767px) {
     body { font-size: 15px; }
 
-    /* Hero: reduce height on mobile so images don't crop excessively */
+    /* Hero: shorter on mobile to show full image without heavy cropping */
     .hero {
-        height: auto;
-        min-height: 0;
-        aspect-ratio: 16 / 9;
+        height: 56vw;
+        min-height: 220px;
+        max-height: 400px;
     }
     .hero-slide {
         background-size: cover;
