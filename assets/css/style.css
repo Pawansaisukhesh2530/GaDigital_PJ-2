@@ -606,54 +606,43 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* =============================================================
    WHY CHOOSE  (white bg, gold italic heading, feature blocks)
    ============================================================= */
-.why-choose { background: var(--color-white); padding: 0; }
-.why-choose .container { max-width: 1140px; padding: 0; }
+.why-choose { background: var(--color-white); padding: 0; margin-bottom: 80px; }
+.why-choose .container { max-width: 1320px; padding: 0 40px; }
 .why-choose .section-title { margin-bottom: 50px; }
 .features-grid {
     display: grid; grid-template-columns: repeat(2, 1fr);
-    column-gap: 0; row-gap: 30px;
-    margin-bottom: 30px;
+    border: 1px solid #ddd0ac;
 }
-/* Checkerboard cards. Each card has a colour overlay (::before) over its hover
-   background image. On hover the overlay fades (opacity + colour) over 3s, exactly
-   like the original Elementor background-overlay, revealing the image beneath.
-   Heading left, paragraph centred, 80px padding. */
 .feature-card {
     position: relative;
     overflow: hidden;
-    padding: 80px;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    padding: 52px 44px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid #ddd0ac;
+    border-right: 1px solid #ddd0ac;
+    background: #fff;
 }
-/* dark / white variants: base colour, text colours, and overlay colours/opacity */
-.feature-card.fc-dark  { background-color: #282828; --fc-icon: var(--color-primary); --fc-head: var(--color-primary); --fc-text: #fff; --ov: #282828; --ov-op: 1;   --ov-h: #000; --ov-op-h: .5; }
-.feature-card.fc-dark2 { background-color: #141414; --fc-icon: var(--color-primary); --fc-head: var(--color-primary); --fc-text: #fff; --ov: #141414; --ov-op: 1;   --ov-h: #000; --ov-op-h: .5; }
-.feature-card.fc-light { background-color: #fff;     --fc-icon: #000;                 --fc-head: #000;                 --fc-text: #000; --ov: #EEE;     --ov-op: .74; --ov-h: #FFF; --ov-op-h: .5; }
-
-.feature-card:hover { background-image: var(--hover-img); }
-.feature-card::before {
-    content: ""; position: absolute; inset: 0; z-index: 0;
-    background-color: var(--ov);
-    opacity: var(--ov-op);
-    transition: background 3s, opacity 3s;
-}
-.feature-card:hover::before { background-color: var(--ov-h); opacity: var(--ov-op-h); }
+.feature-card:nth-child(2n) { border-right: none; }
+.feature-card:nth-last-child(-n+2) { border-bottom: none; }
+.feature-card.fc-dark, .feature-card.fc-dark2, .feature-card.fc-light { background: #fff; }
+.feature-card::before { display: none; }
+.feature-card:hover { background-image: none; }
 .feature-card > * { position: relative; z-index: 1; }
 
 .feature-icon {
-    width: 50px; height: 50px; margin: 0 0 16px;
-    display: flex; align-items: center; justify-content: flex-start;
-    color: var(--fc-icon);
-    transition: color .3s;
+    width: 52px; height: 52px; margin: 0 auto 16px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid #a9812e;
+    border-radius: 50%;
+    color: #8a6c2a;
 }
-.feature-icon svg { width: 50px; height: 50px; }
-.feature-card h3 { font-size: 25px; font-weight: 500; font-style: normal; margin-bottom: 14px; color: var(--fc-head); line-height: 1.2; text-align: left; }
-.feature-card p { font-size: 16px; font-weight: 300; color: var(--fc-text); margin: 0; text-align: left; line-height: 1.6; }
+.feature-icon svg { width: 24px; height: 24px; }
+.feature-card h3 { font-size: 20px; font-weight: 700; font-style: normal; margin-bottom: 14px; color: #211d15; line-height: 1.3; text-align: center; }
+.feature-card p { font-size: 14px; font-weight: 400; color: #6f6552; margin: 0; text-align: center; line-height: 1.7; max-width: 352px; }
 
 /* =============================================================
    CTA / TESTIMONIAL / COMPANIES
@@ -1337,7 +1326,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .section-title.white { color: #ffffff; }
 .services-head .section-title { color: #ffffff; }
 .feature-card.fc-dark h3,
-.feature-card.fc-dark2 h3 { color: var(--color-primary); }
+.feature-card.fc-dark2 h3 { color: #211d15; }
 
 /* =============================================================
    LIGHTBOX GALLERY
