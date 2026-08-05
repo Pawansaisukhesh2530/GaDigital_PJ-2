@@ -721,26 +721,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .feature-card:nth-child(1) .feature-icon, .feature-card:nth-child(4) .feature-icon { border-color: #c6bc78; color: #c6bc78; }
 .feature-card:nth-child(1) .feature-icon svg, .feature-card:nth-child(4) .feature-icon svg { stroke: #c6bc78; }
 .feature-card.fc-dark, .feature-card.fc-dark2, .feature-card.fc-light { }
-/* Background image always set but hidden via a covering overlay */
 .feature-card::before {
     content: ""; position: absolute; inset: 0; z-index: 0;
-    background: inherit;
-    opacity: 1;
-    transition: background 3s ease, opacity 3s ease;
-}
-.feature-card::after {
-    content: ""; position: absolute; inset: 0; z-index: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background-image: var(--hover-img);
+    background-size: cover;
+    background-position: center;
     opacity: 0;
-    transition: opacity 3s ease;
+    transition: opacity 2s ease;
 }
-.feature-card:hover::before { background: transparent; opacity: 0; }
-.feature-card:hover::after { opacity: 1; }
-.feature-card { background-image: var(--hover-img); background-size: cover; background-position: center; }
-.feature-card:hover h3 { color: #c6bc78; transition: color 1s ease; }
-.feature-card:hover p { color: #ddd0ac; transition: color 1s ease; }
-.feature-card:hover .feature-icon { border-color: #c6bc78; color: #c6bc78; transition: border-color 1s ease, color 1s ease; }
-.feature-card:hover .feature-icon svg { stroke: #c6bc78; transition: stroke 1s ease; }
+.feature-card:hover::before { opacity: 0.15; }
 .feature-card > * { position: relative; z-index: 1; }
 
 .feature-icon {
