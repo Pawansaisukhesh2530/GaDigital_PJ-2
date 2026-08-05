@@ -242,39 +242,79 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* =============================================================
    HERO SLIDER
    ============================================================= */
-/* Hero = full-width image carousel, 16:9 (no trailing white gap) */
+/* Hero = full-width image carousel, fixed height */
 .hero {
     position: relative;
     width: 100%;
     overflow: hidden;
-    background: #d8d3c2;
-    aspect-ratio: 16 / 9;
+    background: #18160f;
+    height: 720px;
+    min-height: 480px;
 }
 .hero-slides { position: absolute; inset: 0; }
 .hero-slide {
     position: absolute; inset: 0;
     opacity: 0;
-    transition: opacity .5s ease;
+    transition: opacity .8s ease;
     background-size: cover;
     background-position: center;
 }
 .hero-slide.is-active { opacity: 1; }
 .hero-overlay { display: none; }
-.hero-dots { display: none; } /* live uses arrows only, no pagination */
 
-/* Plain light-grey chevrons, centered vertically in the full (square) hero */
+/* Hero pagination dots */
+.hero-dots {
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 9px;
+    z-index: 3;
+}
+.hero-dots button {
+    width: 7px;
+    height: 7px;
+    border-radius: 3.5px;
+    background: rgba(201, 162, 84, 0.35);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.hero-dots button.is-active { background: #c6bc78; }
+
+/* Hero arrows: gold circle-bordered */
 .hero-arrow {
     position: absolute; top: 50%; transform: translateY(-50%);
-    width: 25px; height: 25px;
-    background: none; border-radius: 0;
-    color: rgba(237, 237, 237, .9); z-index: 3;
+    width: 44px; height: 44px;
+    background: none; border-radius: 22px;
+    border: 1px solid rgba(201, 162, 84, 0.4);
+    color: #c6bc78; z-index: 3;
     display: flex; align-items: center; justify-content: center;
-    transition: color var(--transition);
+    transition: background 0.3s, border-color 0.3s;
+    cursor: pointer;
 }
-.hero-arrow svg { width: 25px; height: 25px; }
-.hero-arrow:hover { color: #fff; }
-.hero-arrow.prev { left: 10px; }
-.hero-arrow.next { right: 10px; }
+.hero-arrow svg { width: 18px; height: 18px; stroke: #c6bc78; }
+.hero-arrow:hover { background: rgba(201, 162, 84, 0.15); border-color: #c6bc78; }
+.hero-arrow.prev { left: 28px; }
+.hero-arrow.next { right: 28px; }
+
+/* Hero bottom-left label */
+.hero-label {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 3;
+    background: rgba(20, 17, 10, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 7px 13px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.44px;
+    line-height: 1.75;
+}
 
 /* =============================================================
    PAGE BANNER (inner pages)
@@ -326,9 +366,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .intro .container { max-width: 1140px; padding: 0; }
 .intro-grid {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 0.85fr 1.15fr;
     align-items: center;
-    gap: 0;
+    gap: 74px;
 }
 .intro-media {
     padding: 0;
@@ -374,16 +414,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    SERVICES  (dark #282828 section, 2x2 image tiles w/ overlay)
    ============================================================= */
 /* Dark heading strip: 2 columns (heading left | intro right), matches live */
-.services-section { background: var(--color-white); margin-bottom: 80px; }
-.services-head { background: var(--color-dark); padding: 40px; }
+.services-section { background: var(--color-white); margin-bottom: 0; }
+.services-head { background: #18160f; padding: 52px 300px; }
 .services-head-inner {
-    max-width: 1140px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 30px;
+    max-width: 1320px; margin: 0 auto;
+    display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 30px;
+    padding: 0 40px;
 }
 .services-head-left, .services-head-right { text-align: left; }
-.services-head .section-eyebrow { margin-bottom: 4px; }
-.services-head .section-title { color: var(--color-white); margin-bottom: 0; }
-.services-head .services-intro { color: var(--color-white); font-weight: 300; margin: 0; }
+.services-head .section-eyebrow { margin-bottom: 10px; font-style: italic; font-weight: 700; font-size: 11.5px; letter-spacing: 0.575px; }
+.services-head .section-title { color: #fbf6ea; margin-bottom: 0; font-size: 32px; font-weight: 700; letter-spacing: -0.32px; line-height: 1.75; }
+.services-head .services-intro { color: #a89d84; font-weight: 400; font-size: 14.5px; line-height: 1.75; margin: 0; max-width: 400px; }
 
 /* Tiles: full-bleed 2-col, bg image + overlay, title + desc + Read More */
 .services-grid {
@@ -394,26 +435,54 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .service-card {
     position: relative;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    min-height: 417px;
-    padding: 150px;
+    min-height: 600px;
     background-size: cover;
     background-position: center;
     overflow: hidden;
     text-align: center;
+    border: 1px solid #18160f;
 }
 .service-card::before {
     content: ""; position: absolute; inset: 0;
-    background: #242424; opacity: .5;
-    transition: background .3s, opacity .3s;
+    background: rgba(15, 13, 8, 0.6);
+    transition: background .3s;
 }
-.service-card:hover::before { background: #020202; opacity: .65; }
+.service-card:hover::before { background: rgba(15, 13, 8, 0.72); }
 .service-card > * { position: relative; z-index: 1; }
-.service-card h3 {
-    font-size: 29px; font-weight: 500; font-style: italic;
-    color: var(--color-white); line-height: 1; margin-bottom: 16px;
+.service-card-label {
+    position: absolute;
+    bottom: 15px;
+    left: 16px;
+    z-index: 2;
+    font-size: 10px;
+    font-weight: 400;
+    color: #c6bc78;
+    line-height: 1.75;
 }
-.service-card p { color: var(--color-white); font-weight: 300; margin-bottom: 20px; }
-.service-card .btn { z-index: 2; }
+.service-card-center {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0 30px;
+}
+.service-card h3 {
+    font-size: 28px; font-weight: 600; font-style: italic;
+    color: #c6bc78; line-height: 1.75; margin: 0;
+    letter-spacing: -0.28px;
+}
+.service-card p { color: #a89d84; font-weight: 400; font-size: 13.8px; line-height: 1.75; margin: 0; max-width: 347px; }
+.service-card-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: #c6bc78;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+.service-card-link:hover { color: #fff; }
+.service-card .btn { display: none; }
 
 /* =============================================================
    OUR SERVICES PAGE

@@ -13,8 +13,9 @@ require __DIR__ . '/includes/header.php';
         <div class="hero-slide" style="background-image:url('<?php echo asset('images/hero/banner-1.webp'); ?>')"></div>
         <div class="hero-slide" style="background-image:url('<?php echo asset('images/hero/banner-3.webp'); ?>')"></div>
     </div>
-    <button class="hero-arrow prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <button class="hero-arrow next" aria-label="Next slide"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></button>
+    <span class="hero-label">Featured Build &middot; North Shore Residence</span>
+    <button class="hero-arrow prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="hero-arrow next" aria-label="Next slide"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     <div class="hero-dots" role="tablist" aria-label="Slide navigation"></div>
 </section>
 
@@ -61,9 +62,12 @@ require __DIR__ . '/includes/header.php';
         ];
         foreach ($services as $s): ?>
         <div class="service-card" style="background-image:url('<?php echo asset('images/services/' . $s['img'] . '.webp'); ?>')">
-            <h3><?php echo $s['t']; ?></h3>
-            <p><?php echo $s['d']; ?></p>
-            <a class="btn btn-primary" href="service-details.php?s=<?php echo $s['k']; ?>">Read More</a>
+            <span class="service-card-label"><?php echo $s['t']; ?> &middot; Exterior</span>
+            <div class="service-card-center">
+                <h3><?php echo $s['t']; ?></h3>
+                <p><?php echo $s['d']; ?></p>
+                <a class="service-card-link" href="<?php echo $s['k']; ?>.php">Read More</a>
+            </div>
         </div>
         <?php endforeach; ?>
     </div>
