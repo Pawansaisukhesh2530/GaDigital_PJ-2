@@ -34,7 +34,7 @@ require __DIR__ . '/includes/banner.php';
                 $cover = !empty($p['cover_image']) ? upload_public($p['cover_image']) : asset('images/project-tours/rustum.webp');
                 $num = str_pad($i + 1, 2, '0', STR_PAD_LEFT);
             ?>
-            <article class="cp-card" data-anim="fadeInUp">
+            <article class="cp-card" data-reveal data-reveal-delay="<?php echo ($i % 2) + 1; ?>">
                 <span class="cp-card-num"><?php echo $num; ?></span>
                 <a class="cp-card-media" href="<?php echo e($link); ?>">
                     <img src="<?php echo e($cover); ?>" alt="<?php echo e($p['title']); ?>" loading="lazy">

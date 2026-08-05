@@ -69,8 +69,8 @@ $ic_car  = '<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
 <section class="ss-projects">
     <div class="container">
         <div class="ss-grid">
-            <?php foreach ($designs as $d): ?>
-            <article class="ss-card" data-bed="<?php echo $d['beds']; ?>" data-bath="<?php echo $d['baths']; ?>" data-cars="<?php echo $d['cars']; ?>" data-type="<?php echo $d['type']; ?>" data-anim="fadeInUp">
+            <?php foreach ($designs as $i => $d): ?>
+            <article class="ss-card" data-bed="<?php echo $d['beds']; ?>" data-bath="<?php echo $d['baths']; ?>" data-cars="<?php echo $d['cars']; ?>" data-type="<?php echo $d['type']; ?>" data-reveal data-reveal-delay="<?php echo ($i % 3) + 1; ?>">
                 <div class="ss-card-media">
                     <a href="design-details.php?d=<?php echo $slug($d['name']); ?>">
                         <img src="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>" alt="<?php echo $d['name']; ?>" loading="lazy">

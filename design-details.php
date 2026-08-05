@@ -110,8 +110,8 @@ require __DIR__ . '/includes/banner.php';
 <!-- ===================== DESIGN DETAIL ===================== -->
 <section class="dd-main section">
     <div class="container">
-        <h2 class="dd-page-title text-center"><?php echo htmlspecialchars($d['name']); ?></h2>
-        <div class="dd-detail-card">
+        <h2 class="dd-page-title text-center" data-reveal><?php echo htmlspecialchars($d['name']); ?></h2>
+        <div class="dd-detail-card" data-reveal>
             <div class="dd-grid">
                 <div class="dd-info" data-anim="fadeInLeft">
                     <h3 class="dd-title"><?php echo htmlspecialchars($d['name']); ?></h3>
@@ -141,21 +141,39 @@ require __DIR__ . '/includes/banner.php';
 </section>
 
 <!-- ===================== DESIGN GALLERY ===================== -->
-<section class="dd-gallery-sec">
+<?php
+// Check which facade images actually exist and are unique (different file sizes = different images)
+$facadeDir = __DIR__ . '/assets/images/facades/';
+$facadeImages = [];
+$seenSizes = [];
+for ($fi = 1; $fi <= 3; $fi++) {
+    $facadeFile = $facadeDir . $d['img'] . '-' . $fi . '.webp';
+    if (file_exists($facadeFile)) {
+        $size = filesize($facadeFile);
+        if (!in_array($size, $seenSizes)) {
+            $facadeImages[] = asset('images/facades/' . $d['img'] . '-' . $fi . '.webp');
+            $seenSizes[] = $size;
+        }
+    }
+}
+// Fallback: use the main design image if no unique facades found
+if (empty($facadeImages)) {
+    $facadeImages[] = asset('images/designs/' . $d['img'] . '.webp');
+}
+?>
+<?php if (!empty($facadeImages)): ?>
+<section class="dd-gallery-sec" data-reveal>
     <div class="container">
         <div class="dd-gallery">
-            <a class="dd-gallery-item" href="<?php echo asset('images/facades/' . $d['img'] . '-1.webp'); ?>">
-                <img src="<?php echo asset('images/facades/' . $d['img'] . '-1.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> Facade 1" loading="lazy">
+            <?php foreach ($facadeImages as $fi => $facadeSrc): ?>
+            <a class="dd-gallery-item" href="<?php echo $facadeSrc; ?>">
+                <img src="<?php echo $facadeSrc; ?>" alt="<?php echo htmlspecialchars($d['name']); ?> Facade <?php echo $fi + 1; ?>" loading="lazy">
             </a>
-            <a class="dd-gallery-item" href="<?php echo asset('images/facades/' . $d['img'] . '-2.webp'); ?>">
-                <img src="<?php echo asset('images/facades/' . $d['img'] . '-2.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> Facade 2" loading="lazy">
-            </a>
-            <a class="dd-gallery-item" href="<?php echo asset('images/facades/' . $d['img'] . '-3.webp'); ?>">
-                <img src="<?php echo asset('images/facades/' . $d['img'] . '-3.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> Facade 3" loading="lazy">
-            </a>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <!-- ===================== CTA ENQUIRY (Reusable Component) ===================== -->
 <?php

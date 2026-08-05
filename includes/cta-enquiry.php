@@ -17,7 +17,7 @@ $sent   = $sent ?? false;
 $formError = $formError ?? '';
 ?>
 <!-- ===================== CTA + ENQUIRY SECTION ===================== -->
-<section class="cta-enquiry">
+<section class="cta-enquiry" data-reveal>
     <div class="container">
         <div class="cta-enquiry-grid">
             <!-- Left: Description + Image -->

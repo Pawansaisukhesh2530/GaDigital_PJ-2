@@ -40,9 +40,9 @@ $coverUrl = !empty($prj['cover_image']) ? upload_public($prj['cover_image']) : '
                 <?php endif; ?>
             </div>
             <div class="pj-info" data-anim="fadeInRight">
-                <span class="pj-eyebrow">&mdash; Completed Build</span>
-                <h2 class="pj-title"><?php echo e($prj['title']); ?></h2>
-                <div class="pj-info-grid">
+                <span class="pj-eyebrow" data-reveal>&mdash; Completed Build</span>
+                <h2 class="pj-title" data-reveal><?php echo e($prj['title']); ?></h2>
+                <div class="pj-info-grid" data-reveal>
                     <div class="pj-box">
                         <span class="pj-ic"><?php echo $ic_name; ?></span>
                         <div class="pj-box-text"><h3>Project Name</h3><p><?php echo e($prj['title']); ?></p></div>
@@ -89,8 +89,8 @@ $coverUrl = !empty($prj['cover_image']) ? upload_public($prj['cover_image']) : '
 <!-- ===================== GALLERY ===================== -->
 <section class="pj-gallery-sec">
     <div class="container">
-        <h3 class="pj-gallery-title">Project Gallery</h3>
-        <div class="pj-gallery">
+        <h3 class="pj-gallery-title" data-reveal>Project Gallery</h3>
+        <div class="pj-gallery" data-reveal>
             <?php foreach ($images as $img):
                 $src = upload_public($img['filename']);
                 // Build a readable caption from the filename (strip extension, replace separators)
