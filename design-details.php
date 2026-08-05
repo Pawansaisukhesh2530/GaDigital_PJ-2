@@ -148,8 +148,8 @@ require __DIR__ . '/includes/banner.php';
                 <img src="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> · Angle 1" loading="lazy">
                 <span class="dd-gallery-label"><?php echo htmlspecialchars($d['name']); ?> · Angle 1</span>
             </a>
-            <a class="dd-gallery-item" href="<?php echo asset('images/projects/' . $d['img'] . '.webp'); ?>">
-                <img src="<?php echo asset('images/projects/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> · Angle 2" loading="lazy">
+            <a class="dd-gallery-item" href="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>">
+                <img src="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> · Angle 2" loading="lazy">
                 <span class="dd-gallery-label"><?php echo htmlspecialchars($d['name']); ?> · Angle 2</span>
             </a>
             <a class="dd-gallery-item" href="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>">
