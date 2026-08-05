@@ -242,13 +242,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* =============================================================
    HERO SLIDER
    ============================================================= */
-/* Hero = full-width image carousel, fixed height */
+/* Hero = full-width image carousel, full viewport height */
 .hero {
     position: relative;
     width: 100%;
     overflow: hidden;
     background: #18160f;
-    height: 720px;
+    height: 100vh;
     min-height: 480px;
 }
 .hero-slides { position: absolute; inset: 0; }
