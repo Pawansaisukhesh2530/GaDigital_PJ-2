@@ -144,17 +144,14 @@ require __DIR__ . '/includes/banner.php';
 <section class="dd-gallery-sec">
     <div class="container">
         <div class="dd-gallery">
-            <a class="dd-gallery-item" href="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>">
-                <img src="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> · Angle 1" loading="lazy">
-                <span class="dd-gallery-label"><?php echo htmlspecialchars($d['name']); ?> · Angle 1</span>
+            <a class="dd-gallery-item" href="<?php echo asset('images/facades/' . $d['img'] . '-1.webp'); ?>">
+                <img src="<?php echo asset('images/facades/' . $d['img'] . '-1.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> Facade 1" loading="lazy">
             </a>
-            <a class="dd-gallery-item" href="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>">
-                <img src="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> · Angle 2" loading="lazy">
-                <span class="dd-gallery-label"><?php echo htmlspecialchars($d['name']); ?> · Angle 2</span>
+            <a class="dd-gallery-item" href="<?php echo asset('images/facades/' . $d['img'] . '-2.webp'); ?>">
+                <img src="<?php echo asset('images/facades/' . $d['img'] . '-2.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> Facade 2" loading="lazy">
             </a>
-            <a class="dd-gallery-item" href="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>">
-                <img src="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> · Angle 3" loading="lazy">
-                <span class="dd-gallery-label"><?php echo htmlspecialchars($d['name']); ?> · Angle 3</span>
+            <a class="dd-gallery-item" href="<?php echo asset('images/facades/' . $d['img'] . '-3.webp'); ?>">
+                <img src="<?php echo asset('images/facades/' . $d['img'] . '-3.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> Facade 3" loading="lazy">
             </a>
         </div>
     </div>
