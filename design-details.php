@@ -110,84 +110,57 @@ require __DIR__ . '/includes/banner.php';
 <!-- ===================== DESIGN DETAIL ===================== -->
 <section class="dd-main section">
     <div class="container">
-        <div class="dd-grid">
-            <div class="dd-plan" data-anim="fadeInLeft">
-                <img src="<?php echo asset('images/floorplans/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> floor plan" loading="lazy">
+        <h2 class="dd-page-title text-center"><?php echo htmlspecialchars($d['name']); ?></h2>
+        <div class="dd-detail-card">
+            <div class="dd-grid">
+                <div class="dd-info" data-anim="fadeInLeft">
+                    <h3 class="dd-title"><?php echo htmlspecialchars($d['name']); ?></h3>
+                    <div class="dd-specs">
+                        <span class="dd-spec"><?php echo $ic_bed; ?><em><?php echo $d['beds']; ?></em></span>
+                        <span class="dd-spec"><?php echo $ic_bath; ?><em><?php echo $d['baths']; ?></em></span>
+                        <span class="dd-spec"><?php echo $ic_car; ?><em><?php echo $d['cars']; ?></em></span>
+                    </div>
+                    <p class="dd-desc"><?php echo $d['desc']; ?></p>
+
+                    <h4 class="dd-dim-title">Dimensions</h4>
+                    <ul class="dd-dims">
+                        <?php foreach ($d['dims'] as $label => $val): ?>
+                        <li><span><?php echo $label; ?></span><em><?php echo $val; ?></em></li>
+                        <?php endforeach; ?>
+                        <li class="dd-total"><span>Total</span><em><?php echo $d['total']; ?></em></li>
+                    </ul>
+
+                    <a class="btn btn-primary dd-pdf" href="<?php echo $d['pdf']; ?>" target="_blank" rel="noopener">Download Pdf</a>
+                </div>
+                <div class="dd-plan" data-anim="fadeInRight">
+                    <img src="<?php echo asset('images/floorplans/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> floor plan" loading="lazy">
+                </div>
             </div>
-            <div class="dd-info" data-anim="fadeInRight">
-                <h2 class="dd-title"><?php echo htmlspecialchars($d['name']); ?></h2>
-                <div class="dd-specs">
-                    <span class="dd-spec"><?php echo $ic_bed; ?><em><?php echo $d['beds']; ?></em></span>
-                    <span class="dd-spec"><?php echo $ic_bath; ?><em><?php echo $d['baths']; ?></em></span>
-                    <span class="dd-spec"><?php echo $ic_car; ?><em><?php echo $d['cars']; ?></em></span>
-                </div>
-                <p class="dd-desc"><?php echo $d['desc']; ?></p>
-
-                <h4 class="dd-dim-title">Dimensions</h4>
-                <ul class="dd-dims">
-                    <?php foreach ($d['dims'] as $label => $val): ?>
-                    <li><span><?php echo $label; ?></span><em><?php echo $val; ?></em></li>
-                    <?php endforeach; ?>
-                    <li class="dd-total"><span>Total</span><em><?php echo $d['total']; ?></em></li>
-                </ul>
-
-                <a class="btn btn-primary dd-pdf" href="<?php echo $d['pdf']; ?>" target="_blank" rel="noopener">Download Pdf</a>
-            </div>
         </div>
     </div>
 </section>
 
-<!-- ===================== RANGE INTRO ===================== -->
-<section class="dd-range">
+<!-- ===================== DESIGN GALLERY ===================== -->
+<section class="dd-gallery-sec">
     <div class="container">
-        <p class="dd-range-text" data-anim="fadeInUp">At Nivi Homes, we offer a thoughtfully curated range of single and double storey designs to suit every lifestyle. Whether you prefer the ease of open-plan living on one level or the spacious elegance of a two-storey layout, our homes are crafted with care and functionality in mind. From compact and efficient to bold and luxurious, each design reflects our commitment to comfort, quality, and contemporary living. Discover the perfect space to grow, connect, and create lasting memories with Nivi Homes.</p>
+        <div class="dd-gallery">
+            <a class="dd-gallery-item" href="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>">
+                <img src="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> · Angle 1" loading="lazy">
+            </a>
+            <a class="dd-gallery-item" href="<?php echo asset('images/projects/' . $d['img'] . '.webp'); ?>">
+                <img src="<?php echo asset('images/projects/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> · Angle 2" loading="lazy">
+            </a>
+            <a class="dd-gallery-item" href="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>">
+                <img src="<?php echo asset('images/designs/' . $d['img'] . '.webp'); ?>" alt="<?php echo htmlspecialchars($d['name']); ?> · Angle 3" loading="lazy">
+            </a>
+        </div>
     </div>
 </section>
 
-<!-- ===================== ENQUIRY FORM ===================== -->
-<section class="dd-contact">
-    <div class="container">
-        <div class="text-center" data-anim="fadeIn">
-            <h2 class="section-title gold">Enquire About This Design</h2>
-        </div>
-        <div class="contact-form-wrap dd-form" data-anim="fadeInUp">
-            <form id="contactForm" method="post" action="design-details.php?d=<?php echo urlencode($key); ?>" novalidate>
-                <?php echo csrf_field(); ?>
-                <div class="hp-field" aria-hidden="true" style="position:absolute!important;left:-9999px!important;top:auto;width:1px;height:1px;overflow:hidden;">
-                    <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-                </div>
-                <div class="form-group">
-                    <label for="fullName">Full Name *</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="Your Name" value="<?php echo e($old['fullName']); ?>" required>
-                    <?php if (isset($errors['fullName'])): ?><span class="form-error"><?php echo e($errors['fullName']); ?></span><?php endif; ?>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email Address" value="<?php echo e($old['email']); ?>" required>
-                    <?php if (isset($errors['email'])): ?><span class="form-error"><?php echo e($errors['email']); ?></span><?php endif; ?>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="text" id="phone" name="phone" placeholder="Your Phone Number" value="<?php echo e($old['phone']); ?>">
-                    <?php if (isset($errors['phone'])): ?><span class="form-error"><?php echo e($errors['phone']); ?></span><?php endif; ?>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" maxlength="180" placeholder="Enter your message..."><?php echo e($old['message']); ?></textarea>
-                    <div class="char-count">0 / 180</div>
-                    <?php if (isset($errors['message'])): ?><span class="form-error"><?php echo e($errors['message']); ?></span><?php endif; ?>
-                </div>
-                <button type="submit" class="btn-send">Send Message</button>
-                <?php
-                $noteClass = $sent ? ' success' : (($formError || $errors) ? ' error' : '');
-                $noteText  = $sent
-                    ? 'Thank you! Your message has been sent. We will be in touch shortly.'
-                    : ($formError !== '' ? $formError : ($errors ? 'Please correct the highlighted fields and try again.' : ''));
-                ?>
-                <p class="form-note<?php echo $noteClass; ?>" role="status" aria-live="polite"><?php echo e($noteText); ?></p>
-            </form>
-        </div>
-    </div>
-</section>
+<!-- ===================== CTA ENQUIRY (Reusable Component) ===================== -->
+<?php
+$CTA_FORM_ACTION = 'design-details.php?d=' . urlencode($key);
+require __DIR__ . '/includes/cta-enquiry.php';
+?>
 
 <?php require __DIR__ . '/includes/footer.php'; ?>

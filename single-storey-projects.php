@@ -69,8 +69,10 @@ $ic_car  = '<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                         <span class="ss-spec"><?php echo $ic_bath; ?><em><?php echo $p['bath']; ?></em></span>
                         <span class="ss-spec"><?php echo $ic_car; ?><em><?php echo $p['cars']; ?></em></span>
                     </div>
-                    <a class="ss-btn" href="<?php echo $p['link']; ?>">Click here</a>
-                    <a class="ss-btn" href="<?php echo $p['pdf']; ?>" target="_blank" rel="noopener">Download Pdf</a>
+                    <div class="ss-card-actions">
+                        <a class="ss-btn" href="<?php echo $p['link']; ?>">Click here</a>
+                        <a class="ss-btn-outline" href="<?php echo $p['pdf']; ?>" target="_blank" rel="noopener">Download Pdf</a>
+                    </div>
                 </div>
             </article>
             <?php endforeach; ?>
