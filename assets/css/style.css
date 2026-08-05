@@ -255,9 +255,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero-slide {
     position: absolute; inset: 0;
     opacity: 0;
-    transition: opacity .8s ease;
+    transition: opacity 1.2s ease;
     background-size: cover;
     background-position: center;
+    will-change: opacity;
 }
 .hero-slide.is-active { opacity: 1; }
 .hero-overlay { display: none; }
