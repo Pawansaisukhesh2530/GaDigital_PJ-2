@@ -796,6 +796,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    FOOTER
    ============================================================= */
 .site-footer { background: #1a1a1a; color: #cfcfcf; padding-top: 50px; }
+/* Ensure no gap between main content and footer */
+main { margin-bottom: 0; padding-bottom: 0; }
+main + .site-footer { margin-top: 0; }
 .footer-grid {
     display: grid;
     grid-template-columns: 30.4% 19.6% 25% 25%;
@@ -2097,7 +2100,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     background-position: center;
     padding: 92px 0;
     text-align: center;
+    margin-bottom: 0;
 }
+/* Remove gap between CTA and footer on service pages */
+.svc-cta + * { margin-top: 0; }
+.page-services main > .svc-cta:last-child { margin-bottom: 0; }
 .svc-cta::before {
     content: "";
     position: absolute;

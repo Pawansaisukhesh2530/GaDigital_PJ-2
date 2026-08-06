@@ -7,7 +7,12 @@ define('NIVI_NO_SESSION', true);
 require_once __DIR__ . '/app/bootstrap.php';
 require_once __DIR__ . '/app/projects.php';
 
-$projects = projects_published();   // published, ordered by display_order
+try {
+    $projects = projects_published();
+} catch (Throwable $e) {
+    error_log('Projects page error: ' . $e->getMessage());
+    $projects = [];
+}
 
 require __DIR__ . '/includes/header.php';
 ?>

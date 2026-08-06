@@ -106,13 +106,13 @@
 
     /* Hero: shorter on mobile to show full image without heavy cropping */
     .hero {
-        height: 56vw;
-        min-height: 220px;
-        max-height: 400px;
+        height: 45vh;
+        min-height: 250px;
+        max-height: 380px;
     }
     .hero-slide {
         background-size: cover;
-        background-position: center top;
+        background-position: center center;
     }
 
     /* Mobile logo ~28vw of viewport (matches live), left-aligned */
