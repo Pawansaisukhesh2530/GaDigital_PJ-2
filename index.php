@@ -4,14 +4,30 @@ $PAGE_TITLE = 'Nivi Homes | Custom Homes, Duplexes, Knock Down Rebuilds & Granny
 require __DIR__ . '/includes/header.php';
 ?>
 
-<!-- ===================== HERO SLIDER (full-width 16:9 image carousel) ===================== -->
+<!-- ===================== HERO SLIDER (full-width 16:9 image carousel) =====================
+     Real <img> elements (not CSS backgrounds) so the complete banner is always
+     visible. Every source image is 1920x1080 (16:9); the .hero container is
+     locked to the same ratio, so nothing is ever cropped or stretched.
+-->
 <section class="hero" data-slider data-interval="3000" aria-label="Featured homes">
     <div class="hero-slides">
-        <div class="hero-slide is-active" style="background-image:url('<?php echo asset('images/hero/banner-4.webp'); ?>')"></div>
-        <div class="hero-slide" style="background-image:url('<?php echo asset('images/hero/banner-2.webp'); ?>')"></div>
-        <div class="hero-slide" style="background-image:url('<?php echo asset('images/hero/banner-4-v2.webp'); ?>')"></div>
-        <div class="hero-slide" style="background-image:url('<?php echo asset('images/hero/banner-1.webp'); ?>')"></div>
-        <div class="hero-slide" style="background-image:url('<?php echo asset('images/hero/banner-3.webp'); ?>')"></div>
+        <?php
+        // First slide loads eagerly (it is the LCP element); the rest are lazy.
+        $heroSlides = [
+            ['img' => 'banner-4.webp',    'alt' => 'Nivi Homes - 2 suburbs, 2 records'],
+            ['img' => 'banner-2.webp',    'alt' => 'Nivi Homes custom home exterior'],
+            ['img' => 'banner-4-v2.webp', 'alt' => 'Nivi Homes completed build'],
+            ['img' => 'banner-1.webp',    'alt' => 'Nivi Homes duplex home facade'],
+            ['img' => 'banner-3.webp',    'alt' => 'Nivi Homes luxury home elevation'],
+        ];
+        foreach ($heroSlides as $hi => $hs): ?>
+        <div class="hero-slide<?php echo $hi === 0 ? ' is-active' : ''; ?>">
+            <img src="<?php echo asset('images/hero/' . $hs['img']); ?>"
+                 alt="<?php echo e($hs['alt']); ?>"
+                 width="1920" height="1080"
+                 <?php if ($hi === 0): ?>loading="eager" fetchpriority="high"<?php else: ?>loading="lazy"<?php endif; ?>>
+        </div>
+        <?php endforeach; ?>
     </div>
     <button class="hero-arrow prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
     <button class="hero-arrow next" aria-label="Next slide"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>

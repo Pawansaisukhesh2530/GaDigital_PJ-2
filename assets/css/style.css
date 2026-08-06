@@ -242,26 +242,49 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* =============================================================
    HERO SLIDER
    ============================================================= */
-/* Hero = full-width image carousel, full viewport height */
+/* Hero = full-width 16:9 image carousel.
+   The source banners are all 1920x1080 (16:9). The container is locked to that
+   same ratio via aspect-ratio, and the images use object-fit: contain, so the
+   COMPLETE banner is always visible - never cropped, never stretched, at any
+   viewport width.
+   On ultrawide screens max-width caps the hero so its 16:9 height can never
+   exceed the viewport height; the leftover space becomes brand-coloured gutters
+   rather than a cropped image. */
 .hero {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    /* 16:9 - matches the source images exactly */
+    aspect-ratio: 16 / 9;
+    /* Never taller than the viewport: 100vh at 16:9 == 100vh * 16/9 wide */
+    max-width: calc(100vh * 16 / 9);
+    margin-inline: auto;
     background: #18160f;
-    height: 100vh;
-    min-height: 480px;
+    overflow: hidden;
 }
 .hero-slides { position: absolute; inset: 0; }
 .hero-slide {
     position: absolute; inset: 0;
     opacity: 0;
     transition: opacity 1.2s ease;
-    background-size: cover;
-    background-position: center;
     will-change: opacity;
 }
 .hero-slide.is-active { opacity: 1; }
+.hero-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* contain guarantees the whole image is shown; because the container is
+       already 16:9 there is no letterboxing in practice */
+    object-fit: contain;
+    object-position: center;
+}
 .hero-overlay { display: none; }
+
+/* Fallback for browsers without aspect-ratio support (very old Safari):
+   padding-top hack keeps the same 56.25% (16:9) box. */
+@supports not (aspect-ratio: 16 / 9) {
+    .hero { height: 0; padding-top: 56.25%; }
+}
 
 /* Hero pagination dots */
 .hero-dots {

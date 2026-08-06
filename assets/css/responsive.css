@@ -104,16 +104,14 @@
 @media (max-width: 767px) {
     body { font-size: 15px; }
 
-    /* Hero: shorter on mobile to show full image without heavy cropping */
-    .hero {
-        height: 45vh;
-        min-height: 250px;
-        max-height: 380px;
-    }
-    .hero-slide {
-        background-size: cover;
-        background-position: center center;
-    }
+    /* Hero: no height override here on purpose.
+       .hero is locked to aspect-ratio 16/9 in style.css so the full banner is
+       visible on mobile too. Setting a fixed height here would reintroduce
+       cropping. Only the controls are scaled down. */
+    .hero-arrow { width: 34px; height: 34px; }
+    .hero-arrow.prev { left: 10px; }
+    .hero-arrow.next { right: 10px; }
+    .hero-dots { bottom: 12px; }
 
     /* Mobile logo ~28vw of viewport (matches live), left-aligned */
     .brand { flex: 0 0 auto; }
