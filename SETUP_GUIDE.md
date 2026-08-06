@@ -65,23 +65,51 @@ The site runs fine without it.
 
 ---
 
-## 5. Database setup
+## 5. Database setup — **REQUIRED on every fresh clone**
 
-The repo ships with a ready `data\nivihomes.sqlite` (default admin, default
-settings, demo projects), so you can skip straight to running it.
+> **Important:** the database is **not** in the repository. `data\nivihomes.sqlite`
+> and `assets\uploads\projects\` are listed in `.gitignore` (a database and
+> user uploads should never be committed). A fresh clone therefore has **no
+> database and no projects** until you run the two commands below.
+>
+> Skipping this step is the #1 cause of "the Projects page is empty / erroring"
+> and "the Projects dropdown is missing".
 
-To rebuild the database from scratch instead:
+Run these **once** from the project root, right after cloning:
 
 ```bat
 C:\xampp\php\php.exe database\install.php
 C:\xampp\php\php.exe database\seed_projects.php
 ```
 
-- `install.php` creates the schema and seeds the default admin + settings.
-- `seed_projects.php` loads the demo projects and their images.
+- `install.php` — creates the schema, the default admin, and default settings.
+- `seed_projects.php` — loads the 5 demo projects and copies their gallery
+  images into `assets\uploads\projects\`.
+
+Both scripts are **idempotent** — re-running them will not duplicate data.
+
+### Expected output
+
+```
+Schema applied to ...\data\nivihomes.sqlite
+Seeded default admin  ->  username: admin  password: Admin@123
+Seeded/topped-up 24 settings.
+Install complete.
+
+Seeded "RUSTUM 20 Halifax St ,Nirimbafields NSW"  (cover: yes, gallery: 20/20)
+Seeded "Project Nirvana"                          (cover: yes, gallery: 15/15)
+Seeded "72 Voyager st, wadalba NSW"               (cover: yes, gallery: 22/22)
+Seeded "33 Warman St Pendlehill"                  (cover: yes, gallery: 20/20)
+Seeded "The Gateway at Akuna Vista"               (cover: yes, gallery: 21/21)
+Project seed complete.
+```
+
+If you see that, the Projects page, the Projects nav dropdown, and all project
+detail pages will work.
 
 Make sure the `data\` folder is **writable** (it holds the database, sessions
-and logs).
+and logs), and that `assets\uploads\projects\` is writable (it holds project
+images).
 
 ---
 
@@ -175,6 +203,10 @@ site (header, footer, contact page):
 
 | Symptom | Cause / Fix |
 |---|---|
+| **Projects page empty / 500 error** | The database was never created. Run `setup.bat` (or `php database\install.php` then `php database\seed_projects.php`). See section 5. |
+| **Projects dropdown missing from the nav** | Same cause — the dropdown is built from published projects in the database. Run `setup.bat`. |
+| **Project images broken** | `assets\uploads\projects\` is empty because the seeder never ran, or the folder is not writable. Run `setup.bat`. |
+| **"It works on my machine but not on his"** | The database and uploads are gitignored, so they never transfer via git. Every machine must run `setup.bat` once. |
 | `could not find driver` | Enable `extension=pdo_sqlite` in `php.ini`, restart. |
 | Login loops back to the login page | `data\sessions` not writable — make `data\` writable. |
 | Images won't upload | Make `assets\uploads\projects\` writable; check the 5 MB limit. |
@@ -185,6 +217,22 @@ site (header, footer, contact page):
 
 ---
 
-You're set. Clone → (optionally build DB) → `php -S localhost:8000` → log in at
-`/admin` with `admin` / `Admin@123`, then configure SMTP and company details
-from **Settings**.
+---
+
+## Quick start (TL;DR)
+
+```bat
+git clone https://github.com/Pawansaisukhesh2530/GaDigital_PJ-2.git
+cd GaDigital_PJ-2
+
+setup.bat                                  REM creates the DB + seeds the projects (run once)
+
+C:\xampp\php\php.exe -S localhost:8000
+```
+
+Then open <http://localhost:8000/> and log in to the admin at
+<http://localhost:8000/admin> with `admin` / `Admin@123`, and configure SMTP
+and company details from **Settings**.
+
+`setup.bat` is the step people miss — without it there is no database, so the
+Projects page and the Projects nav dropdown will be empty.
